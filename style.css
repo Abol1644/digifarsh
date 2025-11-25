@@ -44,3 +44,7 @@ body {
   font-family: peyda-bold;
   font-weight: 700;
 }
+
+.material-icons-outlined {
+  display: flex !important;
+}

@@ -23,7 +23,7 @@ body {
 
 .site-header {
   background-color: #ffffff;
-  
+  direction: rtl;
 }
 
 /* Accessibility helper */
@@ -74,7 +74,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  border-radius: 999px;
+  border-radius: 14px;
   padding: 10px 18px;
   border: none;
   font-size: 0.9rem;
@@ -92,7 +92,7 @@ body {
 .btn-primary {
   background-color: var(--primary);
   color: #ffffff;
-  box-shadow: 0 6px 15px rgba(230, 0, 18, 0.25);
+  box-shadow: -8px 0 20px rgba(230, 0, 18, 0.3);
 }
 
 .btn-primary:hover {
@@ -109,11 +109,18 @@ body {
   background-color: #ececf0;
 }
 
+.header-search-logo {
+  display: flex;
+  flex-direction: row;
+  gap: 16px
+}
+
 /* Search */
 .header-search {
   flex: 1;
   min-width: 240px;
   max-width: 540px;
+  width: 360px;
 }
 
 .search-field {
@@ -121,7 +128,7 @@ body {
   align-items: center;
   gap: 8px;
   background-color: var(--muted-bg);
-  border-radius: 999px;
+  border-radius: 14px;
   padding: 8px 16px;
   border: 1px solid transparent;
 }
@@ -170,6 +177,12 @@ body {
   padding: 10px 0;
   justify-content: space-between;
   flex-direction: row; /* برای قرار گرفتن دسته‌بندی در سمت راست */
+}
+
+.header-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 /* Category toggle */
@@ -260,6 +273,12 @@ body {
   width: 1px;
   height: 20px;
   background-color: #e0e0e0;
+}
+
+.header-actions {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
 }
 
 /* Responsive tweaks */

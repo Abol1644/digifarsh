@@ -7,14 +7,10 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="assets/css/layout.css" />
-    <link rel="stylesheet" href="assets/css/utilities.css" />
 
     <!-- Component Styles -->
-    <link rel="stylesheet" href="components/header.css" />
-    <link rel="stylesheet" href="assets/css/components/hero.css" />
-    <link rel="stylesheet" href="assets/css/components/features.css" />
-    <link rel="stylesheet" href="assets/css/components/footer.css" />
+    <link rel="stylesheet" href="components/css/header.css" />
+    <link rel="stylesheet" href="components/css/story-slider.css" />
 
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
@@ -27,42 +23,40 @@
 
       <div class="header-container">
         <div class="header-top">
-          <!-- Left actions -->
-          <div class="header-actions">
-            <button class="btn btn-primary font-medium header-cart-btn">
-              <span class="material-icons-outlined icon">shopping_bag</span>
-              <span>سبد خرید</span>
-            </button>
+          <div class="header-search-logo">
+            <a href="/" class="header-logo">
+              <img
+                src="/assets/images/logo-main.png"
+                alt="لوگوی دیجی فرش"
+                class="logo-img"
+              />
+            </a>
+            <div class="header-search">
+              <label for="site-search" class="sr-only">جستجو</label>
+              <div class="search-field">
+                <span class="material-icons-outlined icon">search</span>
+                <input
+                  type="search"
+                  id="site-search"
+                  class="font-regular"
+                  placeholder="نام محصول ، دسته بندی ..."
+                  aria-label="جستجو در محصولات"
+                />
+              </div>
+            </div>
+          </div>
 
+          <div class="header-actions">
             <button class="btn btn-ghost font-regular header-login-btn">
               <span class="material-icons-outlined icon">login</span>
               <span>ورود و عضویت</span>
             </button>
-          </div>
 
-          <!-- Search -->
-          <div class="header-search">
-            <label for="site-search" class="sr-only">جستجو</label>
-            <div class="search-field">
-              <span class="material-icons-outlined icon">search</span>
-              <input
-                type="search"
-                id="site-search"
-                class="font-regular"
-                placeholder="نام محصول ، دسته بندی ..."
-                aria-label="جستجو در محصولات"
-              />
-            </div>
+            <button class="btn btn-primary font-medium header-cart-btn">
+              <span class="material-icons-outlined icon">shopping_bag</span>
+              <span>سبد خرید</span>
+            </button>
           </div>
-
-          <!-- Logo -->
-          <a href="/" class="header-logo">
-            <img
-              src="/assets/images/logo-main.png"
-              alt="لوگوی دیجی فرش"
-              class="logo-img"
-            />
-          </a>
         </div>
       </div>
 
@@ -70,21 +64,23 @@
 
       <div class="header-container">
         <div class="header-bottom">
-          <!-- Category toggle -->
-          <button class="category-btn font-bold" aria-label="مشاهده دسته‌بندی">
-            <span class="category-label">دسته بندی محصولات</span>
-            <span class="material-icons-outlined icon">menu</span>
-          </button>
-
-          <!-- Nav -->
-          <nav class="main-nav" aria-label="منوی اصلی">
-            <ul class="nav-list font-regular">
-              <li><a href="#">صفحه اصلی</a></li>
-              <li><a href="#">مجله دیجی فرش</a></li>
-              <li><a href="#">فروش</a></li>
-              <li><a href="#">تماس با ما</a></li>
-            </ul>
-          </nav>
+          <div class="header-nav">
+            <button
+              class="category-btn font-bold"
+              aria-label="مشاهده دسته‌بندی"
+            >
+              <span class="material-icons-outlined icon">menu</span>
+              <span class="category-label">دسته بندی محصولات</span>
+            </button>
+            <nav class="main-nav" aria-label="منوی اصلی">
+              <ul class="nav-list font-regular">
+                <li><a href="#">صفحه اصلی</a></li>
+                <li><a href="#">مجله دیجی فرش</a></li>
+                <li><a href="#">فروش</a></li>
+                <li><a href="#">تماس با ما</a></li>
+              </ul>
+            </nav>
+          </div>
 
           <!-- Special links -->
           <div class="header-special-links">
@@ -106,6 +102,154 @@
       </div>
     </section>
 
-    <!-- <script src="assets/js/main.js"></script> -->
+    <section id="story-slider" class="story-slider" aria-label="دسته‌بندی‌ها">
+      <div class="story-wrapper">
+        <!-- Prev button -->
+        <button class="slider-btn next-btn" aria-label="بعدی">
+          <span class="material-icons-outlined">chevron_right</span>
+        </button>
+
+        <!-- List -->
+        <div class="story-list" id="story-scroll">
+          <!-- Story item 1 -->
+          <div class="story-item">
+            <div class="story-thumb">
+              <img
+                src="/assets/images/story-thumbnail-1.jpg"
+                alt="فرش ماشینی"
+              />
+            </div>
+            <p class="font-regular story-title">فرش ماشینی</p>
+          </div>
+
+          <!-- Story item 2 -->
+          <div class="story-item">
+            <div class="story-thumb">
+              <img
+                src="/assets/images/story-thumbnail-2.jpg"
+                alt="فرش کلاسیک"
+              />
+            </div>
+            <p class="font-regular story-title">فرش کلاسیک</p>
+          </div>
+
+          <!-- Story item 3 -->
+          <div class="story-item">
+            <div class="story-thumb">
+              <img
+                src="/assets/images/story-thumbnail-3.jpg"
+                alt="پرفروش‌ترین‌ها"
+              />
+            </div>
+            <p class="font-regular story-title">پرفروش‌ترین‌ها</p>
+          </div>
+
+          <div class="story-item">
+            <div class="story-thumb">
+              <img
+                src="/assets/images/story-thumbnail-1.jpg"
+                alt="فرش ماشینی"
+              />
+            </div>
+            <p class="font-regular story-title">فرش ماشینی</p>
+          </div>
+
+          <!-- Story item 2 -->
+          <div class="story-item">
+            <div class="story-thumb">
+              <img
+                src="/assets/images/story-thumbnail-2.jpg"
+                alt="فرش کلاسیک"
+              />
+            </div>
+            <p class="font-regular story-title">فرش کلاسیک</p>
+          </div>
+
+          <!-- Story item 3 -->
+          <div class="story-item">
+            <div class="story-thumb">
+              <img
+                src="/assets/images/story-thumbnail-3.jpg"
+                alt="پرفروش‌ترین‌ها"
+              />
+            </div>
+            <p class="font-regular story-title">پرفروش‌ترین‌ها</p>
+          </div>
+
+          <div class="story-item">
+            <div class="story-thumb">
+              <img
+                src="/assets/images/story-thumbnail-1.jpg"
+                alt="فرش ماشینی"
+              />
+            </div>
+            <p class="font-regular story-title">فرش ماشینی</p>
+          </div>
+
+          <!-- Story item 2 -->
+          <div class="story-item">
+            <div class="story-thumb">
+              <img
+                src="/assets/images/story-thumbnail-2.jpg"
+                alt="فرش کلاسیک"
+              />
+            </div>
+            <p class="font-regular story-title">فرش کلاسیک</p>
+          </div>
+
+          <!-- Story item 3 -->
+          <div class="story-item">
+            <div class="story-thumb">
+              <img
+                src="/assets/images/story-thumbnail-3.jpg"
+                alt="پرفروش‌ترین‌ها"
+              />
+            </div>
+            <p class="font-regular story-title">پرفروش‌ترین‌ها</p>
+          </div>
+
+          <div class="story-item">
+            <div class="story-thumb">
+              <img
+                src="/assets/images/story-thumbnail-1.jpg"
+                alt="فرش ماشینی"
+              />
+            </div>
+            <p class="font-regular story-title">فرش ماشینی</p>
+          </div>
+
+          <!-- Story item 2 -->
+          <div class="story-item">
+            <div class="story-thumb">
+              <img
+                src="/assets/images/story-thumbnail-2.jpg"
+                alt="فرش کلاسیک"
+              />
+            </div>
+            <p class="font-regular story-title">فرش کلاسیک</p>
+          </div>
+
+          <!-- Story item 3 -->
+          <div class="story-item">
+            <div class="story-thumb">
+              <img
+                src="/assets/images/story-thumbnail-3.jpg"
+                alt="پرفروش‌ترین‌ها"
+              />
+            </div>
+            <p class="font-regular story-title">پرفروش‌ترین‌ها</p>
+          </div>
+
+          <!-- ... ادامه آیتم‌ها -->
+        </div>
+
+        <!-- Next button -->
+        <button class="slider-btn prev-btn" aria-label="قبلی">
+          <span class="material-icons-outlined">chevron_left</span>
+        </button>
+      </div>
+    </section>
+
+    <script src="components/js/story-slider.js"></script>
   </body>
 </html>
