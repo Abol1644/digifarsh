@@ -11,6 +11,7 @@
     <!-- Component Styles -->
     <link rel="stylesheet" href="components/css/header.css" />
     <link rel="stylesheet" href="components/css/story-slider.css" />
+    <link rel="stylesheet" href="components/css/hero-carousel.css" />
 
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
@@ -239,17 +240,159 @@
             </div>
             <p class="font-regular story-title">پرفروش‌ترین‌ها</p>
           </div>
-
-          <!-- ... ادامه آیتم‌ها -->
         </div>
 
-        <!-- Next button -->
         <button class="slider-btn prev-btn" aria-label="قبلی">
           <span class="material-icons-outlined">chevron_left</span>
         </button>
       </div>
     </section>
 
+    <section
+      id="hero-carousel"
+      class="hero-carousel"
+      aria-label="اسلایدر محصولات ویژه"
+    >
+      <div class="hero-carousel-inner">
+        <!-- دکمه قبلی -->
+         <button
+          class="hero-nav hero-nav-next"
+          type="button"
+          aria-label="اسلاید بعدی"
+        >
+          <svg
+            class="hero-nav-shape"
+            width="54"
+            height="241"
+            viewBox="0 0 54 241"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path
+              d="M0 0V240.88V212.758C0 199.756 4.76878 187.222 13.3733 177.608L42.2177 145.38C57.0771 128.778 57.0771 103.4 42.2177 86.7981L13.3733 54.5702C4.76878 44.9563 0 32.4225 0 19.4208V0Z"
+              fill="white"
+            />
+          </svg>
+          <span class="material-icons-outlined hero-nav-icon" aria-hidden="true"
+            >chevron_right</span
+          >
+        </button>
+        
+
+        <!-- دکمه بعدی -->
+         <button
+          class="hero-nav hero-nav-prev"
+          type="button"
+          aria-label="اسلاید قبلی"
+        >
+          <svg
+            class="hero-nav-shape"
+            width="54"
+            height="241"
+            viewBox="0 0 54 241"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path
+              d="M53.3623 240.88L53.3623 0L53.3623 28.1223C53.3623 41.1245 48.5935 53.6576 39.989 63.2722L11.1446 95.5C-3.71476 112.102 -3.71477 137.48 11.1446 154.082L39.989 186.31C48.5935 195.924 53.3623 208.458 53.3623 221.459L53.3623 240.88Z"
+              fill="white"
+            />
+          </svg>
+          <span class="material-icons-outlined hero-nav-icon" aria-hidden="true"
+            >chevron_left</span
+          >
+        </button>
+        
+
+        <!-- اسلایدها -->
+        <div class="hero-slides">
+          <!-- Slide 1 -->
+          <article
+            class="hero-slide active"
+            aria-label="خرید آنلاین فرش‌های اصیل ایرانی"
+          >
+            
+            <div class="hero-slide-content">
+              <h2 class="font-bold hero-title">
+                خرید آنلاین فرش‌های اصیل ایرانی
+              </h2>
+              <p class="font-regular hero-subtitle">
+                تنوع بی‌نظیر | ارسال رایگان | ضمانت بازگشت
+              </p>
+              <a href="#" class="hero-cta font-medium">مشاهده محصولات</a>
+            </div>
+            <div class="hero-slide-media">
+              <img
+                src="/assets/images/banner-1.png"
+                alt="چند فرش ایرانی کنار هم"
+              />
+            </div>
+          </article>
+
+          <!-- Slide 2 -->
+          <article class="hero-slide" aria-label="کلکسیون ویژه فرش ماشینی">
+            
+            <div class="hero-slide-content">
+              <h2 class="font-bold hero-title">کلکسیون ویژه فرش ماشینی</h2>
+              <p class="font-regular hero-subtitle">
+                جدیدترین طرح‌ها با بهترین قیمت
+              </p>
+              <a href="#" class="hero-cta font-medium">مشاهده محصولات</a>
+            </div>
+            <div class="hero-slide-media">
+              <img
+                src="/assets/images/banner-1.png"
+                alt="فرش ماشینی در طرح‌های مختلف"
+              />
+            </div>
+          </article>
+
+          <!-- Slide 3 -->
+          <article class="hero-slide" aria-label="فرش دستباف، هنر اصیل ایرانی">
+            
+            <div class="hero-slide-content">
+              <h2 class="font-bold hero-title">فرش دستباف، هنر اصیل ایرانی</h2>
+              <p class="font-regular hero-subtitle">
+                انتخابی لوکس برای خانه‌های خاص
+              </p>
+              <a href="#" class="hero-cta font-medium">مشاهده محصولات</a>
+            </div>
+            <div class="hero-slide-media">
+              <img src="/assets/images/banner-1.png" alt="فرش دستباف ایرانی" />
+            </div>
+          </article>
+        </div>
+
+        <!-- دات‌ها -->
+        <div class="hero-dots" role="tablist" aria-label="انتخاب اسلاید">
+          <button
+            class="hero-dot active"
+            type="button"
+            role="tab"
+            aria-label="اسلاید ۱"
+            aria-selected="true"
+          ></button>
+          <button
+            class="hero-dot"
+            type="button"
+            role="tab"
+            aria-label="اسلاید ۲"
+            aria-selected="false"
+          ></button>
+          <button
+            class="hero-dot"
+            type="button"
+            role="tab"
+            aria-label="اسلاید ۳"
+            aria-selected="false"
+          ></button>
+        </div>
+      </div>
+    </section>
+
     <script src="components/js/story-slider.js"></script>
+    <script src="components/js/hero-carousel.js"></script>
   </body>
 </html>
