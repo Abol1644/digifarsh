@@ -1,0 +1,46 @@
+:root {
+  --primary: #E60012;
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-bold: 700;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui;
+  direction: rtl;
+}
+
+@font-face {
+  font-family: peyda;
+  src: url(/assets/fonts/Peyda-Regular.woff2);
+}
+
+@font-face {
+  font-family: peyda-medium;
+  src: url(/assets/fonts/Peyda-Medium.woff2);
+}
+
+@font-face {
+  font-family: peyda-bold;
+  src: url(/assets/fonts/Peyda-Bold.woff2);
+}
+
+.font-regular {
+  font-family: peyda;
+  font-weight: 400;
+}
+
+.font-medium {
+  font-family: peyda-medium;
+  font-weight: 500;
+}
+
+.font-bold {
+  font-family: peyda-bold;
+  font-weight: 700;
+}

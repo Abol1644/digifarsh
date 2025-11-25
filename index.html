@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fa">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Page</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="assets/css/layout.css" />
+    <link rel="stylesheet" href="assets/css/utilities.css" />
+
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="components/header.css" />
+    <link rel="stylesheet" href="assets/css/components/hero.css" />
+    <link rel="stylesheet" href="assets/css/components/features.css" />
+    <link rel="stylesheet" href="assets/css/components/footer.css" />
+
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section id="site-header" class="site-header" aria-label="سربرگ اصلی سایت">
+      <div class="header-top-border" aria-hidden="true"></div>
+
+      <div class="header-container">
+        <div class="header-top">
+          <!-- Left actions -->
+          <div class="header-actions">
+            <button class="btn btn-primary font-medium header-cart-btn">
+              <span class="material-icons-outlined icon">shopping_bag</span>
+              <span>سبد خرید</span>
+            </button>
+
+            <button class="btn btn-ghost font-regular header-login-btn">
+              <span class="material-icons-outlined icon">login</span>
+              <span>ورود و عضویت</span>
+            </button>
+          </div>
+
+          <!-- Search -->
+          <div class="header-search">
+            <label for="site-search" class="sr-only">جستجو</label>
+            <div class="search-field">
+              <span class="material-icons-outlined icon">search</span>
+              <input
+                type="search"
+                id="site-search"
+                class="font-regular"
+                placeholder="نام محصول ، دسته بندی ..."
+                aria-label="جستجو در محصولات"
+              />
+            </div>
+          </div>
+
+          <!-- Logo -->
+          <a href="/" class="header-logo">
+            <img
+              src="/assets/images/logo-main.png"
+              alt="لوگوی دیجی فرش"
+              class="logo-img"
+            />
+          </a>
+        </div>
+      </div>
+
+      <div class="header-divider"></div>
+
+      <div class="header-container">
+        <div class="header-bottom">
+          <!-- Category toggle -->
+          <button class="category-btn font-bold" aria-label="مشاهده دسته‌بندی">
+            <span class="category-label">دسته بندی محصولات</span>
+            <span class="material-icons-outlined icon">menu</span>
+          </button>
+
+          <!-- Nav -->
+          <nav class="main-nav" aria-label="منوی اصلی">
+            <ul class="nav-list font-regular">
+              <li><a href="#">صفحه اصلی</a></li>
+              <li><a href="#">مجله دیجی فرش</a></li>
+              <li><a href="#">فروش</a></li>
+              <li><a href="#">تماس با ما</a></li>
+            </ul>
+          </nav>
+
+          <!-- Special links -->
+          <div class="header-special-links">
+            <a href="#" class="special-link font-medium special-offers">
+              <span class="material-icons-outlined icon badge-icon"
+                >percent</span
+              >
+              <span>محصولات شگفت انگیز</span>
+            </a>
+
+            <span class="divider-vertical"></span>
+
+            <a href="#" class="special-link font-regular favorites-link">
+              <span class="material-icons-outlined icon">favorite</span>
+              <span>علاقه‌مندی ها</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <script src="assets/js/main.js"></script> -->
+  </body>
+</html>
