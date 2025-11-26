@@ -176,7 +176,8 @@ body {
   gap: 16px;
   padding: 10px 0;
   justify-content: space-between;
-  flex-direction: row; /* برای قرار گرفتن دسته‌بندی در سمت راست */
+  flex-direction: row;
+  /* برای قرار گرفتن دسته‌بندی در سمت راست */
 }
 
 .header-nav {
@@ -279,6 +280,31 @@ body {
   display: flex;
   flex-direction: row;
   gap: 12px;
+}
+
+.header-upper-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  /* Ensures header stays on top of other content */
+  background-color: #fff;
+  /* Critical: prevents content from showing behind the transparent header */
+  width: 100%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  /* Optional: Adds a subtle shadow when sticky */
+}
+
+/* Ensures the rest of the header flows naturally */
+.header-lower-nav {
+  position: relative;
+  z-index: 999;
+  background-color: #fff;
+}
+
+/* Main content wrapper */
+main {
+  position: relative;
+  z-index: 1;
 }
 
 /* Responsive tweaks */
