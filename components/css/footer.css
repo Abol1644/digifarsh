@@ -29,7 +29,10 @@
   padding: 2px;
   /* ضخامت border */
   border-radius: inherit;
-  background: linear-gradient(to bottom, var(--primary) 0%,#fff 75%);
+  background: linear-gradient(to bottom, var(--primary) 0%, #fff 75%);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
   -webkit-mask:
     linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
