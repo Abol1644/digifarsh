@@ -8,7 +8,7 @@
 }
 
 .blog-section {
-    padding: 60px 0;
+    padding: 10px 0;
     direction: rtl;
     background-color: #ffffff;
 }
@@ -28,9 +28,9 @@
 
 /* Decoration (Reuse or Redefine) */
 .header-decoration {
-    width: 1px;
-    height: 24px;
-    background-color: var(--primary);
+    width: 2px;
+    height: 40px;
+    background: linear-gradient(to top, var(--primary), #fff);
     margin: 0 auto 10px;
     position: relative;
 }
@@ -41,10 +41,11 @@
     bottom: -3px;
     left: 50%;
     transform: translateX(-50%);
-    width: 6px;
-    height: 6px;
+    width: 12px;
+    height: 12px;
     background-color: var(--primary);
     border-radius: 50%;
+    border: 2px solid #fff;
 }
 
 .section-title {
