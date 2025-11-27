@@ -14,7 +14,7 @@
 }
 
 .hero-carousel-inner {
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 0 24px;
   position: relative;
@@ -36,7 +36,7 @@
   justify-content: space-between;
   padding: 40px 72px;
   gap: 40px;
-  min-height: 320px;
+  min-height: 380px;
 }
 
 .hero-slide.active {
