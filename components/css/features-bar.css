@@ -7,10 +7,16 @@
     border-image: linear-gradient(to right, #fff 20%, #e2e2e2 50%, #fff 80%) 1;
 }
 
+.features-bar-bottom {
+    background-color: #ffffff;
+    padding: 32px 0;
+    border-top: 2px solid; 
+    border-image: linear-gradient(to right, #fff 20%, #e2e2e2 50%, #fff 80%) 1;
+}
 
 .features-container {
     width: 100%; /* Matches your standard container width */
-    padding: 0 32px;
+    padding: 0 64px;
     display: flex;
     justify-content: space-around;
     align-items: center;
