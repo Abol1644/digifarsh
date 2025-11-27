@@ -1,0 +1,167 @@
+/* category-puzzle.css */
+
+:root {
+  --primary: #E60012;
+  --text-color: #333333;
+  --muted-text: #777777;
+  --divider-color: #EEEEEE;
+}
+
+.category-puzzle-section {
+    padding: 60px 0; /* More spacing for this section */
+    direction: rtl;
+    background-color: #ffffff;
+}
+
+.category-puzzle-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    
+    display: flex;
+    justify-content: space-between;
+}
+
+/* --- Column Layout --- */
+.puzzle-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+    /* Divider Line on the Left side for RTL layout */
+    border-left: 1px solid var(--divider-color);
+}
+
+/* Remove border from the last column on the left */
+.puzzle-col:last-child {
+    border-left: none;
+}
+
+/* --- Header --- */
+.puzzle-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.puzzle-title {
+    font-size: 1.1rem;
+    color: var(--primary);
+    margin: 0 0 8px 0;
+}
+
+.puzzle-subtitle {
+    font-size: 0.85rem;
+    color: var(--muted-text);
+    margin: 0;
+}
+
+/* --- 2x2 Grid --- */
+.puzzle-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0; /* REMOVED GAP to allow borders to touch */
+    width: 100%;
+    margin-bottom: 24px;
+    /* Optional: If you want a border around the WHOLE grid, uncomment below */
+    /* border: 1px solid var(--divider-color); */
+    /* border-radius: 12px; */
+    /* overflow: hidden; */
+}
+
+.puzzle-item {
+    display: block;
+    width: 100%;
+    height: 120px;
+    /* Create a placeholder aspect ratio to prevent layout shifts */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+    padding: 6px;
+}
+
+.puzzle-item:nth-child(1) {
+    border-left: 1px solid var(--divider-color);
+    border-bottom: 1px solid var(--divider-color);
+}
+
+/* Item 2 (Top Left in RTL): Needs Bottom border only */
+.puzzle-item:nth-child(2) {
+    border-bottom: 1px solid var(--divider-color);
+}
+
+/* Item 3 (Bottom Right in RTL): Needs Left border only */
+.puzzle-item:nth-child(3) {
+    border-left: 1px solid var(--divider-color);
+}
+
+/* Item 4 (Bottom Left in RTL): No borders needed */
+.puzzle-item:nth-child(4) {
+    border: none;
+}
+
+/* Hover Effect */
+.puzzle-item:hover {
+    transform: scale(1.05); /* Zoom slightly instead of moving up, looks better in a grid */
+    z-index: 2; /* Bring to front so it goes over borders */
+}
+
+.puzzle-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.1));
+}
+
+/* --- Footer Link --- */
+.puzzle-view-all {
+    margin-top: auto; /* Pushes link to bottom if heights differ */
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #777;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.puzzle-view-all:hover {
+    color: var(--primary);
+}
+
+.puzzle-view-all .icon {
+    font-size: 18px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 992px) {
+    .category-puzzle-container {
+        flex-wrap: wrap;
+        gap: 40px 0; /* Vertical gap when wrapping */
+    }
+
+    .puzzle-col {
+        flex: 0 0 50%; /* 2 columns per row */
+        border-left: none; /* Remove default borders */
+    }
+
+    /* Add borders to odd items (Right side items in RTL) */
+    .puzzle-col:nth-child(odd) {
+        border-left: 1px solid var(--divider-color);
+    }
+}
+
+@media (max-width: 600px) {
+    .puzzle-col {
+        flex: 0 0 100%; /* 1 column per row */
+        border-left: none !important;
+        border-bottom: 1px solid var(--divider-color);
+        padding-bottom: 40px;
+    }
+
+    .puzzle-col:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+}
