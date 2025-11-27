@@ -3,28 +3,10 @@
 .features-bar {
     background-color: #ffffff;
     padding: 32px 0;
-    border-bottom: 1px solid var(--border-color); 
+    border-bottom: 2px solid; 
+    border-image: linear-gradient(to right, #fff 20%, #e2e2e2 50%, #fff 80%) 1;
 }
 
-.features-bar::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-
-  height: 2px; /* ضخامت border-bottom */
-
-  border-bottom-left-radius: inherit;
-  border-bottom-right-radius: inherit;
-
-  background: linear-gradient(
-    to right,
-    #fff 20%,
-    #ebebeb 50%,
-    #fff 80%
-  );
-}
 
 .features-container {
     width: 100%; /* Matches your standard container width */
