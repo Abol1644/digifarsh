@@ -72,82 +72,67 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* components/js/mega-menu.js */
 
-document.addEventListener('DOMContentLoaded', () => {
-    const menuWrapper = document.querySelector('.category-menu-wrapper');
-    const categoryBtn = document.querySelector('.category-btn');
-    const megaMenu = document.querySelector('.mega-menu');
-    // Select the new overlay
-    const overlay = document.querySelector('.menu-overlay');
+document.addEventListener('DOMContentLoaded', function() {
+  
+  // 1. Header & Menu Toggles
+  const menuBtn = document.querySelector('.mobile-menu-trigger');
+  const megaMenu = document.querySelector('.mega-menu');
+  const openState = document.querySelector('.menu-state-open');
+  const closeState = document.querySelector('.menu-state-close');
+  const body = document.body;
 
-    if (menuWrapper && categoryBtn && megaMenu && overlay) {
+  if (menuBtn) {
+    menuBtn.addEventListener('click', () => {
+      // Toggle Menu Class
+      megaMenu.classList.toggle('menu-open');
+      
+      // Toggle Button State (Menu Icon vs Close Icon)
+      const isOpen = megaMenu.classList.contains('menu-open');
+      if (isOpen) {
+        openState.style.display = 'none';
+        closeState.style.display = 'flex';
+        body.style.overflow = 'hidden'; // Prevent background scrolling
+      } else {
+        openState.style.display = 'flex';
+        closeState.style.display = 'none';
+        body.style.overflow = '';
+      }
+    });
+  }
+
+  // 2. Mobile Accordion Logic (Left Side)
+  const accordionTitles = document.querySelectorAll('.mega-col-title');
+  
+  accordionTitles.forEach(title => {
+    title.addEventListener('click', () => {
+      // Only run on mobile
+      if (window.innerWidth <= 992) {
+        const parent = title.parentElement; // .mega-col
         
-        // --- Helper Functions to keep code clean ---
-        let closeTimer = null;
-        const CLOSE_DELAY = 150; // ms delay for mouseleave close
+        // Toggle active class
+        parent.classList.toggle('accordion-active');
+      }
+    });
+  });
 
-        const clearCloseTimer = () => {
-            if (closeTimer) {
-                clearTimeout(closeTimer);
-                closeTimer = null;
-            }
-        };
+  // 3. Tab Switching Logic (Right Sidebar)
+  const sidebarLinks = document.querySelectorAll('.mega-sidebar-list li');
+  
+  sidebarLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault(); // Prevent jump
+      
+      // Remove active from all
+      sidebarLinks.forEach(l => l.classList.remove('active'));
+      
+      // Add active to clicked
+      link.classList.add('active');
+      
+      // Logic to switch content (Optional: If you have different content divs)
+      // For now, it just highlights the tab as per visual design
+    });
+  });
 
-        const openMenu = () => {
-            clearCloseTimer();
-            megaMenu.classList.add('menu-open');
-            overlay.classList.add('active');
-        };
-
-        const closeMenu = () => {
-            clearCloseTimer();
-            megaMenu.classList.remove('menu-open');
-            overlay.classList.remove('active');
-        };
-
-        const toggleMenu = () => {
-            if (megaMenu.classList.contains('menu-open')) {
-                closeMenu();
-            } else {
-                openMenu();
-            }
-        };
-
-        // --- 1. HOVER LOGIC ---
-        menuWrapper.addEventListener('mouseenter', () => {
-            // cancel any pending close and open immediately
-            clearCloseTimer();
-            openMenu();
-        });
-
-        menuWrapper.addEventListener('mouseleave', () => {
-            // start a delayed close, cancelable if the user re-enters
-            clearCloseTimer();
-            closeTimer = setTimeout(() => {
-                closeMenu();
-                closeTimer = null;
-            }, CLOSE_DELAY);
-        });
-
-        // --- 2. CLICK LOGIC ---
-        categoryBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            toggleMenu();
-        });
-
-        megaMenu.addEventListener('click', (e) => {
-            e.stopPropagation();
-        });
-
-        // Close when clicking the overlay itself
-        overlay.addEventListener('click', closeMenu);
-
-        // Close when clicking anywhere else (Safety net)
-        // document.addEventListener('click', () => {
-        //     if (megaMenu.classList.contains('menu-open')) {
-        //         closeMenu();
-        //     }
-        // });
-    }
 });
 
 document.addEventListener('DOMContentLoaded', () => {

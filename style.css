@@ -1,8 +1,16 @@
 :root {
   --primary: #E60012;
+  --bg-offer: #EF394E;
   --font-regular: 400;
   --font-medium: 500;
   --font-bold: 700;
+  --text-color: #333333;
+  --muted-text: #777777;
+  --bg-card-thumb: #E8E8E8;
+  --bg-card: #F9F9F9;
+  --border-color: #EEEEEE;
+  --bg-card: #F9F9F9;
+  --bg-brand-box: #F5F7FA;
 }
 
 * {

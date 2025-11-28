@@ -1,11 +1,5 @@
 /* offers-slider.css */
 
-:root {
-  --primary: #E60012;
-  --bg-offer: #EF394E;
-  /* A slightly lighter red for gradient */
-}
-
 .offers-section {
   padding: 40px 0;
   direction: rtl;
@@ -298,14 +292,6 @@
 
 /* single-category-slider.css */
 
-:root {
-  --primary: #E60012;
-  --text-color: #333333;
-  --bg-card: #F9F9F9;
-  /* Very light gray for card background */
-  --border-color: #EEEEEE;
-}
-
 .single-category-section {
   padding: 40px 0;
   direction: rtl;
@@ -592,17 +578,9 @@
   .product-img-box {
     height: 160px;
   }
-}
+} 
 
 /* most-sold.css */
-
-:root {
-  --primary: #E60012;
-  --text-color: #333333;
-  --muted-text: #777777;
-  --bg-card-thumb: #E8E8E8;
-  /* Light gray background for image */
-}
 
 .most-sold-section {
   padding: 40px 0;
@@ -922,6 +900,10 @@
   margin: 0;
 }
 
+.thumb-box img {
+  width: 40px;
+}
+
 .mega-sub-list li {
   margin-bottom: 10px;
 }
@@ -976,14 +958,6 @@
 }
 
 /* blog-section.css */
-
-:root {
-  --primary: #E60012;
-  --text-color: #333333;
-  --muted-text: #777777;
-  --bg-card-hover: #FFF5F5;
-  /* Very light pink for hover bg if needed */
-}
 
 .blog-section {
   padding: 10px 0;
@@ -1189,10 +1163,6 @@
   }
 }
 
-:root {
-  --primary: #E60012;
-  --text-on-primary: #ffffff;
-}
 
 /* Typography helpers */
 .font-regular {
@@ -1265,11 +1235,13 @@
 .hero-title {
   font-size: 2.2rem;
   margin: 0 0 12px;
+  color: #fff;
 }
 
 .hero-subtitle {
   font-size: 1rem;
   margin: 0 0 24px;
+  color: #f0f0f0;
 }
 
 .hero-cta {
@@ -1417,27 +1389,6 @@
 
 /* header.css */
 
-:root {
-  --primary: #E60012;
-  --text-color: #333333;
-  --muted-text: #777777;
-  --muted-bg: #F5F5F7;
-  --border-color: #F0F0F0;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background-color: #ffffff;
-  color: var(--text-color);
-}
-
 .site-header {
   background-color: #ffffff;
   direction: rtl;
@@ -1549,8 +1500,9 @@ body {
 .header-search {
   flex: 1;
   min-width: 240px;
-  max-width: 540px;
-  width: 360px;
+  max-width: 440px;
+  background-color: var(--border-color);
+  border-radius: 12px;
 }
 
 .search-field {
@@ -1581,6 +1533,13 @@ body {
   color: var(--muted-text);
 }
 
+.search-logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+}
+
 /* Logo */
 .header-logo {
   display: flex;
@@ -1589,7 +1548,7 @@ body {
 }
 
 .logo-img {
-  height: 24px;
+  height: 20px;
   width: auto;
 }
 
@@ -1613,7 +1572,6 @@ body {
   padding: 10px 0;
   justify-content: space-between;
   flex-direction: row;
-  /* برای قرار گرفتن دسته‌بندی در سمت راست */
 }
 
 .header-nav {
@@ -1642,11 +1600,9 @@ body {
   position: absolute;
   left: 0;
   top: 15%;
-  /* centers 80% height vertically */
   height: 70%;
   width: 1px;
   background: var(--border-color);
-  /* or your desired color */
 }
 
 .category-btn .icon {
@@ -1723,11 +1679,9 @@ body {
   position: absolute;
   right: -10px;
   top: 15%;
-  /* centers 80% height vertically */
   height: 70%;
   width: 1px;
   background: var(--border-color);
-  /* or your desired color */
 }
 
 /* Special links (left side) */
@@ -1783,14 +1737,10 @@ body {
   position: sticky;
   top: 0;
   z-index: 1000;
-  /* Ensures header stays on top of other content */
   background-color: #fff;
-  /* Critical: prevents content from showing behind the transparent header */
   width: 100%;
-  /* Optional: Adds a subtle shadow when sticky */
 }
 
-/* Ensures the rest of the header flows naturally */
 .header-lower-nav {
   position: relative;
   z-index: 999;
@@ -1798,61 +1748,155 @@ body {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
-/* Main content wrapper */
 main {
   position: relative;
   z-index: 1;
 }
 
-/* Responsive tweaks */
-@media (max-width: 768px) {
+/* ----------------------------------------------------- */
+/* NEW MOBILE STYLES (Added for Responsive Redesign)   */
+/* ----------------------------------------------------- */
+
+/* Default / Desktop Styles for new elements */
+.mobile-menu-trigger,
+.mobile-call-btn {
+  display: none; /* Hidden on desktop */
+}
+
+/* Helper class to hide desktop elements */
+.desktop-only {
+  display: flex;
+}
+
+/* --- Mobile Responsive Styles --- */
+@media (max-width: 992px) {
+  .desktop-only {
+    display: none !important;
+  }
+
+  .search-logo-wrapper {
+    display: contents; /* This makes the wrapper invisible to the layout */
+  }
+  
+  .header-lower-nav {
+    visibility: hidden;
+    display: none;
+  }
+
+  /* 1. Header Grid Layout */
   .header-top {
-    gap: 12px;
-  }
-
-  .header-actions {
-    order: 2;
-  }
-
-  .header-logo {
-    order: 1;
-  }
-
-  .header-search {
-    order: 3;
-    max-width: 100%;
-  }
-
-  .header-bottom {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .main-nav {
-    order: 2;
-    justify-content: flex-start;
-  }
-
-  .nav-list {
-    gap: 16px;
+    display: flex;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 8px;
   }
 
-  .header-special-links {
+  /* 2. Menu Button (Right) */
+  .mobile-menu-trigger {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: transparent;
+    border: none;
+    order: 1; /* First item in RTL */
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  .mobile-menu-trigger span {
+    font-size: 0.8rem;
+    color: #333; /* Text color */
+  }
+
+  
+
+  .mobile-menu-trigger .icon {
+    font-size: 28px;
+    color: var(--primary); /* Red Hamburger Icon */
+  }
+
+  .menu-state-open {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+
+  /* 3. Logo (Center) */
+  .header-logo {
+    order: 2;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .logo-img {
+    height: 28px; /* Slightly larger on mobile */
+  }
+
+  /* 4. Actions (Left) */
+  .header-actions {
     order: 3;
+    gap: 12px;
+    align-items: center;
+  }
+
+  /* Phone Icon */
+  .mobile-call-btn {
+    display: flex;
+    color: var(--primary); /* Red phone icon */
+    text-decoration: none;
+  }
+  .mobile-call-btn .icon {
+    font-size: 26px;
+  }
+
+  /* Login/Profile Button (Icon Only) */
+  .header-login-btn {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    color: #333 !important; /* Black user icon */
+    width: auto;
+    height: auto;
+  }
+
+  .header-login-btn .btn-text {
+    display: none; /* Hide text "Login/Register" */
+  }
+  
+  .header-login-btn .icon {
+    font-size: 28px; 
+    margin: 0;
+  }
+
+  /* 5. Search Bar (Bottom Row) */
+  .header-search {
+    order: 4;
+    width: 100%;
+    margin-top: 16px;
+    min-width: unset; /* Remove desktop min-width */
+    max-width: unset;
+  }
+
+  .search-field {
+    background-color: #F5F6F8; /* Light gray background */
+    border-radius: 12px;
+    height: 48px;
+  }
+
+  .search-field input::placeholder {
+    font-size: 0.85rem;
+    color: #999;
+  }
+  
+  /* Fix container padding */
+  .header-container-top {
+    padding: 16px 20px;
   }
 }
 
 /* footer.css */
-
-:root {
-  --primary: #E60012;
-  --text-color: #333333;
-  --muted-text: #666666;
-  --muted-bg: #F5F6F8;
-  /* Light gray for cards */
-  --border-color: #E0E0E0;
-}
 
 .site-footer {
   direction: rtl;
@@ -2335,12 +2379,7 @@ main {
 
 /* category-puzzle.css */
 
-:root {
-  --primary: #E60012;
-  --text-color: #333333;
-  --muted-text: #777777;
-  --divider-color: #EEEEEE;
-}
+
 
 .category-puzzle-section {
   padding: 60px 0;
@@ -2511,13 +2550,6 @@ main {
 }
 
 /* category-section.css */
-
-:root {
-  --primary: #E60012;
-  --text-color: #333333;
-  --bg-card: #F3F5F9;
-  /* Light blue-gray for card background */
-}
 
 .category-section {
   padding: 40px 0;
@@ -2706,13 +2738,6 @@ main {
 
 /* brands-section.css */
 
-:root {
-  --primary: #E60012;
-  --text-color: #333333;
-  --bg-brand-box: #F5F7FA;
-  /* Very light cool gray/blue background from image */
-}
-
 .brands-section {
   padding: 40px 0;
   direction: rtl;
@@ -2847,10 +2872,6 @@ main {
   .section-title {
     font-size: 1.2rem;
   }
-}
-
-:root {
-  --primary: #E60012;
 }
 
 /* Container */

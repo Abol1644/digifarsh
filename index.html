@@ -19,7 +19,18 @@
 
       <div class="header-container-top">
         <div class="header-top">
-          <div class="header-search-logo">
+          <button class="mobile-menu-trigger font-medium" id="mobile-menu-btn">
+            <div class="menu-state-open">
+              <span>منو</span>
+              <span class="material-icons-outlined icon">menu</span>
+            </div>
+            <div class="menu-state-close" style="display: none;">
+              <span>بستن</span>
+              <span class="material-icons-outlined icon">close</span>
+            </div>
+          </button>
+
+          <div class="search-logo-wrapper">
             <a href="/" class="header-logo">
               <img src="/assets/images/logo-main.png" alt="لوگوی دیجی فرش" class="logo-img" />
             </a>
@@ -34,12 +45,14 @@
           </div>
 
           <div class="header-actions">
+            <a href="tel:09909809100" class="btn-icon mobile-call-btn">
+              <span class="material-icons-outlined icon">phone_in_talk</span>
+            </a>
             <button class="btn btn-ghost font-regular header-login-btn">
-              <span class="material-icons-outlined icon">login</span>
-              <span>ورود و عضویت</span>
+              <span class="material-icons-outlined icon">person_outline</span>
+              <span class="btn-text">ورود و عضویت</span>
             </button>
-
-            <button class="btn btn-primary font-medium header-cart-btn">
+            <button class="btn btn-primary font-medium header-cart-btn desktop-only">
               <span class="material-icons-outlined icon">shopping_bag</span>
               <span>سبد خرید</span>
             </button>
@@ -49,21 +62,22 @@
     </div>
 
     <div class="header-lower-nav">
-      <div class="header-divider"></div>
+      <div class="header-divider desktop-only"></div>
 
       <div class="header-container-bottom">
         <div class="header-bottom">
           <div class="header-nav">
 
             <div class="category-menu-wrapper">
-              <button class="category-btn font-bold" aria-label="مشاهده دسته‌بندی">
+              <button class="category-btn font-bold desktop-only" aria-label="مشاهده دسته‌بندی">
                 <span class="material-icons-outlined icon">menu</span>
                 <span class="category-label">دسته بندی محصولات</span>
               </button>
 
               <div class="mega-menu">
-                <div class="mega-menu-divider"></div>
+                <div class="mega-menu-divider desktop-only"></div>
                 <div class="mega-menu-content-wrapper">
+
                   <div class="mega-sidebar">
                     <ul class="mega-sidebar-list font-medium">
                       <li class="active">
@@ -90,109 +104,108 @@
                           فرش کلاسیک
                         </a>
                       </li>
-                      <li>
-                        <a href="#">
-                          <img src="assets/images/mega-menu/menu-icon-machine.png" alt="" class="menu-icon">
-                          فرش ماشینی
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <img src="assets/images/mega-menu/menu-icon-vintage.png" alt="" class="menu-icon">
-                          فرش وینتیج
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <img src="assets/images/mega-menu/menu-icon-classic.png" alt="" class="menu-icon">
-                          فرش کلاسیک
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <img src="assets/images/mega-menu/menu-icon-vintage.png" alt="" class="menu-icon">
-                          فرش وینتیج
-                        </a>
-                      </li>
                     </ul>
                   </div>
+
                   <div class="mega-content">
                     <div class="mega-content-header">
                       <a href="#" class="view-all-cat font-bold">مشاهده همه فرش آشپزخانه</a>
                     </div>
+
                     <div class="mega-columns">
-                      <div class="mega-col">
-                        <h4 class="mega-col-title font-bold">انتخاب نوع فرش</h4>
-                        <ul class="mega-sub-list font-regular">
-                          <li><a href="#">فرش ماشینی</a></li>
-                          <li><a href="#">فرش طرح دستباف و سنتی</a></li>
-                          <li><a href="#">فرش وینتیج - کهنه نما</a></li>
-                          <li><a href="#">فرش برلیاند - شگی</a></li>
-                          <li><a href="#">فرش گل برجسته</a></li>
-                          <li><a href="#">تابلو فرش</a></li>
-                          <li><a href="#">فرش ابریشم گونه</a></li>
-                          <li><a href="#">فرش لایت (طرح ترک)</a></li>
+                      <div class="mega-col accordion-active">
+                        <h4 class="mega-col-title font-bold">
+                          نوع فرش
+                          <span class="material-icons-outlined arrow">expand_more</span>
+                        </h4>
+                        <ul class="mega-sub-list mega-grid-list font-regular">
+                          <li>
+                            <a href="#" class="grid-item">
+                              <div class="thumb-box">
+                                <img src="/assets/images/category-1.png" alt="فرش ماشینی">
+                              </div>
+                              <span class="item-label">فرش ماشینی</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#" class="grid-item">
+                              <div class="thumb-box">
+                                <img src="/assets/images/category-4.png" alt="فرش وینتیج">
+                              </div>
+                              <span class="item-label">فرش وینتیج - کهنه نما</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#" class="grid-item">
+                              <div class="thumb-box">
+                                <img src="/assets/images/category-3.png" alt="طرح دستباف">
+                              </div>
+                              <span class="item-label">فرش طرح دستباف و سنتی</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#" class="grid-item">
+                              <div class="thumb-box">
+                                <img src="/assets/images/category-5.png" alt="تابلو فرش">
+                              </div>
+                              <span class="item-label">تابلو فرش</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#" class="grid-item">
+                              <div class="thumb-box">
+                                <img src="/assets/images/category-2.png" alt="فرش گل برجسته">
+                              </div>
+                              <span class="item-label">فرش گل برجسته</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#" class="grid-item">
+                              <div class="thumb-box">
+                                <div class="view-all-box">
+                                  <span class="material-icons-outlined"
+                                    style="font-size: 24px; color: #ccc;">grid_view</span>
+                                </div>
+                              </div>
+                              <span class="item-label">مشاهده همه</span>
+                            </a>
+                          </li>
                         </ul>
                       </div>
+
                       <div class="mega-col">
-                        <h4 class="mega-col-title font-bold">انتخاب رنگ فرش</h4>
+                        <h4 class="mega-col-title font-bold">
+                          انتخاب رنگ فرش
+                          <span class="material-icons-outlined arrow">expand_more</span>
+                        </h4>
                         <ul class="mega-sub-list font-regular">
                           <li><a href="#">زمینه لاکی</a></li>
                           <li><a href="#">زمینه طوسی</a></li>
                           <li><a href="#">فرش زمینه خاکستری</a></li>
                           <li><a href="#">زمینه سرمه ای</a></li>
                           <li><a href="#">زمینه روشن</a></li>
-                          <li><a href="#">زمینه کرم</a></li>
-                          <li><a href="#">فرش زمینه مشکی</a></li>
-                          <li><a href="#">زمینه فیلی</a></li>
-                          <li><a href="#">زمینه سفید</a></li>
                         </ul>
                       </div>
+
                       <div class="mega-col">
-                        <h4 class="mega-col-title font-bold">انتخاب شانه فرش</h4>
-                        <ul class="mega-sub-list font-regular">
-                          <li><a href="#">فرش 1500 شانه</a></li>
-                          <li><a href="#">فرش 1200 شانه</a></li>
-                          <li><a href="#">فرش 1000 شانه</a></li>
-                          <li><a href="#">فرش 700 شانه</a></li>
-                        </ul>
-                      </div>
-                      <div class="mega-col">
-                        <h4 class="mega-col-title font-bold">طرح و نقشه فرش</h4>
-                        <ul class="mega-sub-list font-regular">
-                          <li><a href="#">فرش طرح افشان</a></li>
-                          <li><a href="#">فرش طرح خشتی</a></li>
-                          <li><a href="#">فرش طرح هالیدی</a></li>
-                          <li><a href="#">فرش طرح ریزماهی</a></li>
-                          <li><a href="#">فرش طرح تبریز</a></li>
-                          <li><a href="#">فرش طرح نایین</a></li>
-                          <li><a href="#">فرش طرح حوض نقره</a></li>
-                          <li><a href="#">فرش طرح باغ ارم</a></li>
-                          <li><a href="#">فرش طرح هریس</a></li>
-                        </ul>
-                      </div>
-                      <div class="mega-col">
-                        <h4 class="mega-col-title font-bold">برند یا شرکت تولیدکننده فرش</h4>
+                        <h4 class="mega-col-title font-bold">
+                          برند یا شرکت تولیدکننده فرش
+                          <span class="material-icons-outlined arrow">expand_more</span>
+                        </h4>
                         <ul class="mega-sub-list font-regular">
                           <li><a href="#">فرش دیجی‌فرش</a></li>
                           <li><a href="#">فرش مهدیان</a></li>
                           <li><a href="#">فرش بزرگمهر</a></li>
-                          <li><a href="#">فرش پامچال</a></li>
-                          <li><a href="#">فرش محتشم</a></li>
-                          <li><a href="#">فرش قیطران</a></li>
-                          <li><a href="#">فرش شاهرخ</a></li>
-                          <li><a href="#">فرش نیاوران</a></li>
-                          <li><a href="#">فرش سبلان</a></li>
                         </ul>
                       </div>
+
                     </div>
                   </div>
                 </div>
-
               </div>
             </div>
 
-            <nav class="main-nav" aria-label="منوی اصلی">
+            <nav class="main-nav desktop-only" aria-label="منوی اصلی">
               <ul class="nav-list font-regular">
                 <li><a href="#">صفحه اصلی</a></li>
                 <li><a href="#">مجله دیجی فرش</a></li>
@@ -201,20 +214,18 @@
               </ul>
             </nav>
           </div>
-          <div class="nav-left">
+
+          <div class="nav-left desktop-only">
             <div class="nav-left-item font-medium">
               <span class="material-icons-outlined icon">percent</span>
-              <a href="">
-                محصولات شگفت انگیز
-              </a>
+              <a href="">محصولات شگفت انگیز</a>
             </div>
             <div class="nav-left-item nav-left-item-border font-medium">
               <span class="material-icons-outlined icon">favorite</span>
-              <a href="">
-                علاقه مندی‌ها
-              </a>
+              <a href="">علاقه مندی‌ها</a>
             </div>
           </div>
+
         </div>
       </div>
     </div>
