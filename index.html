@@ -1,121 +1,228 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Landing Page</title>
 
-    <link rel="stylesheet" href="style.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Landing Page</title>
 
-    <link rel="stylesheet" href="components/css/header.css" />
-    <link rel="stylesheet" href="components/css/story-slider.css" />
-    <link rel="stylesheet" href="components/css/hero-carousel.css" />
-    <link rel="stylesheet" href="components/css/stack.css" />
-    <link rel="stylesheet" href="components/css/features-bar.css" />
-    <link rel="stylesheet" href="components/css/category-home.css" />
-    <link rel="stylesheet" href="components/css/amazing-offer.css" />
-    <link rel="stylesheet" href="components/css/single-category-slider.css" />
-    <link rel="stylesheet" href="components/css/most-sold.css" />
-    <link rel="stylesheet" href="components/css/brands.css" />
-    <link rel="stylesheet" href="components/css/category-puzzle.css" />
-    <link rel="stylesheet" href="components/css/magazine.css" />
-    <link rel="stylesheet" href="components/css/footer.css" />
+  <link rel="stylesheet" href="style.css" />
 
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <header id="site-header" class="site-header" aria-label="سربرگ اصلی سایت">
-      <div class="header-upper-sticky">
-        <div class="header-top-border" aria-hidden="true"></div>
+  <link rel="stylesheet" href="components/css/header.css" />
+  <link rel="stylesheet" href="components/css/story-slider.css" />
+  <link rel="stylesheet" href="components/css/hero-carousel.css" />
+  <link rel="stylesheet" href="components/css/stack.css" />
+  <link rel="stylesheet" href="components/css/features-bar.css" />
+  <link rel="stylesheet" href="components/css/category-home.css" />
+  <link rel="stylesheet" href="components/css/amazing-offer.css" />
+  <link rel="stylesheet" href="components/css/single-category-slider.css" />
+  <link rel="stylesheet" href="components/css/most-sold.css" />
+  <link rel="stylesheet" href="components/css/brands.css" />
+  <link rel="stylesheet" href="components/css/category-puzzle.css" />
+  <link rel="stylesheet" href="components/css/magazine.css" />
+  <link rel="stylesheet" href="components/css/mega-menu.css" />
+  <link rel="stylesheet" href="components/css/footer.css" />
 
-        <div class="header-container">
-          <div class="header-top">
-            <div class="header-search-logo">
-              <a href="/" class="header-logo">
-                <img
-                  src="/assets/images/logo-main.png"
-                  alt="لوگوی دیجی فرش"
-                  class="logo-img"
-                />
-              </a>
-              <div class="header-search">
-                <label for="site-search" class="sr-only">جستجو</label>
-                <div class="search-field">
-                  <span class="material-icons-outlined icon">search</span>
-                  <input
-                    type="search"
-                    id="site-search"
-                    class="font-regular"
-                    placeholder="نام محصول ، دسته بندی ..."
-                    aria-label="جستجو در محصولات"
-                  />
-                </div>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+</head>
+
+<body>
+  <header id="site-header" class="site-header" aria-label="سربرگ اصلی سایت">
+    <div class="header-upper-sticky">
+      <div class="header-top-border" aria-hidden="true"></div>
+
+      <div class="header-container-top">
+        <div class="header-top">
+          <div class="header-search-logo">
+            <a href="/" class="header-logo">
+              <img src="/assets/images/logo-main.png" alt="لوگوی دیجی فرش" class="logo-img" />
+            </a>
+            <div class="header-search">
+              <label for="site-search" class="sr-only">جستجو</label>
+              <div class="search-field">
+                <span class="material-icons-outlined icon">search</span>
+                <input type="search" id="site-search" class="font-regular" placeholder="نام محصول ، دسته بندی ..."
+                  aria-label="جستجو در محصولات" />
               </div>
             </div>
+          </div>
 
-            <div class="header-actions">
-              <button class="btn btn-ghost font-regular header-login-btn">
-                <span class="material-icons-outlined icon">login</span>
-                <span>ورود و عضویت</span>
-              </button>
+          <div class="header-actions">
+            <button class="btn btn-ghost font-regular header-login-btn">
+              <span class="material-icons-outlined icon">login</span>
+              <span>ورود و عضویت</span>
+            </button>
 
-              <button class="btn btn-primary font-medium header-cart-btn">
-                <span class="material-icons-outlined icon">shopping_bag</span>
-                <span>سبد خرید</span>
-              </button>
-            </div>
+            <button class="btn btn-primary font-medium header-cart-btn">
+              <span class="material-icons-outlined icon">shopping_bag</span>
+              <span>سبد خرید</span>
+            </button>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="header-lower-nav">
-        <div class="header-divider"></div>
+    <div class="header-lower-nav">
+      <div class="header-divider"></div>
 
-        <div class="header-container">
-          <div class="header-bottom">
-            <div class="header-nav">
-              <button
-                class="category-btn font-bold"
-                aria-label="مشاهده دسته‌بندی"
-              >
+      <div class="header-container-bottom">
+        <div class="header-bottom">
+          <div class="header-nav">
+
+            <div class="category-menu-wrapper">
+              <button class="category-btn font-bold" aria-label="مشاهده دسته‌بندی">
                 <span class="material-icons-outlined icon">menu</span>
                 <span class="category-label">دسته بندی محصولات</span>
               </button>
-              <nav class="main-nav" aria-label="منوی اصلی">
-                <ul class="nav-list font-regular">
-                  <li><a href="#">صفحه اصلی</a></li>
-                  <li><a href="#">مجله دیجی فرش</a></li>
-                  <li><a href="#">فروش</a></li>
-                  <li><a href="#">تماس با ما</a></li>
-                </ul>
-              </nav>
+
+              <div class="mega-menu">
+                <div class="mega-menu-divider"></div>
+                <div class="mega-menu-content-wrapper">
+                  <div class="mega-sidebar">
+                    <ul class="mega-sidebar-list font-medium">
+                      <li class="active">
+                        <a href="#">
+                          <img src="assets/images/mega-menu/menu-icon-kitchen.png" alt="" class="menu-icon">
+                          فرش آشپزخانه
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <img src="assets/images/mega-menu/menu-icon-machine.png" alt="" class="menu-icon">
+                          فرش ماشینی
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <img src="assets/images/mega-menu/menu-icon-vintage.png" alt="" class="menu-icon">
+                          فرش وینتیج
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <img src="assets/images/mega-menu/menu-icon-classic.png" alt="" class="menu-icon">
+                          فرش کلاسیک
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <img src="assets/images/mega-menu/menu-icon-machine.png" alt="" class="menu-icon">
+                          فرش ماشینی
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <img src="assets/images/mega-menu/menu-icon-vintage.png" alt="" class="menu-icon">
+                          فرش وینتیج
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <img src="assets/images/mega-menu/menu-icon-classic.png" alt="" class="menu-icon">
+                          فرش کلاسیک
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <img src="assets/images/mega-menu/menu-icon-vintage.png" alt="" class="menu-icon">
+                          فرش وینتیج
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="mega-content">
+                    <div class="mega-content-header">
+                      <a href="#" class="view-all-cat font-bold">مشاهده همه فرش آشپزخانه</a>
+                    </div>
+                    <div class="mega-columns">
+                      <div class="mega-col">
+                        <h4 class="mega-col-title font-bold">انتخاب نوع فرش</h4>
+                        <ul class="mega-sub-list font-regular">
+                          <li><a href="#">فرش ماشینی</a></li>
+                          <li><a href="#">فرش طرح دستباف و سنتی</a></li>
+                          <li><a href="#">فرش وینتیج - کهنه نما</a></li>
+                          <li><a href="#">فرش برلیاند - شگی</a></li>
+                          <li><a href="#">فرش گل برجسته</a></li>
+                          <li><a href="#">تابلو فرش</a></li>
+                          <li><a href="#">فرش ابریشم گونه</a></li>
+                          <li><a href="#">فرش لایت (طرح ترک)</a></li>
+                        </ul>
+                      </div>
+                      <div class="mega-col">
+                        <h4 class="mega-col-title font-bold">انتخاب رنگ فرش</h4>
+                        <ul class="mega-sub-list font-regular">
+                          <li><a href="#">زمینه لاکی</a></li>
+                          <li><a href="#">زمینه طوسی</a></li>
+                          <li><a href="#">فرش زمینه خاکستری</a></li>
+                          <li><a href="#">زمینه سرمه ای</a></li>
+                          <li><a href="#">زمینه روشن</a></li>
+                          <li><a href="#">زمینه کرم</a></li>
+                          <li><a href="#">فرش زمینه مشکی</a></li>
+                          <li><a href="#">زمینه فیلی</a></li>
+                          <li><a href="#">زمینه سفید</a></li>
+                        </ul>
+                      </div>
+                      <div class="mega-col">
+                        <h4 class="mega-col-title font-bold">انتخاب شانه فرش</h4>
+                        <ul class="mega-sub-list font-regular">
+                          <li><a href="#">فرش 1500 شانه</a></li>
+                          <li><a href="#">فرش 1200 شانه</a></li>
+                          <li><a href="#">فرش 1000 شانه</a></li>
+                          <li><a href="#">فرش 700 شانه</a></li>
+                        </ul>
+                      </div>
+                      <div class="mega-col">
+                        <h4 class="mega-col-title font-bold">طرح و نقشه فرش</h4>
+                        <ul class="mega-sub-list font-regular">
+                          <li><a href="#">فرش طرح افشان</a></li>
+                          <li><a href="#">فرش طرح خشتی</a></li>
+                          <li><a href="#">فرش طرح هالیدی</a></li>
+                          <li><a href="#">فرش طرح ریزماهی</a></li>
+                          <li><a href="#">فرش طرح تبریز</a></li>
+                          <li><a href="#">فرش طرح نایین</a></li>
+                          <li><a href="#">فرش طرح حوض نقره</a></li>
+                          <li><a href="#">فرش طرح باغ ارم</a></li>
+                          <li><a href="#">فرش طرح هریس</a></li>
+                        </ul>
+                      </div>
+                      <div class="mega-col">
+                        <h4 class="mega-col-title font-bold">برند یا شرکت تولیدکننده فرش</h4>
+                        <ul class="mega-sub-list font-regular">
+                          <li><a href="#">فرش دیجی‌فرش</a></li>
+                          <li><a href="#">فرش مهدیان</a></li>
+                          <li><a href="#">فرش بزرگمهر</a></li>
+                          <li><a href="#">فرش پامچال</a></li>
+                          <li><a href="#">فرش محتشم</a></li>
+                          <li><a href="#">فرش قیطران</a></li>
+                          <li><a href="#">فرش شاهرخ</a></li>
+                          <li><a href="#">فرش نیاوران</a></li>
+                          <li><a href="#">فرش سبلان</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
             </div>
 
-            <div class="header-special-links">
-              <a href="#" class="special-link font-medium special-offers">
-                <span class="material-icons-outlined icon badge-icon"
-                  >percent</span
-                >
-                <span>محصولات شگفت انگیز</span>
-              </a>
-
-              <span class="divider-vertical"></span>
-
-              <a href="#" class="special-link font-regular favorites-link">
-                <span class="material-icons-outlined icon">favorite</span>
-                <span>علاقه‌مندی ها</span>
-              </a>
-            </div>
+            <nav class="main-nav" aria-label="منوی اصلی">
+              <ul class="nav-list font-regular">
+                <li><a href="#">صفحه اصلی</a></li>
+                <li><a href="#">مجله دیجی فرش</a></li>
+                <li><a href="#">فروش</a></li>
+                <li><a href="#">تماس با ما</a></li>
+              </ul>
+            </nav>
           </div>
         </div>
       </div>
-    </header>
+    </div>
+    <div class="header-divider-bottom"></div>
+  </header>
 
-    <main>
-      <section id="story-slider" class="story-slider" aria-label="دسته‌بندی‌ها">
+  <main>
+    <section id="story-slider" class="story-slider" aria-label="دسته‌بندی‌ها">
       <div class="story-wrapper">
         <!-- Prev button -->
         <button class="slider-btn next-btn" aria-label="بعدی">
@@ -127,10 +234,7 @@
           <!-- Story item 1 -->
           <div class="story-item">
             <div class="story-thumb">
-              <img
-                src="/assets/images/story-thumbnail-1.jpg"
-                alt="فرش ماشینی"
-              />
+              <img src="/assets/images/story-thumbnail-1.jpg" alt="فرش ماشینی" />
             </div>
             <p class="font-regular story-title">فرش ماشینی</p>
           </div>
@@ -138,10 +242,7 @@
           <!-- Story item 2 -->
           <div class="story-item">
             <div class="story-thumb">
-              <img
-                src="/assets/images/story-thumbnail-2.jpg"
-                alt="فرش کلاسیک"
-              />
+              <img src="/assets/images/story-thumbnail-2.jpg" alt="فرش کلاسیک" />
             </div>
             <p class="font-regular story-title">فرش کلاسیک</p>
           </div>
@@ -149,20 +250,14 @@
           <!-- Story item 3 -->
           <div class="story-item">
             <div class="story-thumb">
-              <img
-                src="/assets/images/story-thumbnail-3.jpg"
-                alt="پرفروش‌ترین‌ها"
-              />
+              <img src="/assets/images/story-thumbnail-3.jpg" alt="پرفروش‌ترین‌ها" />
             </div>
             <p class="font-regular story-title">پرفروش‌ترین‌ها</p>
           </div>
 
           <div class="story-item">
             <div class="story-thumb">
-              <img
-                src="/assets/images/story-thumbnail-1.jpg"
-                alt="فرش ماشینی"
-              />
+              <img src="/assets/images/story-thumbnail-1.jpg" alt="فرش ماشینی" />
             </div>
             <p class="font-regular story-title">فرش ماشینی</p>
           </div>
@@ -170,10 +265,7 @@
           <!-- Story item 2 -->
           <div class="story-item">
             <div class="story-thumb">
-              <img
-                src="/assets/images/story-thumbnail-2.jpg"
-                alt="فرش کلاسیک"
-              />
+              <img src="/assets/images/story-thumbnail-2.jpg" alt="فرش کلاسیک" />
             </div>
             <p class="font-regular story-title">فرش کلاسیک</p>
           </div>
@@ -181,20 +273,14 @@
           <!-- Story item 3 -->
           <div class="story-item">
             <div class="story-thumb">
-              <img
-                src="/assets/images/story-thumbnail-3.jpg"
-                alt="پرفروش‌ترین‌ها"
-              />
+              <img src="/assets/images/story-thumbnail-3.jpg" alt="پرفروش‌ترین‌ها" />
             </div>
             <p class="font-regular story-title">پرفروش‌ترین‌ها</p>
           </div>
 
           <div class="story-item">
             <div class="story-thumb">
-              <img
-                src="/assets/images/story-thumbnail-1.jpg"
-                alt="فرش ماشینی"
-              />
+              <img src="/assets/images/story-thumbnail-1.jpg" alt="فرش ماشینی" />
             </div>
             <p class="font-regular story-title">فرش ماشینی</p>
           </div>
@@ -202,10 +288,7 @@
           <!-- Story item 2 -->
           <div class="story-item">
             <div class="story-thumb">
-              <img
-                src="/assets/images/story-thumbnail-2.jpg"
-                alt="فرش کلاسیک"
-              />
+              <img src="/assets/images/story-thumbnail-2.jpg" alt="فرش کلاسیک" />
             </div>
             <p class="font-regular story-title">فرش کلاسیک</p>
           </div>
@@ -213,20 +296,14 @@
           <!-- Story item 3 -->
           <div class="story-item">
             <div class="story-thumb">
-              <img
-                src="/assets/images/story-thumbnail-3.jpg"
-                alt="پرفروش‌ترین‌ها"
-              />
+              <img src="/assets/images/story-thumbnail-3.jpg" alt="پرفروش‌ترین‌ها" />
             </div>
             <p class="font-regular story-title">پرفروش‌ترین‌ها</p>
           </div>
 
           <div class="story-item">
             <div class="story-thumb">
-              <img
-                src="/assets/images/story-thumbnail-1.jpg"
-                alt="فرش ماشینی"
-              />
+              <img src="/assets/images/story-thumbnail-1.jpg" alt="فرش ماشینی" />
             </div>
             <p class="font-regular story-title">فرش ماشینی</p>
           </div>
@@ -234,10 +311,7 @@
           <!-- Story item 2 -->
           <div class="story-item">
             <div class="story-thumb">
-              <img
-                src="/assets/images/story-thumbnail-2.jpg"
-                alt="فرش کلاسیک"
-              />
+              <img src="/assets/images/story-thumbnail-2.jpg" alt="فرش کلاسیک" />
             </div>
             <p class="font-regular story-title">فرش کلاسیک</p>
           </div>
@@ -245,10 +319,7 @@
           <!-- Story item 3 -->
           <div class="story-item">
             <div class="story-thumb">
-              <img
-                src="/assets/images/story-thumbnail-3.jpg"
-                alt="پرفروش‌ترین‌ها"
-              />
+              <img src="/assets/images/story-thumbnail-3.jpg" alt="پرفروش‌ترین‌ها" />
             </div>
             <p class="font-regular story-title">پرفروش‌ترین‌ها</p>
           </div>
@@ -263,2191 +334,1666 @@
       </div>
     </section>
 
-      <section
-        id="hero-carousel"
-        class="hero-carousel"
-        aria-label="اسلایدر محصولات ویژه"
-      >
-        <div class="hero-carousel-inner">
-          <button
-            class="hero-nav hero-nav-next"
-            type="button"
-            aria-label="اسلاید بعدی"
-          >
-            <svg
-              class="hero-nav-shape"
-              width="54"
-              height="241"
-              viewBox="0 0 54 241"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-              focusable="false"
-            >
-              <path
-                d="M0 0V240.88V212.758C0 199.756 4.76878 187.222 13.3733 177.608L42.2177 145.38C57.0771 128.778 57.0771 103.4 42.2177 86.7981L13.3733 54.5702C4.76878 44.9563 0 32.4225 0 19.4208V0Z"
-                fill="white"
-              />
-            </svg>
-            <span
-              class="material-icons-outlined hero-nav-icon"
-              aria-hidden="true"
-              >chevron_right</span
-            >
-          </button>
+    <section id="hero-carousel" class="hero-carousel" aria-label="اسلایدر محصولات ویژه">
+      <div class="hero-carousel-inner">
+        <button class="hero-nav hero-nav-next" type="button" aria-label="اسلاید بعدی">
+          <svg class="hero-nav-shape" width="54" height="241" viewBox="0 0 54 241" xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true" focusable="false">
+            <path
+              d="M0 0V240.88V212.758C0 199.756 4.76878 187.222 13.3733 177.608L42.2177 145.38C57.0771 128.778 57.0771 103.4 42.2177 86.7981L13.3733 54.5702C4.76878 44.9563 0 32.4225 0 19.4208V0Z"
+              fill="white" />
+          </svg>
+          <span class="material-icons-outlined hero-nav-icon" aria-hidden="true">chevron_right</span>
+        </button>
 
-          <button
-            class="hero-nav hero-nav-prev"
-            type="button"
-            aria-label="اسلاید قبلی"
-          >
-            <svg
-              class="hero-nav-shape"
-              width="54"
-              height="241"
-              viewBox="0 0 54 241"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-              focusable="false"
-            >
-              <path
-                d="M53.3623 240.88L53.3623 0L53.3623 28.1223C53.3623 41.1245 48.5935 53.6576 39.989 63.2722L11.1446 95.5C-3.71476 112.102 -3.71477 137.48 11.1446 154.082L39.989 186.31C48.5935 195.924 53.3623 208.458 53.3623 221.459L53.3623 240.88Z"
-                fill="white"
-              />
-            </svg>
-            <span
-              class="material-icons-outlined hero-nav-icon"
-              aria-hidden="true"
-              >chevron_left</span
-            >
-          </button>
+        <button class="hero-nav hero-nav-prev" type="button" aria-label="اسلاید قبلی">
+          <svg class="hero-nav-shape" width="54" height="241" viewBox="0 0 54 241" xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true" focusable="false">
+            <path
+              d="M53.3623 240.88L53.3623 0L53.3623 28.1223C53.3623 41.1245 48.5935 53.6576 39.989 63.2722L11.1446 95.5C-3.71476 112.102 -3.71477 137.48 11.1446 154.082L39.989 186.31C48.5935 195.924 53.3623 208.458 53.3623 221.459L53.3623 240.88Z"
+              fill="white" />
+          </svg>
+          <span class="material-icons-outlined hero-nav-icon" aria-hidden="true">chevron_left</span>
+        </button>
 
-          <div class="hero-slides">
-            <article
-              class="hero-slide active"
-              aria-label="خرید آنلاین فرش‌های اصیل ایرانی"
-            >
-              <div class="hero-slide-content">
-                <h2 class="font-bold hero-title">
-                  خرید آنلاین فرش‌های اصیل ایرانی
-                </h2>
-                <p class="font-regular hero-subtitle">
-                  تنوع بی‌نظیر | ارسال رایگان | ضمانت بازگشت
-                </p>
-                <a href="#" class="hero-cta font-medium">مشاهده محصولات</a>
-              </div>
-              <div class="hero-slide-media">
-                <img
-                  src="/assets/images/banner-1.png"
-                  alt="چند فرش ایرانی کنار هم"
-                />
-              </div>
-            </article>
-
-            <article class="hero-slide" aria-label="کلکسیون ویژه فرش ماشینی">
-              <div class="hero-slide-content">
-                <h2 class="font-bold hero-title">کلکسیون ویژه فرش ماشینی</h2>
-                <p class="font-regular hero-subtitle">
-                  جدیدترین طرح‌ها با بهترین قیمت
-                </p>
-                <a href="#" class="hero-cta font-medium">مشاهده محصولات</a>
-              </div>
-              <div class="hero-slide-media">
-                <img
-                  src="/assets/images/banner-1.png"
-                  alt="فرش ماشینی در طرح‌های مختلف"
-                />
-              </div>
-            </article>
-
-            <article
-              class="hero-slide"
-              aria-label="فرش دستباف، هنر اصیل ایرانی"
-            >
-              <div class="hero-slide-content">
-                <h2 class="font-bold hero-title">
-                  فرش دستباف، هنر اصیل ایرانی
-                </h2>
-                <p class="font-regular hero-subtitle">
-                  انتخابی لوکس برای خانه‌های خاص
-                </p>
-                <a href="#" class="hero-cta font-medium">مشاهده محصولات</a>
-              </div>
-              <div class="hero-slide-media">
-                <img
-                  src="/assets/images/banner-1.png"
-                  alt="فرش دستباف ایرانی"
-                />
-              </div>
-            </article>
-          </div>
-
-          <div class="hero-dots" role="tablist" aria-label="انتخاب اسلاید">
-            <button
-              class="hero-dot active"
-              type="button"
-              role="tab"
-              aria-label="اسلاید ۱"
-              aria-selected="true"
-            ></button>
-            <button
-              class="hero-dot"
-              type="button"
-              role="tab"
-              aria-label="اسلاید ۲"
-              aria-selected="false"
-            ></button>
-            <button
-              class="hero-dot"
-              type="button"
-              role="tab"
-              aria-label="اسلاید ۳"
-              aria-selected="false"
-            ></button>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <div class="stack-1-banners">
-          <div class="stack-1-img stack-1-1">
-            <img src="/assets/images/stack-1-1.jpg" alt="فرش ماشینی" />
-          </div>
-          <div class="stack-1-img stack-1-2">
-            <img src="/assets/images/stack-1-2.jpg" alt="فرش دستباف" />
-          </div>
-          <div class="stack-1-img stack-1-3">
-            <img src="/assets/images/stack-1-3.jpg" alt="فرش مدرن" />
-          </div>
-          <div class="stack-1-img stack-1-4">
-            <img src="/assets/images/stack-1-4.jpg" alt="فرش کودک" />
-          </div>
-        </div>
-      </section>
-
-      <section class="features-bar" aria-label="ویژگی‌های فروشگاه">
-        <div class="features-container">
-          <div class="feature-item">
-            <img
-              src="/assets/images/support.png"
-              alt="آیکون پشتیبانی"
-              class="feature-icon"
-            />
-            <div class="feature-content">
-              <h3 class="feature-title font-bold">پشتیبانی ۲۴ ساعته</h3>
-              <p class="feature-subtitle font-regular">
-                پشتیبانی همیشه در دسترس
-              </p>
-            </div>
-          </div>
-
-          <div class="feature-item">
-            <img
-              src="/assets/images/express.png"
-              alt="آیکون ارسال"
-              class="feature-icon"
-            />
-            <div class="feature-content">
-              <h3 class="feature-title font-bold">ارسال اکسپرس</h3>
-              <p class="feature-subtitle font-regular">تحویل سریع و مطمئن</p>
-            </div>
-          </div>
-
-          <div class="feature-item">
-            <img
-              src="/assets/images/return.png"
-              alt="آیکون بازگشت"
-              class="feature-icon"
-            />
-            <div class="feature-content">
-              <h3 class="feature-title font-bold">ضمانت بازگشت ۷ روزه</h3>
-              <p class="feature-subtitle font-regular">خرید بدون دغدغه</p>
-            </div>
-          </div>
-
-          <div class="feature-item">
-            <img
-              src="/assets/images/warranty.png"
-              alt="آیکون ضمانت"
-              class="feature-icon"
-            />
-            <div class="feature-content">
-              <h3 class="feature-title font-bold">ضمانت اصالت فرش</h3>
-              <p class="feature-subtitle font-regular">اصالت تضمین‌شد</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="category-section" aria-label="دسته‌بندی محصولات">
-        <div class="category-container">
-          <div class="category-header">
-            <div class="header-decoration"></div>
-            <h2 class="category-section-title font-bold">
-              دسته بندی <span class="text-primary">محصولات</span>
-            </h2>
-          </div>
-
-          <div class="category-content-wrapper">
-            <button
-              class="nav-arrow nav-arrow-prev"
-              type="button"
-              aria-label="قبلی"
-            >
-              <span class="material-icons-outlined">chevron_right</span>
-            </button>
-
-            <div class="category-grid">
-              <a href="#" class="category-card">
-                <div class="category-img-box">
-                  <img
-                    src="/assets/images/category-1.png"
-                    alt="فرش آشپزخانه"
-                    loading="lazy"
-                  />
-                </div>
-                <span class="category-label font-medium">فرش آشپزخانه</span>
-              </a>
-
-              <a href="#" class="category-card">
-                <div class="category-img-box">
-                  <img
-                    src="/assets/images/category-2.png"
-                    alt="فرش ماشینی"
-                    loading="lazy"
-                  />
-                </div>
-                <span class="category-label font-medium">فرش ماشینی</span>
-              </a>
-
-              <a href="#" class="category-card">
-                <div class="category-img-box">
-                  <img
-                    src="/assets/images/category-3.png"
-                    alt="فرش کلاسیک"
-                    loading="lazy"
-                  />
-                </div>
-                <span class="category-label font-medium">فرش کلاسیک</span>
-              </a>
-
-              <a href="#" class="category-card">
-                <div class="category-img-box">
-                  <img
-                    src="/assets/images/category-4.png"
-                    alt="فرش وینتیج"
-                    loading="lazy"
-                  />
-                </div>
-                <span class="category-label font-medium">فرش وینتیج</span>
-              </a>
-
-              <a href="#" class="category-card">
-                <div class="category-img-box">
-                  <img
-                    src="/assets/images/category-5.png"
-                    alt="فرش مراکشی"
-                    loading="lazy"
-                  />
-                </div>
-                <span class="category-label font-medium">فرش مراکشی</span>
-              </a>
-
-              <a href="#" class="category-card">
-                <div class="category-img-box">
-                  <img
-                    src="/assets/images/category-6.png"
-                    alt="فرش اتاق خواب"
-                    loading="lazy"
-                  />
-                </div>
-                <span class="category-label font-medium">فرش اتاق خواب</span>
-              </a>
-
-              <a href="#" class="category-card">
-                <div class="category-img-box">
-                  <img
-                    src="/assets/images/category-1.png"
-                    alt="فرش آشپزخانه"
-                    loading="lazy"
-                  />
-                </div>
-                <span class="category-label font-medium">فرش آشپزخانه</span>
-              </a>
-
-              <a href="#" class="category-card">
-                <div class="category-img-box">
-                  <img
-                    src="/assets/images/category-2.png"
-                    alt="فرش ماشینی"
-                    loading="lazy"
-                  />
-                </div>
-                <span class="category-label font-medium">فرش ماشینی</span>
-              </a>
-
-              <a href="#" class="category-card">
-                <div class="category-img-box">
-                  <img
-                    src="/assets/images/category-3.png"
-                    alt="فرش کلاسیک"
-                    loading="lazy"
-                  />
-                </div>
-                <span class="category-label font-medium">فرش کلاسیک</span>
-              </a>
-
-              <a href="#" class="category-card">
-                <div class="category-img-box">
-                  <img
-                    src="/assets/images/category-4.png"
-                    alt="فرش وینتیج"
-                    loading="lazy"
-                  />
-                </div>
-                <span class="category-label font-medium">فرش وینتیج</span>
-              </a>
-
-              <a href="#" class="category-card">
-                <div class="category-img-box">
-                  <img
-                    src="/assets/images/category-5.png"
-                    alt="فرش مراکشی"
-                    loading="lazy"
-                  />
-                </div>
-                <span class="category-label font-medium">فرش مراکشی</span>
-              </a>
-
-              <a href="#" class="category-card">
-                <div class="category-img-box">
-                  <img
-                    src="/assets/images/category-6.png"
-                    alt="فرش اتاق خواب"
-                    loading="lazy"
-                  />
-                </div>
-                <span class="category-label font-medium">فرش اتاق خواب</span>
-              </a>
-            </div>
-
-            <button
-              class="nav-arrow nav-arrow-next"
-              type="button"
-              aria-label="بعدی"
-            >
-              <span class="material-icons-outlined">chevron_left</span>
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <section class="offers-section" aria-label="پیشنهادات شگفت‌انگیز">
-        <div class="offers-container">
-          <div class="offers-banner">
-            <div class="offers-banner-content">
-              <h2 class="offers-title font-bold">
-                شـــگفــــت <br />
-                انــگـــیـزات
+        <div class="hero-slides">
+          <article class="hero-slide active" aria-label="خرید آنلاین فرش‌های اصیل ایرانی">
+            <div class="hero-slide-content">
+              <h2 class="font-bold hero-title">
+                خرید آنلاین فرش‌های اصیل ایرانی
               </h2>
-              <a href="#" class="offers-view-all font-regular">
-                مشاهده همه
-                <span class="material-icons-outlined arrow-icon"
-                  >arrow_back</span
-                >
-              </a>
-            </div>
-
-            <img
-              src="/assets/images/main-off-carpet.png"
-              alt="فرش‌های ویژه"
-              class="offers-decor-img"
-            />
-          </div>
-
-          <button
-            id="offer-scroll-btn"
-            class="offer-nav-btn"
-            type="button"
-            aria-label="مشاهده موارد بیشتر"
-          >
-            <span class="material-icons-outlined">chevron_left</span>
-          </button>
-
-          <div class="offers-scroll-area" id="offers-list">
-            <article class="offer-card">
-              <div class="offer-img-box">
-                <img
-                  src="/assets/images/carpet-off-slider-1.png"
-                  alt="فرش طرح سنتی"
-                  loading="lazy"
-                />
-              </div>
-              <h3 class="offer-card-title font-medium">
-                فرش طرح سنتی هریس مدل وینتیج
-              </h3>
-              <div class="offer-card-footer">
-                <div class="offer-actions">
-                  <button
-                    class="action-btn btn-add-cart"
-                    aria-label="افزودن به سبد"
-                  >
-                    <span class="material-icons-outlined">shopping_bag</span>
-                  </button>
-                  <button
-                    class="action-btn btn-fav"
-                    aria-label="افزودن به علاقه‌مندی"
-                  >
-                    <span class="material-icons-outlined">favorite_border</span>
-                  </button>
-                </div>
-                <div class="offer-prices font-regular">
-                  <del class="old-price">8,580,000 تومان</del>
-                  <div class="new-price font-bold">
-                    7,910,000 <span class="currency">تومان</span>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <article class="offer-card">
-              <div class="offer-img-box">
-                <img
-                  src="/assets/images/carpet-off-slider-2.png"
-                  alt="فرش ماشینی 1200 شانه"
-                  loading="lazy"
-                />
-              </div>
-              <h3 class="offer-card-title font-medium">
-                فرش ماشینی 1200 شانه طرح کلاریس
-              </h3>
-              <div class="offer-card-footer">
-                <div class="offer-actions">
-                  <button class="action-btn btn-add-cart">
-                    <span class="material-icons-outlined">shopping_bag</span>
-                  </button>
-                  <button class="action-btn btn-fav">
-                    <span class="material-icons-outlined">favorite_border</span>
-                  </button>
-                </div>
-                <div class="offer-prices font-regular">
-                  <del class="old-price">8,580,000 تومان</del>
-                  <div class="new-price font-bold">
-                    7,910,000 <span class="currency">تومان</span>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <article class="offer-card">
-              <div class="offer-img-box">
-                <img
-                  src="/assets/images/carpet-off-slider-3.png"
-                  alt="فرش مدرن و فانتزی"
-                  loading="lazy"
-                />
-              </div>
-              <h3 class="offer-card-title font-medium">
-                فرش مدرن و فانتزی پتینه
-              </h3>
-              <div class="offer-card-footer">
-                <div class="offer-actions">
-                  <button class="action-btn btn-add-cart">
-                    <span class="material-icons-outlined">shopping_bag</span>
-                  </button>
-                  <button class="action-btn btn-fav">
-                    <span class="material-icons-outlined">favorite_border</span>
-                  </button>
-                </div>
-                <div class="offer-prices font-regular">
-                  <del class="old-price">8,580,000 تومان</del>
-                  <div class="new-price font-bold">
-                    7,910,000 <span class="currency">تومان</span>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <article class="offer-card">
-              <div class="offer-img-box">
-                <img
-                  src="/assets/images/carpet-off-slider-5.png"
-                  alt="فرش طرح سنتی"
-                  loading="lazy"
-                />
-              </div>
-              <h3 class="offer-card-title font-medium">فرش طرح سنتی جدید</h3>
-              <div class="offer-card-footer">
-                <div class="offer-actions">
-                  <button class="action-btn btn-add-cart">
-                    <span class="material-icons-outlined">shopping_bag</span>
-                  </button>
-                  <button class="action-btn btn-fav">
-                    <span class="material-icons-outlined">favorite_border</span>
-                  </button>
-                </div>
-                <div class="offer-prices font-regular">
-                  <del class="old-price">8,580,000 تومان</del>
-                  <div class="new-price font-bold">
-                    7,910,000 <span class="currency">تومان</span>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <article class="offer-card">
-              <div class="offer-img-box">
-                <img
-                  src="/assets/images/carpet-off-slider-1.png"
-                  alt="فرش طرح سنتی"
-                  loading="lazy"
-                />
-              </div>
-              <h3 class="offer-card-title font-medium">فرش طرح سنتی هریس</h3>
-              <div class="offer-card-footer">
-                <div class="offer-actions">
-                  <button class="action-btn btn-add-cart">
-                    <span class="material-icons-outlined">shopping_bag</span>
-                  </button>
-                  <button class="action-btn btn-fav">
-                    <span class="material-icons-outlined">favorite_border</span>
-                  </button>
-                </div>
-                <div class="offer-prices font-regular">
-                  <del class="old-price">8,580,000 تومان</del>
-                  <div class="new-price font-bold">
-                    7,910,000 <span class="currency">تومان</span>
-                  </div>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="single-category-section" aria-label="فرش مدرن و فانتزی">
-        <div class="category-slider-container">
-          <div class="section-header">
-            <h2 class="section-title font-bold">فرش مدرن و فانتزی</h2>
-
-            <div class="header-line"></div>
-
-            <a href="#" class="view-all-link font-regular">
-              مشاهده همه
-              <span class="material-icons-outlined icon">arrow_back</span>
-            </a>
-          </div>
-
-          <div class="product-slider-wrapper">
-            <button
-              class="slider-nav-btn nav-btn-right"
-              id="simple-slider-next-btn"
-              aria-label="بعدی"
-            >
-              <span class="material-icons-outlined">chevron_right</span>
-            </button>
-
-            <div class="product-scroll-track" id="simple-scroll-track">
-              <article class="simple-product-card">
-                <div class="product-img-box">
-                  <img
-                    src="/assets/images/modern/modern-category-1.png"
-                    alt="فرش مدرن"
-                    loading="lazy"
-                  />
-                </div>
-                <h3 class="product-title font-bold">
-                  فرش طرح سنتی هریس مدل وینتیج
-                </h3>
-                <div class="product-footer">
-                  <div class="product-prices font-regular">
-                    <del class="old-price">8,580,000 تومان</del>
-                    <div class="new-price font-bold">
-                      7,910,000 <span class="currency">تومان</span>
-                    </div>
-                  </div>
-                  <div class="product-actions">
-                    <button
-                      class="action-btn btn-cart-red"
-                      aria-label="افزودن به سبد"
-                    >
-                      <span class="material-icons-outlined">shopping_bag</span>
-                    </button>
-                    <button
-                      class="action-btn btn-fav-outline"
-                      aria-label="علاقه‌مندی"
-                    >
-                      <span class="material-icons-outlined"
-                        >favorite_border</span
-                      >
-                    </button>
-                  </div>
-                </div>
-              </article>
-
-              <article class="simple-product-card">
-                <div class="product-img-box">
-                  <img
-                    src="/assets/images/modern/modern-category-2.png"
-                    alt="فرش مدرن"
-                    loading="lazy"
-                  />
-                </div>
-                <h3 class="product-title font-bold">
-                  فرش طرح سنتی هریس مدل وینتیج
-                </h3>
-                <div class="product-footer">
-                  <div class="product-prices font-regular">
-                    <del class="old-price">8,580,000 تومان</del>
-                    <div class="new-price font-bold">
-                      7,910,000 <span class="currency">تومان</span>
-                    </div>
-                  </div>
-                  <div class="product-actions">
-                    <button
-                      class="action-btn btn-cart-red"
-                      aria-label="افزودن به سبد"
-                    >
-                      <span class="material-icons-outlined">shopping_bag</span>
-                    </button>
-                    <button
-                      class="action-btn btn-fav-outline"
-                      aria-label="علاقه‌مندی"
-                    >
-                      <span class="material-icons-outlined"
-                        >favorite_border</span
-                      >
-                    </button>
-                  </div>
-                </div>
-              </article>
-
-              <article class="simple-product-card">
-                <div class="product-img-box">
-                  <img
-                    src="/assets/images/modern/modern-category-3.png"
-                    alt="فرش مدرن"
-                    loading="lazy"
-                  />
-                </div>
-                <h3 class="product-title font-bold">
-                  فرش طرح سنتی هریس مدل وینتیج
-                </h3>
-                <div class="product-footer">
-                  <div class="product-prices font-regular">
-                    <del class="old-price">8,580,000 تومان</del>
-                    <div class="new-price font-bold">
-                      7,910,000 <span class="currency">تومان</span>
-                    </div>
-                  </div>
-                  <div class="product-actions">
-                    <button
-                      class="action-btn btn-cart-red"
-                      aria-label="افزودن به سبد"
-                    >
-                      <span class="material-icons-outlined">shopping_bag</span>
-                    </button>
-                    <button
-                      class="action-btn btn-fav-outline"
-                      aria-label="علاقه‌مندی"
-                    >
-                      <span class="material-icons-outlined"
-                        >favorite_border</span
-                      >
-                    </button>
-                  </div>
-                </div>
-              </article>
-
-              <article class="simple-product-card">
-                <div class="product-img-box">
-                  <img
-                    src="/assets/images/modern/modern-category-4.png"
-                    alt="فرش مدرن"
-                    loading="lazy"
-                  />
-                </div>
-                <h3 class="product-title font-bold">
-                  فرش طرح سنتی هریس مدل وینتیج
-                </h3>
-                <div class="product-footer">
-                  <div class="product-prices font-regular">
-                    <del class="old-price">8,580,000 تومان</del>
-                    <div class="new-price font-bold">
-                      7,910,000 <span class="currency">تومان</span>
-                    </div>
-                  </div>
-                  <div class="product-actions">
-                    <button
-                      class="action-btn btn-cart-red"
-                      aria-label="افزودن به سبد"
-                    >
-                      <span class="material-icons-outlined">shopping_bag</span>
-                    </button>
-                    <button
-                      class="action-btn btn-fav-outline"
-                      aria-label="علاقه‌مندی"
-                    >
-                      <span class="material-icons-outlined"
-                        >favorite_border</span
-                      >
-                    </button>
-                  </div>
-                </div>
-              </article>
-
-              <article class="simple-product-card">
-                <div class="product-img-box">
-                  <img
-                    src="/assets/images/modern/modern-category-5.png"
-                    alt="فرش مدرن"
-                    loading="lazy"
-                  />
-                </div>
-                <h3 class="product-title font-bold">
-                  فرش طرح سنتی هریس مدل وینتیج
-                </h3>
-                <div class="product-footer">
-                  <div class="product-prices font-regular">
-                    <del class="old-price">8,580,000 تومان</del>
-                    <div class="new-price font-bold">
-                      7,910,000 <span class="currency">تومان</span>
-                    </div>
-                  </div>
-                  <div class="product-actions">
-                    <button
-                      class="action-btn btn-cart-red"
-                      aria-label="افزودن به سبد"
-                    >
-                      <span class="material-icons-outlined">shopping_bag</span>
-                    </button>
-                    <button
-                      class="action-btn btn-fav-outline"
-                      aria-label="علاقه‌مندی"
-                    >
-                      <span class="material-icons-outlined"
-                        >favorite_border</span
-                      >
-                    </button>
-                  </div>
-                </div>
-              </article>
-            </div>
-
-            <button
-              class="slider-nav-btn nav-btn-left"
-              id="simple-slider-prev-btn"
-              aria-label="قبلی"
-            >
-              <span class="material-icons-outlined">chevron_left</span>
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <section class="single-category-section" aria-label="فرش طرح سنتی">
-        <div class="category-slider-container">
-          <div class="section-header">
-            <h2 class="section-title font-bold">فرش طرح سنتی</h2>
-
-            <div class="header-line"></div>
-
-            <a href="#" class="view-all-link font-regular">
-              مشاهده همه
-              <span class="material-icons-outlined icon">arrow_back</span>
-            </a>
-          </div>
-
-          <div class="product-slider-wrapper">
-            <button
-              class="slider-nav-btn nav-btn-right"
-              id="simple-slider-next-btn"
-              aria-label="بعدی"
-            >
-              <span class="material-icons-outlined">chevron_right</span>
-            </button>
-
-            <div class="product-scroll-track" id="simple-scroll-track">
-              <article class="simple-product-card">
-                <div class="product-img-box">
-                  <img
-                    src="/assets/images/sonati/sonati-category-1.png"
-                    alt="فرش مدرن"
-                    loading="lazy"
-                  />
-                </div>
-                <h3 class="product-title font-bold">
-                  فرش طرح سنتی هریس مدل وینتیج
-                </h3>
-                <div class="product-footer">
-                  <div class="product-prices font-regular">
-                    <del class="old-price">8,580,000 تومان</del>
-                    <div class="new-price font-bold">
-                      7,910,000 <span class="currency">تومان</span>
-                    </div>
-                  </div>
-                  <div class="product-actions">
-                    <button
-                      class="action-btn btn-cart-red"
-                      aria-label="افزودن به سبد"
-                    >
-                      <span class="material-icons-outlined">shopping_bag</span>
-                    </button>
-                    <button
-                      class="action-btn btn-fav-outline"
-                      aria-label="علاقه‌مندی"
-                    >
-                      <span class="material-icons-outlined"
-                        >favorite_border</span
-                      >
-                    </button>
-                  </div>
-                </div>
-              </article>
-
-              <article class="simple-product-card">
-                <div class="product-img-box">
-                  <img
-                    src="/assets/images/sonati/sonati-category-2.png"
-                    alt="فرش مدرن"
-                    loading="lazy"
-                  />
-                </div>
-                <h3 class="product-title font-bold">
-                  فرش طرح سنتی هریس مدل وینتیج
-                </h3>
-                <div class="product-footer">
-                  <div class="product-prices font-regular">
-                    <del class="old-price">8,580,000 تومان</del>
-                    <div class="new-price font-bold">
-                      7,910,000 <span class="currency">تومان</span>
-                    </div>
-                  </div>
-                  <div class="product-actions">
-                    <button
-                      class="action-btn btn-cart-red"
-                      aria-label="افزودن به سبد"
-                    >
-                      <span class="material-icons-outlined">shopping_bag</span>
-                    </button>
-                    <button
-                      class="action-btn btn-fav-outline"
-                      aria-label="علاقه‌مندی"
-                    >
-                      <span class="material-icons-outlined"
-                        >favorite_border</span
-                      >
-                    </button>
-                  </div>
-                </div>
-              </article>
-
-              <article class="simple-product-card">
-                <div class="product-img-box">
-                  <img
-                    src="/assets/images/sonati/sonati-category-3.png"
-                    alt="فرش مدرن"
-                    loading="lazy"
-                  />
-                </div>
-                <h3 class="product-title font-bold">
-                  فرش طرح سنتی هریس مدل وینتیج
-                </h3>
-                <div class="product-footer">
-                  <div class="product-prices font-regular">
-                    <del class="old-price">8,580,000 تومان</del>
-                    <div class="new-price font-bold">
-                      7,910,000 <span class="currency">تومان</span>
-                    </div>
-                  </div>
-                  <div class="product-actions">
-                    <button
-                      class="action-btn btn-cart-red"
-                      aria-label="افزودن به سبد"
-                    >
-                      <span class="material-icons-outlined">shopping_bag</span>
-                    </button>
-                    <button
-                      class="action-btn btn-fav-outline"
-                      aria-label="علاقه‌مندی"
-                    >
-                      <span class="material-icons-outlined"
-                        >favorite_border</span
-                      >
-                    </button>
-                  </div>
-                </div>
-              </article>
-
-              <article class="simple-product-card">
-                <div class="product-img-box">
-                  <img
-                    src="/assets/images/sonati/sonati-category-4.png"
-                    alt="فرش مدرن"
-                    loading="lazy"
-                  />
-                </div>
-                <h3 class="product-title font-bold">
-                  فرش طرح سنتی هریس مدل وینتیج
-                </h3>
-                <div class="product-footer">
-                  <div class="product-prices font-regular">
-                    <del class="old-price">8,580,000 تومان</del>
-                    <div class="new-price font-bold">
-                      7,910,000 <span class="currency">تومان</span>
-                    </div>
-                  </div>
-                  <div class="product-actions">
-                    <button
-                      class="action-btn btn-cart-red"
-                      aria-label="افزودن به سبد"
-                    >
-                      <span class="material-icons-outlined">shopping_bag</span>
-                    </button>
-                    <button
-                      class="action-btn btn-fav-outline"
-                      aria-label="علاقه‌مندی"
-                    >
-                      <span class="material-icons-outlined"
-                        >favorite_border</span
-                      >
-                    </button>
-                  </div>
-                </div>
-              </article>
-
-              <article class="simple-product-card">
-                <div class="product-img-box">
-                  <img
-                    src="/assets/images/sonati/sonati-category-5.png"
-                    alt="فرش مدرن"
-                    loading="lazy"
-                  />
-                </div>
-                <h3 class="product-title font-bold">
-                  فرش طرح سنتی هریس مدل وینتیج
-                </h3>
-                <div class="product-footer">
-                  <div class="product-prices font-regular">
-                    <del class="old-price">8,580,000 تومان</del>
-                    <div class="new-price font-bold">
-                      7,910,000 <span class="currency">تومان</span>
-                    </div>
-                  </div>
-                  <div class="product-actions">
-                    <button
-                      class="action-btn btn-cart-red"
-                      aria-label="افزودن به سبد"
-                    >
-                      <span class="material-icons-outlined">shopping_bag</span>
-                    </button>
-                    <button
-                      class="action-btn btn-fav-outline"
-                      aria-label="علاقه‌مندی"
-                    >
-                      <span class="material-icons-outlined"
-                        >favorite_border</span
-                      >
-                    </button>
-                  </div>
-                </div>
-              </article>
-            </div>
-
-            <button
-              class="slider-nav-btn nav-btn-left"
-              id="simple-slider-prev-btn"
-              aria-label="قبلی"
-            >
-              <span class="material-icons-outlined">chevron_left</span>
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <div class="stack-3-banners">
-          <div class="stack-3-img stack-3-1">
-            <img src="/assets/images/stack-3-1.jpg" alt="فرش ماشینی" />
-          </div>
-          <div class="stack-3-img stack-3-2">
-            <img src="/assets/images/stack-3-2.jpg" alt="فرش دستباف" />
-          </div>
-          <div class="stack-3-img stack-3-3">
-            <img src="/assets/images/stack-3-3.jpg" alt="فرش مدرن" />
-          </div>
-        </div>
-      </section>
-
-      <section class="most-sold-section" aria-label="پرفروش ترین محصولات">
-        <div class="most-sold-container">
-          <div class="section-header">
-            <h2 class="section-title font-bold">پرفروش ترین ها</h2>
-            <div class="header-line"></div>
-            <a href="#" class="view-all-link font-regular">
-              مشاهده همه
-              <span class="material-icons-outlined icon">arrow_back</span>
-            </a>
-          </div>
-
-          <div class="most-sold-grid">
-            <a href="#" class="most-sold-card">
-              <div class="rank-number font-bold">۱</div>
-              <div class="product-info">
-                <h3 class="product-name font-medium">
-                  فرش آشپزخانه ارزان با اشکال هندسی
-                </h3>
-                <span class="product-code font-regular">کد 7111</span>
-              </div>
-              <div class="product-thumb">
-                <img
-                  src="assets/images/mostsold/most-sold-1.png"
-                  alt="فرش"
-                  loading="lazy"
-                />
-              </div>
-            </a>
-
-            <a href="#" class="most-sold-card">
-              <div class="rank-number font-bold">۲</div>
-              <div class="product-info">
-                <h3 class="product-name font-medium">
-                  بهترین فرش ماشینی طرح دستباف زمینه سبز
-                </h3>
-                <span class="product-code font-regular">کد 771022</span>
-              </div>
-              <div class="product-thumb">
-                <img
-                  src="assets/images/mostsold/most-sold-2.png"
-                  alt="فرش"
-                  loading="lazy"
-                />
-              </div>
-            </a>
-
-            <a href="#" class="most-sold-card">
-              <div class="rank-number font-bold">۳</div>
-              <div class="product-info">
-                <h3 class="product-name font-medium">
-                  فرش طرح سنتی 700 شانه زمینه آبی
-                </h3>
-                <span class="product-code font-regular">کد 771021</span>
-              </div>
-              <div class="product-thumb">
-                <img
-                  src="assets/images/mostsold/most-sold-3.png"
-                  alt="فرش"
-                  loading="lazy"
-                />
-              </div>
-            </a>
-
-            <a href="#" class="most-sold-card">
-              <div class="rank-number font-bold">۴</div>
-              <div class="product-info">
-                <h3 class="product-name font-medium">
-                  فرش آشپزخانه ارزان با اشکال هندسی
-                </h3>
-                <span class="product-code font-regular">کد 7111</span>
-              </div>
-              <div class="product-thumb">
-                <img
-                  src="assets/images/mostsold/most-sold-4.png"
-                  alt="فرش"
-                  loading="lazy"
-                />
-              </div>
-            </a>
-
-            <a href="#" class="most-sold-card">
-              <div class="rank-number font-bold">۵</div>
-              <div class="product-info">
-                <h3 class="product-name font-medium">
-                  بهترین فرش ماشینی طرح دستباف زمینه سبز
-                </h3>
-                <span class="product-code font-regular">کد 771022</span>
-              </div>
-              <div class="product-thumb">
-                <img
-                  src="assets/images/mostsold/most-sold-5.png"
-                  alt="فرش"
-                  loading="lazy"
-                />
-              </div>
-            </a>
-
-            <a href="#" class="most-sold-card">
-              <div class="rank-number font-bold">۶</div>
-              <div class="product-info">
-                <h3 class="product-name font-medium">
-                  فرش طرح سنتی 700 شانه زمینه آبی
-                </h3>
-                <span class="product-code font-regular">کد 771021</span>
-              </div>
-              <div class="product-thumb">
-                <img
-                  src="assets/images/mostsold/most-sold-6.png"
-                  alt="فرش"
-                  loading="lazy"
-                />
-              </div>
-            </a>
-
-            <a href="#" class="most-sold-card">
-              <div class="rank-number font-bold">۷</div>
-              <div class="product-info">
-                <h3 class="product-name font-medium">
-                  فرش آشپزخانه ارزان با اشکال هندسی
-                </h3>
-                <span class="product-code font-regular">کد 7111</span>
-              </div>
-              <div class="product-thumb">
-                <img
-                  src="assets/images/mostsold/most-sold-7.png"
-                  alt="فرش"
-                  loading="lazy"
-                />
-              </div>
-            </a>
-
-            <a href="#" class="most-sold-card">
-              <div class="rank-number font-bold">۸</div>
-              <div class="product-info">
-                <h3 class="product-name font-medium">
-                  بهترین فرش ماشینی طرح دستباف زمینه سبز
-                </h3>
-                <span class="product-code font-regular">کد 771022</span>
-              </div>
-              <div class="product-thumb">
-                <img
-                  src="assets/images/mostsold/most-sold-8.png"
-                  alt="فرش"
-                  loading="lazy"
-                />
-              </div>
-            </a>
-
-            <a href="#" class="most-sold-card">
-              <div class="rank-number font-bold">۹</div>
-              <div class="product-info">
-                <h3 class="product-name font-medium">
-                  فرش طرح سنتی 700 شانه زمینه آبی
-                </h3>
-                <span class="product-code font-regular">کد 771021</span>
-              </div>
-              <div class="product-thumb">
-                <img
-                  src="assets/images/mostsold/most-sold-9.png"
-                  alt="فرش"
-                  loading="lazy"
-                />
-              </div>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section class="brands-section" aria-label="برندهای همکار">
-        <div class="brands-container">
-          <div class="section-header">
-            <h2 class="section-title font-bold">برندها</h2>
-            <div class="header-line"></div>
-            <a href="#" class="view-all-link font-regular">
-              مشاهده همه
-              <span class="material-icons-outlined icon">arrow_back</span>
-            </a>
-          </div>
-
-          <div class="brands-grid">
-            <a href="#" class="brand-card">
-              <div class="brand-logo-box">
-                <img
-                  src="assets/images/brands/patris.png"
-                  alt="فرش پاتریس"
-                  loading="lazy"
-                />
-              </div>
-              <span class="brand-name font-medium">فرش پاتریس</span>
-            </a>
-
-            <a href="#" class="brand-card">
-              <div class="brand-logo-box">
-                <img
-                  src="assets/images/brands/negin.png"
-                  alt="فرش نگین مشهد"
-                  loading="lazy"
-                />
-              </div>
-              <span class="brand-name font-medium">فرش نگین مشهد</span>
-            </a>
-
-            <a href="#" class="brand-card">
-              <div class="brand-logo-box">
-                <img
-                  src="assets/images/brands/bozorgmehr.png"
-                  alt="فرش بزرگمهر"
-                  loading="lazy"
-                />
-              </div>
-              <span class="brand-name font-medium">فرش بزرگمهر</span>
-            </a>
-
-            <a href="#" class="brand-card">
-              <div class="brand-logo-box">
-                <img
-                  src="assets/images/brands/ara.png"
-                  alt="فرش آرا"
-                  loading="lazy"
-                />
-              </div>
-              <span class="brand-name font-medium">فرش آرا</span>
-            </a>
-
-            <a href="#" class="brand-card">
-              <div class="brand-logo-box">
-                <img
-                  src="assets/images/brands/mohtasham.png"
-                  alt="فرش محتشم"
-                  loading="lazy"
-                />
-              </div>
-              <span class="brand-name font-medium">فرش محتشم</span>
-            </a>
-
-            <a href="#" class="brand-card">
-              <div class="brand-logo-box">
-                <img
-                  src="assets/images/brands/gheytaran.png"
-                  alt="فرش قیطران"
-                  loading="lazy"
-                />
-              </div>
-              <span class="brand-name font-medium">فرش قیطران</span>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section class="single-category-section" aria-label="فرش پرز بلند.شگی">
-        <div class="category-slider-container">
-          <div class="section-header">
-            <h2 class="section-title font-bold">فرش پرز بلند.شگی</h2>
-
-            <div class="header-line"></div>
-
-            <a href="#" class="view-all-link font-regular">
-              مشاهده همه
-              <span class="material-icons-outlined icon">arrow_back</span>
-            </a>
-          </div>
-
-          <div class="product-slider-wrapper">
-            <button
-              class="slider-nav-btn nav-btn-right"
-              id="simple-slider-next-btn"
-              aria-label="بعدی"
-            >
-              <span class="material-icons-outlined">chevron_right</span>
-            </button>
-
-            <div class="product-scroll-track" id="simple-scroll-track">
-              <article class="simple-product-card">
-                <div class="product-img-box">
-                  <img
-                    src="/assets/images/sonati/sonati-category-1.png"
-                    alt="فرش مدرن"
-                    loading="lazy"
-                  />
-                </div>
-                <h3 class="product-title font-bold">
-                  فرش طرح سنتی هریس مدل وینتیج
-                </h3>
-                <div class="product-footer">
-                  <div class="product-prices font-regular">
-                    <del class="old-price">8,580,000 تومان</del>
-                    <div class="new-price font-bold">
-                      7,910,000 <span class="currency">تومان</span>
-                    </div>
-                  </div>
-                  <div class="product-actions">
-                    <button
-                      class="action-btn btn-cart-red"
-                      aria-label="افزودن به سبد"
-                    >
-                      <span class="material-icons-outlined">shopping_bag</span>
-                    </button>
-                    <button
-                      class="action-btn btn-fav-outline"
-                      aria-label="علاقه‌مندی"
-                    >
-                      <span class="material-icons-outlined"
-                        >favorite_border</span
-                      >
-                    </button>
-                  </div>
-                </div>
-              </article>
-
-              <article class="simple-product-card">
-                <div class="product-img-box">
-                  <img
-                    src="/assets/images/sonati/sonati-category-2.png"
-                    alt="فرش مدرن"
-                    loading="lazy"
-                  />
-                </div>
-                <h3 class="product-title font-bold">
-                  فرش طرح سنتی هریس مدل وینتیج
-                </h3>
-                <div class="product-footer">
-                  <div class="product-prices font-regular">
-                    <del class="old-price">8,580,000 تومان</del>
-                    <div class="new-price font-bold">
-                      7,910,000 <span class="currency">تومان</span>
-                    </div>
-                  </div>
-                  <div class="product-actions">
-                    <button
-                      class="action-btn btn-cart-red"
-                      aria-label="افزودن به سبد"
-                    >
-                      <span class="material-icons-outlined">shopping_bag</span>
-                    </button>
-                    <button
-                      class="action-btn btn-fav-outline"
-                      aria-label="علاقه‌مندی"
-                    >
-                      <span class="material-icons-outlined"
-                        >favorite_border</span
-                      >
-                    </button>
-                  </div>
-                </div>
-              </article>
-
-              <article class="simple-product-card">
-                <div class="product-img-box">
-                  <img
-                    src="/assets/images/sonati/sonati-category-3.png"
-                    alt="فرش مدرن"
-                    loading="lazy"
-                  />
-                </div>
-                <h3 class="product-title font-bold">
-                  فرش طرح سنتی هریس مدل وینتیج
-                </h3>
-                <div class="product-footer">
-                  <div class="product-prices font-regular">
-                    <del class="old-price">8,580,000 تومان</del>
-                    <div class="new-price font-bold">
-                      7,910,000 <span class="currency">تومان</span>
-                    </div>
-                  </div>
-                  <div class="product-actions">
-                    <button
-                      class="action-btn btn-cart-red"
-                      aria-label="افزودن به سبد"
-                    >
-                      <span class="material-icons-outlined">shopping_bag</span>
-                    </button>
-                    <button
-                      class="action-btn btn-fav-outline"
-                      aria-label="علاقه‌مندی"
-                    >
-                      <span class="material-icons-outlined"
-                        >favorite_border</span
-                      >
-                    </button>
-                  </div>
-                </div>
-              </article>
-
-              <article class="simple-product-card">
-                <div class="product-img-box">
-                  <img
-                    src="/assets/images/sonati/sonati-category-4.png"
-                    alt="فرش مدرن"
-                    loading="lazy"
-                  />
-                </div>
-                <h3 class="product-title font-bold">
-                  فرش طرح سنتی هریس مدل وینتیج
-                </h3>
-                <div class="product-footer">
-                  <div class="product-prices font-regular">
-                    <del class="old-price">8,580,000 تومان</del>
-                    <div class="new-price font-bold">
-                      7,910,000 <span class="currency">تومان</span>
-                    </div>
-                  </div>
-                  <div class="product-actions">
-                    <button
-                      class="action-btn btn-cart-red"
-                      aria-label="افزودن به سبد"
-                    >
-                      <span class="material-icons-outlined">shopping_bag</span>
-                    </button>
-                    <button
-                      class="action-btn btn-fav-outline"
-                      aria-label="علاقه‌مندی"
-                    >
-                      <span class="material-icons-outlined"
-                        >favorite_border</span
-                      >
-                    </button>
-                  </div>
-                </div>
-              </article>
-
-              <article class="simple-product-card">
-                <div class="product-img-box">
-                  <img
-                    src="/assets/images/sonati/sonati-category-5.png"
-                    alt="فرش مدرن"
-                    loading="lazy"
-                  />
-                </div>
-                <h3 class="product-title font-bold">
-                  فرش طرح سنتی هریس مدل وینتیج
-                </h3>
-                <div class="product-footer">
-                  <div class="product-prices font-regular">
-                    <del class="old-price">8,580,000 تومان</del>
-                    <div class="new-price font-bold">
-                      7,910,000 <span class="currency">تومان</span>
-                    </div>
-                  </div>
-                  <div class="product-actions">
-                    <button
-                      class="action-btn btn-cart-red"
-                      aria-label="افزودن به سبد"
-                    >
-                      <span class="material-icons-outlined">shopping_bag</span>
-                    </button>
-                    <button
-                      class="action-btn btn-fav-outline"
-                      aria-label="علاقه‌مندی"
-                    >
-                      <span class="material-icons-outlined"
-                        >favorite_border</span
-                      >
-                    </button>
-                  </div>
-                </div>
-              </article>
-            </div>
-
-            <button
-              class="slider-nav-btn nav-btn-left"
-              id="simple-slider-prev-btn"
-              aria-label="قبلی"
-            >
-              <span class="material-icons-outlined">chevron_left</span>
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <section class="single-category-section" aria-label="فرش کودک">
-        <div class="category-slider-container">
-          <div class="section-header">
-            <h2 class="section-title font-bold">فرش کودک</h2>
-
-            <div class="header-line"></div>
-
-            <a href="#" class="view-all-link font-regular">
-              مشاهده همه
-              <span class="material-icons-outlined icon">arrow_back</span>
-            </a>
-          </div>
-
-          <div class="product-slider-wrapper">
-            <button
-              class="slider-nav-btn nav-btn-right"
-              id="simple-slider-next-btn"
-              aria-label="بعدی"
-            >
-              <span class="material-icons-outlined">chevron_right</span>
-            </button>
-
-            <div class="product-scroll-track" id="simple-scroll-track">
-              <article class="simple-product-card">
-                <div class="product-img-box">
-                  <img
-                    src="/assets/images/sonati/sonati-category-1.png"
-                    alt="فرش مدرن"
-                    loading="lazy"
-                  />
-                </div>
-                <h3 class="product-title font-bold">
-                  فرش طرح سنتی هریس مدل وینتیج
-                </h3>
-                <div class="product-footer">
-                  <div class="product-prices font-regular">
-                    <del class="old-price">8,580,000 تومان</del>
-                    <div class="new-price font-bold">
-                      7,910,000 <span class="currency">تومان</span>
-                    </div>
-                  </div>
-                  <div class="product-actions">
-                    <button
-                      class="action-btn btn-cart-red"
-                      aria-label="افزودن به سبد"
-                    >
-                      <span class="material-icons-outlined">shopping_bag</span>
-                    </button>
-                    <button
-                      class="action-btn btn-fav-outline"
-                      aria-label="علاقه‌مندی"
-                    >
-                      <span class="material-icons-outlined"
-                        >favorite_border</span
-                      >
-                    </button>
-                  </div>
-                </div>
-              </article>
-
-              <article class="simple-product-card">
-                <div class="product-img-box">
-                  <img
-                    src="/assets/images/sonati/sonati-category-2.png"
-                    alt="فرش مدرن"
-                    loading="lazy"
-                  />
-                </div>
-                <h3 class="product-title font-bold">
-                  فرش طرح سنتی هریس مدل وینتیج
-                </h3>
-                <div class="product-footer">
-                  <div class="product-prices font-regular">
-                    <del class="old-price">8,580,000 تومان</del>
-                    <div class="new-price font-bold">
-                      7,910,000 <span class="currency">تومان</span>
-                    </div>
-                  </div>
-                  <div class="product-actions">
-                    <button
-                      class="action-btn btn-cart-red"
-                      aria-label="افزودن به سبد"
-                    >
-                      <span class="material-icons-outlined">shopping_bag</span>
-                    </button>
-                    <button
-                      class="action-btn btn-fav-outline"
-                      aria-label="علاقه‌مندی"
-                    >
-                      <span class="material-icons-outlined"
-                        >favorite_border</span
-                      >
-                    </button>
-                  </div>
-                </div>
-              </article>
-
-              <article class="simple-product-card">
-                <div class="product-img-box">
-                  <img
-                    src="/assets/images/sonati/sonati-category-3.png"
-                    alt="فرش مدرن"
-                    loading="lazy"
-                  />
-                </div>
-                <h3 class="product-title font-bold">
-                  فرش طرح سنتی هریس مدل وینتیج
-                </h3>
-                <div class="product-footer">
-                  <div class="product-prices font-regular">
-                    <del class="old-price">8,580,000 تومان</del>
-                    <div class="new-price font-bold">
-                      7,910,000 <span class="currency">تومان</span>
-                    </div>
-                  </div>
-                  <div class="product-actions">
-                    <button
-                      class="action-btn btn-cart-red"
-                      aria-label="افزودن به سبد"
-                    >
-                      <span class="material-icons-outlined">shopping_bag</span>
-                    </button>
-                    <button
-                      class="action-btn btn-fav-outline"
-                      aria-label="علاقه‌مندی"
-                    >
-                      <span class="material-icons-outlined"
-                        >favorite_border</span
-                      >
-                    </button>
-                  </div>
-                </div>
-              </article>
-
-              <article class="simple-product-card">
-                <div class="product-img-box">
-                  <img
-                    src="/assets/images/sonati/sonati-category-4.png"
-                    alt="فرش مدرن"
-                    loading="lazy"
-                  />
-                </div>
-                <h3 class="product-title font-bold">
-                  فرش طرح سنتی هریس مدل وینتیج
-                </h3>
-                <div class="product-footer">
-                  <div class="product-prices font-regular">
-                    <del class="old-price">8,580,000 تومان</del>
-                    <div class="new-price font-bold">
-                      7,910,000 <span class="currency">تومان</span>
-                    </div>
-                  </div>
-                  <div class="product-actions">
-                    <button
-                      class="action-btn btn-cart-red"
-                      aria-label="افزودن به سبد"
-                    >
-                      <span class="material-icons-outlined">shopping_bag</span>
-                    </button>
-                    <button
-                      class="action-btn btn-fav-outline"
-                      aria-label="علاقه‌مندی"
-                    >
-                      <span class="material-icons-outlined"
-                        >favorite_border</span
-                      >
-                    </button>
-                  </div>
-                </div>
-              </article>
-
-              <article class="simple-product-card">
-                <div class="product-img-box">
-                  <img
-                    src="/assets/images/sonati/sonati-category-5.png"
-                    alt="فرش مدرن"
-                    loading="lazy"
-                  />
-                </div>
-                <h3 class="product-title font-bold">
-                  فرش طرح سنتی هریس مدل وینتیج
-                </h3>
-                <div class="product-footer">
-                  <div class="product-prices font-regular">
-                    <del class="old-price">8,580,000 تومان</del>
-                    <div class="new-price font-bold">
-                      7,910,000 <span class="currency">تومان</span>
-                    </div>
-                  </div>
-                  <div class="product-actions">
-                    <button
-                      class="action-btn btn-cart-red"
-                      aria-label="افزودن به سبد"
-                    >
-                      <span class="material-icons-outlined">shopping_bag</span>
-                    </button>
-                    <button
-                      class="action-btn btn-fav-outline"
-                      aria-label="علاقه‌مندی"
-                    >
-                      <span class="material-icons-outlined"
-                        >favorite_border</span
-                      >
-                    </button>
-                  </div>
-                </div>
-              </article>
-            </div>
-
-            <button
-              class="slider-nav-btn nav-btn-left"
-              id="simple-slider-prev-btn"
-              aria-label="قبلی"
-            >
-              <span class="material-icons-outlined">chevron_left</span>
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <div class="stack-4-banners">
-          <div class="stack-4-img stack-4-1">
-            <img src="/assets/images/stack-4-1.png" alt="فرش ماشینی" />
-          </div>
-          <div class="stack-4-img stack-4-2">
-            <img src="/assets/images/stack-4-2.png" alt="فرش دستباف" />
-          </div>
-        </div>
-      </section>
-
-      <section class="category-puzzle-section" aria-label="پیشنهاد بر اساس سلیقه">
-        <div class="category-puzzle-container">
-
-            <div class="puzzle-col">
-                <div class="puzzle-header">
-                    <h3 class="puzzle-title font-bold">فرش مراکشی</h3>
-                    <p class="puzzle-subtitle font-regular">براساس سلیقه شما</p>
-                </div>
-                
-                <div class="puzzle-grid">
-                    <a href="#" class="puzzle-item">
-                        <img src="assets/images/category-puzzle/category-puzzle-moroccan-1.png" alt="فرش مراکشی" loading="lazy">
-                    </a>
-                    <a href="#" class="puzzle-item">
-                        <img src="assets/images/category-puzzle/category-puzzle-moroccan-2.png" alt="فرش مراکشی" loading="lazy">
-                    </a>
-                    <a href="#" class="puzzle-item">
-                        <img src="assets/images/category-puzzle/category-puzzle-moroccan-3.png" alt="فرش مراکشی" loading="lazy">
-                    </a>
-                    <a href="#" class="puzzle-item">
-                        <img src="assets/images/category-puzzle/category-puzzle-moroccan-4.png" alt="فرش مراکشی" loading="lazy">
-                    </a>
-                </div>
-
-                <a href="#" class="puzzle-view-all font-regular">
-                    مشاهده همه
-                    <span class="material-icons-outlined icon">arrow_back</span>
-                </a>
-            </div>
-
-            <div class="puzzle-col">
-                <div class="puzzle-header">
-                    <h3 class="puzzle-title font-bold">فرش 1200 شانه</h3>
-                    <p class="puzzle-subtitle font-regular">براساس سلیقه شما</p>
-                </div>
-                
-                <div class="puzzle-grid">
-                    <a href="#" class="puzzle-item">
-                        <img src="assets/images/category-puzzle/category-puzzle-1200-1.png" alt="فرش 1200 شانه" loading="lazy">
-                    </a>
-                    <a href="#" class="puzzle-item">
-                        <img src="assets/images/category-puzzle/category-puzzle-1200-2.png" alt="فرش 1200 شانه" loading="lazy">
-                    </a>
-                    <a href="#" class="puzzle-item">
-                        <img src="assets/images/category-puzzle/category-puzzle-1200-3.png" alt="فرش 1200 شانه" loading="lazy">
-                    </a>
-                    <a href="#" class="puzzle-item">
-                        <img src="assets/images/category-puzzle/category-puzzle-1200-4.png" alt="فرش 1200 شانه" loading="lazy">
-                    </a>
-                </div>
-
-                <a href="#" class="puzzle-view-all font-regular">
-                    مشاهده همه
-                    <span class="material-icons-outlined icon">arrow_back</span>
-                </a>
-            </div>
-
-            <div class="puzzle-col">
-                <div class="puzzle-header">
-                    <h3 class="puzzle-title font-bold">فرش اتاق خواب</h3>
-                    <p class="puzzle-subtitle font-regular">براساس سلیقه شما</p>
-                </div>
-                
-                <div class="puzzle-grid">
-                    <a href="#" class="puzzle-item">
-                        <img src="assets/images/category-puzzle/category-puzzle-bedroom-1.png" alt="فرش اتاق خواب" loading="lazy">
-                    </a>
-                    <a href="#" class="puzzle-item">
-                        <img src="assets/images/category-puzzle/category-puzzle-bedroom-2.png" alt="فرش اتاق خواب" loading="lazy">
-                    </a>
-                    <a href="#" class="puzzle-item">
-                        <img src="assets/images/category-puzzle/category-puzzle-bedroom-3.png" alt="فرش اتاق خواب" loading="lazy">
-                    </a>
-                    <a href="#" class="puzzle-item">
-                        <img src="assets/images/category-puzzle/category-puzzle-bedroom-4.png" alt="فرش اتاق خواب" loading="lazy">
-                    </a>
-                </div>
-
-                <a href="#" class="puzzle-view-all font-regular">
-                    مشاهده همه
-                    <span class="material-icons-outlined icon">arrow_back</span>
-                </a>
-            </div>
-
-            <div class="puzzle-col">
-                <div class="puzzle-header">
-                    <h3 class="puzzle-title font-bold">فرش آشپزخانه</h3>
-                    <p class="puzzle-subtitle font-regular">براساس سلیقه شما</p>
-                </div>
-                
-                <div class="puzzle-grid">
-                    <a href="#" class="puzzle-item">
-                        <img src="assets/images/category-puzzle/category-puzzle-kitchen-1.png" alt="فرش آشپزخانه" loading="lazy">
-                    </a>
-                    <a href="#" class="puzzle-item">
-                        <img src="assets/images/category-puzzle/category-puzzle-kitchen-2.png" alt="فرش آشپزخانه" loading="lazy">
-                    </a>
-                    <a href="#" class="puzzle-item">
-                        <img src="assets/images/category-puzzle/category-puzzle-kitchen-3.png" alt="فرش آشپزخانه" loading="lazy">
-                    </a>
-                    <a href="#" class="puzzle-item">
-                        <img src="assets/images/category-puzzle/category-puzzle-kitchen-4.png" alt="فرش آشپزخانه" loading="lazy">
-                    </a>
-                </div>
-
-                <a href="#" class="puzzle-view-all font-regular">
-                    مشاهده همه
-                    <span class="material-icons-outlined icon">arrow_back</span>
-                </a>
-            </div>
-
-        </div>
-    </section>
-
-      <section class="blog-section" aria-label="مجله دیجی فرش">
-        <div class="blog-container">
-          <div class="blog-header">
-              <div class="header-decoration"></div>
-              <h2 class="section-title font-bold">
-                  مجله ی <span class="text-primary">دیجی فرش</span>
-              </h2>
-          </div>
-
-          <div class="product-slider-wrapper">
-              
-              <button class="slider-nav-btn nav-btn-right" aria-label="بعدی">
-                  <span class="material-icons-outlined">chevron_right</span>
-              </button>
-
-              <div class="product-scroll-track blog-scroll-track">
-                  
-                  <article class="blog-card">
-                      <div class="blog-img-box">
-                          <img src="assets/images/mag-fashion.jpg" alt="مد روز فرش" loading="lazy">
-                      </div>
-                      <div class="blog-content">
-                          <h3 class="blog-title font-bold">مد روز در طرح‌های فرش ایرانی</h3>
-                          <p class="blog-excerpt font-regular">
-                              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله...
-                          </p>
-                          <div class="blog-footer">
-                              <a href="#" class="read-more-btn font-medium">
-                                  ادامه مطلب
-                                  <span class="material-icons-outlined icon">arrow_back</span>
-                              </a>
-                              <div class="blog-date font-regular">
-                                  <span>1401/09/15</span>
-                                  <span class="material-icons-outlined icon">calendar_today</span>
-                              </div>
-                          </div>
-                      </div>
-                  </article>
-
-                  <article class="blog-card">
-                      <div class="blog-img-box">
-                          <img src="assets/images/mag-maintenance.jpg" alt="نگهداری فرش" loading="lazy">
-                      </div>
-                      <div class="blog-content">
-                          <h3 class="blog-title font-bold">چطور از فرش نگهداری کنیم؟</h3>
-                          <p class="blog-excerpt font-regular">
-                              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله...
-                          </p>
-                          <div class="blog-footer">
-                              <a href="#" class="read-more-btn font-medium">
-                                  ادامه مطلب
-                                  <span class="material-icons-outlined icon">arrow_back</span>
-                              </a>
-                              <div class="blog-date font-regular">
-                                  <span>1401/09/15</span>
-                                  <span class="material-icons-outlined icon">calendar_today</span>
-                              </div>
-                          </div>
-                      </div>
-                  </article>
-
-                  <article class="blog-card">
-                      <div class="blog-img-box">
-                          <div class="img-overlay"></div> <img src="assets/images/mag-difference.jpg" alt="تفاوت فرش" loading="lazy">
-                      </div>
-                      <div class="blog-content">
-                          <h3 class="blog-title font-bold text-primary">تفاوت فرش ماشینی و دستباف</h3>
-                          <p class="blog-excerpt font-regular">
-                              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله...
-                          </p>
-                          <div class="blog-footer">
-                              <a href="#" class="read-more-btn font-medium">
-                                  ادامه مطلب
-                                  <span class="material-icons-outlined icon">arrow_back</span>
-                              </a>
-                              <div class="blog-date font-regular">
-                                  <span>1401/09/15</span>
-                                  <span class="material-icons-outlined icon">calendar_today</span>
-                              </div>
-                          </div>
-                      </div>
-                  </article>
-
-                  <article class="blog-card">
-                      <div class="blog-img-box">
-                          <img src="assets/images/mag-guide.jpg" alt="راهنمای خرید" loading="lazy">
-                      </div>
-                      <div class="blog-content">
-                          <h3 class="blog-title font-bold">راهنمای خرید فرش دستباف</h3>
-                          <p class="blog-excerpt font-regular">
-                              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله...
-                          </p>
-                          <div class="blog-footer">
-                              <a href="#" class="read-more-btn font-medium">
-                                  ادامه مطلب
-                                  <span class="material-icons-outlined icon">arrow_back</span>
-                              </a>
-                              <div class="blog-date font-regular">
-                                  <span>1401/09/15</span>
-                                  <span class="material-icons-outlined icon">calendar_today</span>
-                              </div>
-                          </div>
-                      </div>
-                  </article>
-
-                  <article class="blog-card">
-                      <div class="blog-img-box">
-                          <img src="assets/images/mag-fashion.jpg" alt="مد روز فرش" loading="lazy">
-                      </div>
-                      <div class="blog-content">
-                          <h3 class="blog-title font-bold">مد روز در طرح‌های فرش ایرانی</h3>
-                          <p class="blog-excerpt font-regular">
-                              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله...
-                          </p>
-                          <div class="blog-footer">
-                              <a href="#" class="read-more-btn font-medium">
-                                  ادامه مطلب
-                                  <span class="material-icons-outlined icon">arrow_back</span>
-                              </a>
-                              <div class="blog-date font-regular">
-                                  <span>1401/09/15</span>
-                                  <span class="material-icons-outlined icon">calendar_today</span>
-                              </div>
-                          </div>
-                      </div>
-                  </article>
-
-                  <article class="blog-card">
-                      <div class="blog-img-box">
-                          <img src="assets/images/mag-guide.jpg" alt="راهنمای خرید" loading="lazy">
-                      </div>
-                      <div class="blog-content">
-                          <h3 class="blog-title font-bold">راهنمای خرید فرش دستباف</h3>
-                          <p class="blog-excerpt font-regular">
-                              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله...
-                          </p>
-                          <div class="blog-footer">
-                              <a href="#" class="read-more-btn font-medium">
-                                  ادامه مطلب
-                                  <span class="material-icons-outlined icon">arrow_back</span>
-                              </a>
-                              <div class="blog-date font-regular">
-                                  <span>1401/09/15</span>
-                                  <span class="material-icons-outlined icon">calendar_today</span>
-                              </div>
-                          </div>
-                      </div>
-                  </article>
-
-              </div>
-
-              <button class="slider-nav-btn nav-btn-left" aria-label="قبلی">
-                  <span class="material-icons-outlined">chevron_left</span>
-              </button>
-          </div>
-        </div>
-      </section>
-
-      <section class="features-bar-bottom" aria-label="ویژگی‌های فروشگاه">
-        <div class="features-container">
-          <div class="feature-item">
-            <img
-              src="/assets/images/support.png"
-              alt="آیکون پشتیبانی"
-              class="feature-icon"
-            />
-            <div class="feature-content">
-              <h3 class="feature-title font-bold">پشتیبانی ۲۴ ساعته</h3>
-              <p class="feature-subtitle font-regular">
-                پشتیبانی همیشه در دسترس
+              <p class="font-regular hero-subtitle">
+                تنوع بی‌نظیر | ارسال رایگان | ضمانت بازگشت
               </p>
+              <a href="#" class="hero-cta font-medium">مشاهده محصولات</a>
             </div>
-          </div>
-
-          <div class="feature-item">
-            <img
-              src="/assets/images/express.png"
-              alt="آیکون ارسال"
-              class="feature-icon"
-            />
-            <div class="feature-content">
-              <h3 class="feature-title font-bold">ارسال اکسپرس</h3>
-              <p class="feature-subtitle font-regular">تحویل سریع و مطمئن</p>
+            <div class="hero-slide-media">
+              <img src="/assets/images/banner-1.png" alt="چند فرش ایرانی کنار هم" />
             </div>
-          </div>
+          </article>
 
-          <div class="feature-item">
-            <img
-              src="/assets/images/return.png"
-              alt="آیکون بازگشت"
-              class="feature-icon"
-            />
-            <div class="feature-content">
-              <h3 class="feature-title font-bold">ضمانت بازگشت ۷ روزه</h3>
-              <p class="feature-subtitle font-regular">خرید بدون دغدغه</p>
+          <article class="hero-slide" aria-label="کلکسیون ویژه فرش ماشینی">
+            <div class="hero-slide-content">
+              <h2 class="font-bold hero-title">کلکسیون ویژه فرش ماشینی</h2>
+              <p class="font-regular hero-subtitle">
+                جدیدترین طرح‌ها با بهترین قیمت
+              </p>
+              <a href="#" class="hero-cta font-medium">مشاهده محصولات</a>
             </div>
-          </div>
-
-          <div class="feature-item">
-            <img
-              src="/assets/images/warranty.png"
-              alt="آیکون ضمانت"
-              class="feature-icon"
-            />
-            <div class="feature-content">
-              <h3 class="feature-title font-bold">ضمانت اصالت فرش</h3>
-              <p class="feature-subtitle font-regular">اصالت تضمین‌شد</p>
+            <div class="hero-slide-media">
+              <img src="/assets/images/banner-1.png" alt="فرش ماشینی در طرح‌های مختلف" />
             </div>
-          </div>
-        </div>
-      </section>
-    </main>
+          </article>
 
-    <footer class="site-footer" aria-label="پاورقی سایت">
-      <div class="footer-container">
-        <div class="footer-top-links">
-          <div class="footer-col">
-            <h3 class="footer-col-title font-medium">دسته‌بندی‌های محبوب</h3>
-            <ul class="footer-link-list font-regular">
-              <li><a href="#">فرش افشان</a></li>
-              <li><a href="#">فرش پذیرایی</a></li>
-              <li><a href="#">فرش آشپزخانه</a></li>
-              <li><a href="#">فرش اتاق خواب</a></li>
-              <li><a href="#">فرش مدرن و فانتزی</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-col">
-            <h3 class="footer-col-title font-medium">برندهای معروف</h3>
-            <ul class="footer-link-list font-regular">
-              <li><a href="#">فرش نیاوران</a></li>
-              <li><a href="#">فرش محتشم</a></li>
-              <li><a href="#">فرش شاهکار صفویه</a></li>
-              <li><a href="#">فرش کشمیر</a></li>
-              <li><a href="#">فرش قصر ایرانیان</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-col">
-            <h3 class="footer-col-title font-medium">راهنمای خرید</h3>
-            <ul class="footer-link-list font-regular">
-              <li><a href="#">راهنمای ثبت سفارش</a></li>
-              <li><a href="#">نحوه ارسال و مدت زمان تحویل</a></li>
-              <li><a href="#">شرایط بازگشت کالا</a></li>
-              <li><a href="#">پرسش‌های پرتکرار (FAQ)</a></li>
-              <li><a href="#">پیگیری سفارش</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-col footer-col--wide">
-            <h3 class="footer-col-title font-medium">
-              پاسخگویی در ساعات اداری صبح
-            </h3>
-            <ul class="footer-info-list font-regular">
-              <li><span class="bullet"></span>دفتر اداری: ۷۱۰۵۳۰۹۹ - ۰۲۱</li>
-              <li><span class="bullet"></span>کارشناس فروش: ۰۹۹۰۹۸۰۹۱۰۰</li>
-              <li>
-                <span class="bullet"></span>بخش تولید و نمایشگاه: ۰۹۹۰۹۸۰۹۱۰۰
-              </li>
-              <li>
-                <span class="bullet"></span>مخصوص نمایندگی (خرید عمده):
-                ۰۹۹۰۹۸۰۹۱۰۰
-              </li>
-            </ul>
-          </div>
-
-          <div class="footer-col footer-col--wide">
-            <h3 class="footer-col-title font-medium">آدرس‌ها</h3>
-            <ul class="footer-info-list font-regular">
-              <li class="address-item">
-                <span class="bullet"></span>
-                <strong>دفتر اداری:</strong>
-                <p>تهران، تهرانپارس، خیابان رشید، پلاک ۹۴ واحد ۱</p>
-              </li>
-              <li class="address-item">
-                <span class="bullet"></span>
-                <strong>بخش تولید و نمایشگاه:</strong>
-                <p>کاشان، شهرک صنعتی سلیمان صباحی، بلوار وحدت پلاک ۱۸</p>
-              </li>
-            </ul>
-          </div>
+          <article class="hero-slide" aria-label="فرش دستباف، هنر اصیل ایرانی">
+            <div class="hero-slide-content">
+              <h2 class="font-bold hero-title">
+                فرش دستباف، هنر اصیل ایرانی
+              </h2>
+              <p class="font-regular hero-subtitle">
+                انتخابی لوکس برای خانه‌های خاص
+              </p>
+              <a href="#" class="hero-cta font-medium">مشاهده محصولات</a>
+            </div>
+            <div class="hero-slide-media">
+              <img src="/assets/images/banner-1.png" alt="فرش دستباف ایرانی" />
+            </div>
+          </article>
         </div>
 
-        <div class="footer-bottom-cards">
-          <div class="footer-card footer-desc-card">
-            <h3 class="footer-card-title font-bold">
-              دیجی فرش؛ تجربه‌ای مطمئن در خرید اینترنتی فرش
-            </h3>
-            <p class="footer-desc-text font-regular">
-              مجموعه بزرگ دیجی فرش با ۱۲ سال تجربه فروش آنلاین فرش، به دلیل
-              پشتیبانی و پاسخگویی حرفه‌ای، تضمین قیمت و کیفیت محصولات، به عنوان
-              بهترین سایت فروشگاه فرش از نظر کاربران معرفی شده است. این مجموعه
-              با ارائه جدیدترین و متنوع‌ترین فرش‌های ماشینی به صورت آنلاین، خرید
-              فرش را برای مشتریان خود آسان کرده است. اگر مایلید خرید اینترنتی
-              فرش را بدون واسطه انجام بدین و محصول شما مستقیما از کارخانه فرش
-              کاشان برای شما ارسال شود، این امکان را سایت دیجی فرش برای شما محیا
-              کرده است. خوشحالیم در کنار شما هستیم.
-            </p>
-          </div>
-
-          <div class="footer-card footer-symbols-card">
-            <h3 class="footer-card-title footer-card-title--center font-bold">
-              نماد ها
-            </h3>
-            <div class="symbols-wrapper">
-              <div class="symbol-item">
-                <img src="/assets/images/enamad.png" alt="نماد ۱" />
-              </div>
-              <div class="symbol-item">
-                <img src="/assets/images/samandehi.png" alt="نماد ۲" />
-              </div>
-              <div class="symbol-item">
-                <img src="/assets/images/zarinpal.png" alt="نماد ۳" />
-              </div>
-            </div>
-          </div>
-
-          <div class="footer-card footer-social-card">
-            <a href="#" class="social-link"
-              ><span class="material-icons-outlined">near_me</span></a
-            >
-            <a href="#" class="social-link"
-              ><span class="material-icons-outlined">call</span></a
-            >
-            <a href="#" class="social-link"
-              ><span class="material-icons-outlined">photo_camera</span></a
-            >
-          </div>
-
-          <div class="footer-card footer-contact-card">
-            <div class="contact-card-content">
-              <span class="material-icons-outlined contact-headset"
-                >headset_mic</span
-              >
-              <span class="contact-phone font-bold">۰۹۹۰۹۸۰۹۱۰۰</span>
-              <span class="contact-subtitle font-regular"
-                >پشتیبانی ۲۴ ساعته</span
-              >
-            </div>
-            <div class="decorative-circle c1"></div>
-            <div class="decorative-circle c2"></div>
-          </div>
-        </div>
-
-        <div class="footer-divider"></div>
-
-        <div class="footer-copyright-row font-regular">
-          <a href="#" class="scroll-top-btn">برو بالا</a>
-          <p>متعلق به شرکت فرش آرمان کاشان (شماره ثبت ۱۴۸۹) می‌باشد.</p>
+        <div class="hero-dots" role="tablist" aria-label="انتخاب اسلاید">
+          <button class="hero-dot active" type="button" role="tab" aria-label="اسلاید ۱" aria-selected="true"></button>
+          <button class="hero-dot" type="button" role="tab" aria-label="اسلاید ۲" aria-selected="false"></button>
+          <button class="hero-dot" type="button" role="tab" aria-label="اسلاید ۳" aria-selected="false"></button>
         </div>
       </div>
-    </footer>
+    </section>
 
-    <script src="components/js/story-slider.js"></script>
-    <script src="components/js/hero-carousel.js"></script>
-    <script src="components/js/amazing-offer.js"></script>
-    <script src="components/js/single-category-slider.js"></script>
-    <script src="components/js/mag-slider.js"></script>
-  </body>
+    <section>
+      <div class="stack-1-banners">
+        <div class="stack-1-img stack-1-1">
+          <img src="/assets/images/stack-1-1.jpg" alt="فرش ماشینی" />
+        </div>
+        <div class="stack-1-img stack-1-2">
+          <img src="/assets/images/stack-1-2.jpg" alt="فرش دستباف" />
+        </div>
+        <div class="stack-1-img stack-1-3">
+          <img src="/assets/images/stack-1-3.jpg" alt="فرش مدرن" />
+        </div>
+        <div class="stack-1-img stack-1-4">
+          <img src="/assets/images/stack-1-4.jpg" alt="فرش کودک" />
+        </div>
+      </div>
+    </section>
+
+    <section class="features-bar" aria-label="ویژگی‌های فروشگاه">
+      <div class="features-container">
+        <div class="feature-item">
+          <img src="/assets/images/support.png" alt="آیکون پشتیبانی" class="feature-icon" />
+          <div class="feature-content">
+            <h3 class="feature-title font-bold">پشتیبانی ۲۴ ساعته</h3>
+            <p class="feature-subtitle font-regular">
+              پشتیبانی همیشه در دسترس
+            </p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <img src="/assets/images/express.png" alt="آیکون ارسال" class="feature-icon" />
+          <div class="feature-content">
+            <h3 class="feature-title font-bold">ارسال اکسپرس</h3>
+            <p class="feature-subtitle font-regular">تحویل سریع و مطمئن</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <img src="/assets/images/return.png" alt="آیکون بازگشت" class="feature-icon" />
+          <div class="feature-content">
+            <h3 class="feature-title font-bold">ضمانت بازگشت ۷ روزه</h3>
+            <p class="feature-subtitle font-regular">خرید بدون دغدغه</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <img src="/assets/images/warranty.png" alt="آیکون ضمانت" class="feature-icon" />
+          <div class="feature-content">
+            <h3 class="feature-title font-bold">ضمانت اصالت فرش</h3>
+            <p class="feature-subtitle font-regular">اصالت تضمین‌شد</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="category-section" aria-label="دسته‌بندی محصولات">
+      <div class="category-container">
+        <div class="category-header">
+          <div class="header-decoration"></div>
+          <h2 class="category-section-title font-bold">
+            دسته بندی <span class="text-primary">محصولات</span>
+          </h2>
+        </div>
+
+        <div class="category-content-wrapper">
+          <button class="nav-arrow nav-arrow-prev" type="button" aria-label="قبلی">
+            <span class="material-icons-outlined">chevron_right</span>
+          </button>
+
+          <div class="category-grid">
+            <a href="#" class="category-card">
+              <div class="category-img-box">
+                <img src="/assets/images/category-1.png" alt="فرش آشپزخانه" loading="lazy" />
+              </div>
+              <span class="category-label font-medium">فرش آشپزخانه</span>
+            </a>
+
+            <a href="#" class="category-card">
+              <div class="category-img-box">
+                <img src="/assets/images/category-2.png" alt="فرش ماشینی" loading="lazy" />
+              </div>
+              <span class="category-label font-medium">فرش ماشینی</span>
+            </a>
+
+            <a href="#" class="category-card">
+              <div class="category-img-box">
+                <img src="/assets/images/category-3.png" alt="فرش کلاسیک" loading="lazy" />
+              </div>
+              <span class="category-label font-medium">فرش کلاسیک</span>
+            </a>
+
+            <a href="#" class="category-card">
+              <div class="category-img-box">
+                <img src="/assets/images/category-4.png" alt="فرش وینتیج" loading="lazy" />
+              </div>
+              <span class="category-label font-medium">فرش وینتیج</span>
+            </a>
+
+            <a href="#" class="category-card">
+              <div class="category-img-box">
+                <img src="/assets/images/category-5.png" alt="فرش مراکشی" loading="lazy" />
+              </div>
+              <span class="category-label font-medium">فرش مراکشی</span>
+            </a>
+
+            <a href="#" class="category-card">
+              <div class="category-img-box">
+                <img src="/assets/images/category-6.png" alt="فرش اتاق خواب" loading="lazy" />
+              </div>
+              <span class="category-label font-medium">فرش اتاق خواب</span>
+            </a>
+
+            <a href="#" class="category-card">
+              <div class="category-img-box">
+                <img src="/assets/images/category-1.png" alt="فرش آشپزخانه" loading="lazy" />
+              </div>
+              <span class="category-label font-medium">فرش آشپزخانه</span>
+            </a>
+
+            <a href="#" class="category-card">
+              <div class="category-img-box">
+                <img src="/assets/images/category-2.png" alt="فرش ماشینی" loading="lazy" />
+              </div>
+              <span class="category-label font-medium">فرش ماشینی</span>
+            </a>
+
+            <a href="#" class="category-card">
+              <div class="category-img-box">
+                <img src="/assets/images/category-3.png" alt="فرش کلاسیک" loading="lazy" />
+              </div>
+              <span class="category-label font-medium">فرش کلاسیک</span>
+            </a>
+
+            <a href="#" class="category-card">
+              <div class="category-img-box">
+                <img src="/assets/images/category-4.png" alt="فرش وینتیج" loading="lazy" />
+              </div>
+              <span class="category-label font-medium">فرش وینتیج</span>
+            </a>
+
+            <a href="#" class="category-card">
+              <div class="category-img-box">
+                <img src="/assets/images/category-5.png" alt="فرش مراکشی" loading="lazy" />
+              </div>
+              <span class="category-label font-medium">فرش مراکشی</span>
+            </a>
+
+            <a href="#" class="category-card">
+              <div class="category-img-box">
+                <img src="/assets/images/category-6.png" alt="فرش اتاق خواب" loading="lazy" />
+              </div>
+              <span class="category-label font-medium">فرش اتاق خواب</span>
+            </a>
+          </div>
+
+          <button class="nav-arrow nav-arrow-next" type="button" aria-label="بعدی">
+            <span class="material-icons-outlined">chevron_left</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="offers-section" aria-label="پیشنهادات شگفت‌انگیز">
+      <div class="offers-container">
+        <div class="offers-banner">
+          <div class="offers-banner-content">
+            <h2 class="offers-title font-bold">
+              شـــگفــــت <br />
+              انــگـــیـزات
+            </h2>
+            <a href="#" class="offers-view-all font-regular">
+              مشاهده همه
+              <span class="material-icons-outlined arrow-icon">arrow_back</span>
+            </a>
+          </div>
+
+          <img src="/assets/images/main-off-carpet.png" alt="فرش‌های ویژه" class="offers-decor-img" />
+        </div>
+
+        <button id="offer-scroll-btn" class="offer-nav-btn" type="button" aria-label="مشاهده موارد بیشتر">
+          <span class="material-icons-outlined">chevron_left</span>
+        </button>
+
+        <div class="offers-scroll-area" id="offers-list">
+          <article class="offer-card">
+            <div class="offer-img-box">
+              <img src="/assets/images/carpet-off-slider-1.png" alt="فرش طرح سنتی" loading="lazy" />
+            </div>
+            <h3 class="offer-card-title font-medium">
+              فرش طرح سنتی هریس مدل وینتیج
+            </h3>
+            <div class="offer-card-footer">
+              <div class="offer-actions">
+                <button class="action-btn btn-add-cart" aria-label="افزودن به سبد">
+                  <span class="material-icons-outlined">shopping_bag</span>
+                </button>
+                <button class="action-btn btn-fav" aria-label="افزودن به علاقه‌مندی">
+                  <span class="material-icons-outlined">favorite_border</span>
+                </button>
+              </div>
+              <div class="offer-prices font-regular">
+                <del class="old-price">8,580,000 تومان</del>
+                <div class="new-price font-bold">
+                  7,910,000 <span class="currency">تومان</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="offer-card">
+            <div class="offer-img-box">
+              <img src="/assets/images/carpet-off-slider-2.png" alt="فرش ماشینی 1200 شانه" loading="lazy" />
+            </div>
+            <h3 class="offer-card-title font-medium">
+              فرش ماشینی 1200 شانه طرح کلاریس
+            </h3>
+            <div class="offer-card-footer">
+              <div class="offer-actions">
+                <button class="action-btn btn-add-cart">
+                  <span class="material-icons-outlined">shopping_bag</span>
+                </button>
+                <button class="action-btn btn-fav">
+                  <span class="material-icons-outlined">favorite_border</span>
+                </button>
+              </div>
+              <div class="offer-prices font-regular">
+                <del class="old-price">8,580,000 تومان</del>
+                <div class="new-price font-bold">
+                  7,910,000 <span class="currency">تومان</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="offer-card">
+            <div class="offer-img-box">
+              <img src="/assets/images/carpet-off-slider-3.png" alt="فرش مدرن و فانتزی" loading="lazy" />
+            </div>
+            <h3 class="offer-card-title font-medium">
+              فرش مدرن و فانتزی پتینه
+            </h3>
+            <div class="offer-card-footer">
+              <div class="offer-actions">
+                <button class="action-btn btn-add-cart">
+                  <span class="material-icons-outlined">shopping_bag</span>
+                </button>
+                <button class="action-btn btn-fav">
+                  <span class="material-icons-outlined">favorite_border</span>
+                </button>
+              </div>
+              <div class="offer-prices font-regular">
+                <del class="old-price">8,580,000 تومان</del>
+                <div class="new-price font-bold">
+                  7,910,000 <span class="currency">تومان</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="offer-card">
+            <div class="offer-img-box">
+              <img src="/assets/images/carpet-off-slider-5.png" alt="فرش طرح سنتی" loading="lazy" />
+            </div>
+            <h3 class="offer-card-title font-medium">فرش طرح سنتی جدید</h3>
+            <div class="offer-card-footer">
+              <div class="offer-actions">
+                <button class="action-btn btn-add-cart">
+                  <span class="material-icons-outlined">shopping_bag</span>
+                </button>
+                <button class="action-btn btn-fav">
+                  <span class="material-icons-outlined">favorite_border</span>
+                </button>
+              </div>
+              <div class="offer-prices font-regular">
+                <del class="old-price">8,580,000 تومان</del>
+                <div class="new-price font-bold">
+                  7,910,000 <span class="currency">تومان</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="offer-card">
+            <div class="offer-img-box">
+              <img src="/assets/images/carpet-off-slider-1.png" alt="فرش طرح سنتی" loading="lazy" />
+            </div>
+            <h3 class="offer-card-title font-medium">فرش طرح سنتی هریس</h3>
+            <div class="offer-card-footer">
+              <div class="offer-actions">
+                <button class="action-btn btn-add-cart">
+                  <span class="material-icons-outlined">shopping_bag</span>
+                </button>
+                <button class="action-btn btn-fav">
+                  <span class="material-icons-outlined">favorite_border</span>
+                </button>
+              </div>
+              <div class="offer-prices font-regular">
+                <del class="old-price">8,580,000 تومان</del>
+                <div class="new-price font-bold">
+                  7,910,000 <span class="currency">تومان</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="single-category-section" aria-label="فرش مدرن و فانتزی">
+      <div class="category-slider-container">
+        <div class="section-header">
+          <h2 class="section-title font-bold">فرش مدرن و فانتزی</h2>
+
+          <div class="header-line"></div>
+
+          <a href="#" class="view-all-link font-regular">
+            مشاهده همه
+            <span class="material-icons-outlined icon">arrow_back</span>
+          </a>
+        </div>
+
+        <div class="product-slider-wrapper">
+          <button class="slider-nav-btn nav-btn-right" id="simple-slider-next-btn" aria-label="بعدی">
+            <span class="material-icons-outlined">chevron_right</span>
+          </button>
+
+          <div class="product-scroll-track" id="simple-scroll-track">
+            <article class="simple-product-card">
+              <div class="product-img-box">
+                <img src="/assets/images/modern/modern-category-1.png" alt="فرش مدرن" loading="lazy" />
+              </div>
+              <h3 class="product-title font-bold">
+                فرش طرح سنتی هریس مدل وینتیج
+              </h3>
+              <div class="product-footer">
+                <div class="product-prices font-regular">
+                  <del class="old-price">8,580,000 تومان</del>
+                  <div class="new-price font-bold">
+                    7,910,000 <span class="currency">تومان</span>
+                  </div>
+                </div>
+                <div class="product-actions">
+                  <button class="action-btn btn-cart-red" aria-label="افزودن به سبد">
+                    <span class="material-icons-outlined">shopping_bag</span>
+                  </button>
+                  <button class="action-btn btn-fav-outline" aria-label="علاقه‌مندی">
+                    <span class="material-icons-outlined">favorite_border</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="simple-product-card">
+              <div class="product-img-box">
+                <img src="/assets/images/modern/modern-category-2.png" alt="فرش مدرن" loading="lazy" />
+              </div>
+              <h3 class="product-title font-bold">
+                فرش طرح سنتی هریس مدل وینتیج
+              </h3>
+              <div class="product-footer">
+                <div class="product-prices font-regular">
+                  <del class="old-price">8,580,000 تومان</del>
+                  <div class="new-price font-bold">
+                    7,910,000 <span class="currency">تومان</span>
+                  </div>
+                </div>
+                <div class="product-actions">
+                  <button class="action-btn btn-cart-red" aria-label="افزودن به سبد">
+                    <span class="material-icons-outlined">shopping_bag</span>
+                  </button>
+                  <button class="action-btn btn-fav-outline" aria-label="علاقه‌مندی">
+                    <span class="material-icons-outlined">favorite_border</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="simple-product-card">
+              <div class="product-img-box">
+                <img src="/assets/images/modern/modern-category-3.png" alt="فرش مدرن" loading="lazy" />
+              </div>
+              <h3 class="product-title font-bold">
+                فرش طرح سنتی هریس مدل وینتیج
+              </h3>
+              <div class="product-footer">
+                <div class="product-prices font-regular">
+                  <del class="old-price">8,580,000 تومان</del>
+                  <div class="new-price font-bold">
+                    7,910,000 <span class="currency">تومان</span>
+                  </div>
+                </div>
+                <div class="product-actions">
+                  <button class="action-btn btn-cart-red" aria-label="افزودن به سبد">
+                    <span class="material-icons-outlined">shopping_bag</span>
+                  </button>
+                  <button class="action-btn btn-fav-outline" aria-label="علاقه‌مندی">
+                    <span class="material-icons-outlined">favorite_border</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="simple-product-card">
+              <div class="product-img-box">
+                <img src="/assets/images/modern/modern-category-4.png" alt="فرش مدرن" loading="lazy" />
+              </div>
+              <h3 class="product-title font-bold">
+                فرش طرح سنتی هریس مدل وینتیج
+              </h3>
+              <div class="product-footer">
+                <div class="product-prices font-regular">
+                  <del class="old-price">8,580,000 تومان</del>
+                  <div class="new-price font-bold">
+                    7,910,000 <span class="currency">تومان</span>
+                  </div>
+                </div>
+                <div class="product-actions">
+                  <button class="action-btn btn-cart-red" aria-label="افزودن به سبد">
+                    <span class="material-icons-outlined">shopping_bag</span>
+                  </button>
+                  <button class="action-btn btn-fav-outline" aria-label="علاقه‌مندی">
+                    <span class="material-icons-outlined">favorite_border</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="simple-product-card">
+              <div class="product-img-box">
+                <img src="/assets/images/modern/modern-category-5.png" alt="فرش مدرن" loading="lazy" />
+              </div>
+              <h3 class="product-title font-bold">
+                فرش طرح سنتی هریس مدل وینتیج
+              </h3>
+              <div class="product-footer">
+                <div class="product-prices font-regular">
+                  <del class="old-price">8,580,000 تومان</del>
+                  <div class="new-price font-bold">
+                    7,910,000 <span class="currency">تومان</span>
+                  </div>
+                </div>
+                <div class="product-actions">
+                  <button class="action-btn btn-cart-red" aria-label="افزودن به سبد">
+                    <span class="material-icons-outlined">shopping_bag</span>
+                  </button>
+                  <button class="action-btn btn-fav-outline" aria-label="علاقه‌مندی">
+                    <span class="material-icons-outlined">favorite_border</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <button class="slider-nav-btn nav-btn-left" id="simple-slider-prev-btn" aria-label="قبلی">
+            <span class="material-icons-outlined">chevron_left</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="single-category-section" aria-label="فرش طرح سنتی">
+      <div class="category-slider-container">
+        <div class="section-header">
+          <h2 class="section-title font-bold">فرش طرح سنتی</h2>
+
+          <div class="header-line"></div>
+
+          <a href="#" class="view-all-link font-regular">
+            مشاهده همه
+            <span class="material-icons-outlined icon">arrow_back</span>
+          </a>
+        </div>
+
+        <div class="product-slider-wrapper">
+          <button class="slider-nav-btn nav-btn-right" id="simple-slider-next-btn" aria-label="بعدی">
+            <span class="material-icons-outlined">chevron_right</span>
+          </button>
+
+          <div class="product-scroll-track" id="simple-scroll-track">
+            <article class="simple-product-card">
+              <div class="product-img-box">
+                <img src="/assets/images/sonati/sonati-category-1.png" alt="فرش مدرن" loading="lazy" />
+              </div>
+              <h3 class="product-title font-bold">
+                فرش طرح سنتی هریس مدل وینتیج
+              </h3>
+              <div class="product-footer">
+                <div class="product-prices font-regular">
+                  <del class="old-price">8,580,000 تومان</del>
+                  <div class="new-price font-bold">
+                    7,910,000 <span class="currency">تومان</span>
+                  </div>
+                </div>
+                <div class="product-actions">
+                  <button class="action-btn btn-cart-red" aria-label="افزودن به سبد">
+                    <span class="material-icons-outlined">shopping_bag</span>
+                  </button>
+                  <button class="action-btn btn-fav-outline" aria-label="علاقه‌مندی">
+                    <span class="material-icons-outlined">favorite_border</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="simple-product-card">
+              <div class="product-img-box">
+                <img src="/assets/images/sonati/sonati-category-2.png" alt="فرش مدرن" loading="lazy" />
+              </div>
+              <h3 class="product-title font-bold">
+                فرش طرح سنتی هریس مدل وینتیج
+              </h3>
+              <div class="product-footer">
+                <div class="product-prices font-regular">
+                  <del class="old-price">8,580,000 تومان</del>
+                  <div class="new-price font-bold">
+                    7,910,000 <span class="currency">تومان</span>
+                  </div>
+                </div>
+                <div class="product-actions">
+                  <button class="action-btn btn-cart-red" aria-label="افزودن به سبد">
+                    <span class="material-icons-outlined">shopping_bag</span>
+                  </button>
+                  <button class="action-btn btn-fav-outline" aria-label="علاقه‌مندی">
+                    <span class="material-icons-outlined">favorite_border</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="simple-product-card">
+              <div class="product-img-box">
+                <img src="/assets/images/sonati/sonati-category-3.png" alt="فرش مدرن" loading="lazy" />
+              </div>
+              <h3 class="product-title font-bold">
+                فرش طرح سنتی هریس مدل وینتیج
+              </h3>
+              <div class="product-footer">
+                <div class="product-prices font-regular">
+                  <del class="old-price">8,580,000 تومان</del>
+                  <div class="new-price font-bold">
+                    7,910,000 <span class="currency">تومان</span>
+                  </div>
+                </div>
+                <div class="product-actions">
+                  <button class="action-btn btn-cart-red" aria-label="افزودن به سبد">
+                    <span class="material-icons-outlined">shopping_bag</span>
+                  </button>
+                  <button class="action-btn btn-fav-outline" aria-label="علاقه‌مندی">
+                    <span class="material-icons-outlined">favorite_border</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="simple-product-card">
+              <div class="product-img-box">
+                <img src="/assets/images/sonati/sonati-category-4.png" alt="فرش مدرن" loading="lazy" />
+              </div>
+              <h3 class="product-title font-bold">
+                فرش طرح سنتی هریس مدل وینتیج
+              </h3>
+              <div class="product-footer">
+                <div class="product-prices font-regular">
+                  <del class="old-price">8,580,000 تومان</del>
+                  <div class="new-price font-bold">
+                    7,910,000 <span class="currency">تومان</span>
+                  </div>
+                </div>
+                <div class="product-actions">
+                  <button class="action-btn btn-cart-red" aria-label="افزودن به سبد">
+                    <span class="material-icons-outlined">shopping_bag</span>
+                  </button>
+                  <button class="action-btn btn-fav-outline" aria-label="علاقه‌مندی">
+                    <span class="material-icons-outlined">favorite_border</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="simple-product-card">
+              <div class="product-img-box">
+                <img src="/assets/images/sonati/sonati-category-5.png" alt="فرش مدرن" loading="lazy" />
+              </div>
+              <h3 class="product-title font-bold">
+                فرش طرح سنتی هریس مدل وینتیج
+              </h3>
+              <div class="product-footer">
+                <div class="product-prices font-regular">
+                  <del class="old-price">8,580,000 تومان</del>
+                  <div class="new-price font-bold">
+                    7,910,000 <span class="currency">تومان</span>
+                  </div>
+                </div>
+                <div class="product-actions">
+                  <button class="action-btn btn-cart-red" aria-label="افزودن به سبد">
+                    <span class="material-icons-outlined">shopping_bag</span>
+                  </button>
+                  <button class="action-btn btn-fav-outline" aria-label="علاقه‌مندی">
+                    <span class="material-icons-outlined">favorite_border</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <button class="slider-nav-btn nav-btn-left" id="simple-slider-prev-btn" aria-label="قبلی">
+            <span class="material-icons-outlined">chevron_left</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="stack-3-banners">
+        <div class="stack-3-img stack-3-1">
+          <img src="/assets/images/stack-3-1.jpg" alt="فرش ماشینی" />
+        </div>
+        <div class="stack-3-img stack-3-2">
+          <img src="/assets/images/stack-3-2.jpg" alt="فرش دستباف" />
+        </div>
+        <div class="stack-3-img stack-3-3">
+          <img src="/assets/images/stack-3-3.jpg" alt="فرش مدرن" />
+        </div>
+      </div>
+    </section>
+
+    <section class="most-sold-section" aria-label="پرفروش ترین محصولات">
+      <div class="most-sold-container">
+        <div class="section-header">
+          <h2 class="section-title font-bold">پرفروش ترین ها</h2>
+          <div class="header-line"></div>
+          <a href="#" class="view-all-link font-regular">
+            مشاهده همه
+            <span class="material-icons-outlined icon">arrow_back</span>
+          </a>
+        </div>
+
+        <div class="most-sold-grid">
+          <a href="#" class="most-sold-card">
+            <div class="rank-number font-bold">۱</div>
+            <div class="product-info">
+              <h3 class="product-name font-medium">
+                فرش آشپزخانه ارزان با اشکال هندسی
+              </h3>
+              <span class="product-code font-regular">کد 7111</span>
+            </div>
+            <div class="product-thumb">
+              <img src="assets/images/mostsold/most-sold-1.png" alt="فرش" loading="lazy" />
+            </div>
+          </a>
+
+          <a href="#" class="most-sold-card">
+            <div class="rank-number font-bold">۲</div>
+            <div class="product-info">
+              <h3 class="product-name font-medium">
+                بهترین فرش ماشینی طرح دستباف زمینه سبز
+              </h3>
+              <span class="product-code font-regular">کد 771022</span>
+            </div>
+            <div class="product-thumb">
+              <img src="assets/images/mostsold/most-sold-2.png" alt="فرش" loading="lazy" />
+            </div>
+          </a>
+
+          <a href="#" class="most-sold-card">
+            <div class="rank-number font-bold">۳</div>
+            <div class="product-info">
+              <h3 class="product-name font-medium">
+                فرش طرح سنتی 700 شانه زمینه آبی
+              </h3>
+              <span class="product-code font-regular">کد 771021</span>
+            </div>
+            <div class="product-thumb">
+              <img src="assets/images/mostsold/most-sold-3.png" alt="فرش" loading="lazy" />
+            </div>
+          </a>
+
+          <a href="#" class="most-sold-card">
+            <div class="rank-number font-bold">۴</div>
+            <div class="product-info">
+              <h3 class="product-name font-medium">
+                فرش آشپزخانه ارزان با اشکال هندسی
+              </h3>
+              <span class="product-code font-regular">کد 7111</span>
+            </div>
+            <div class="product-thumb">
+              <img src="assets/images/mostsold/most-sold-4.png" alt="فرش" loading="lazy" />
+            </div>
+          </a>
+
+          <a href="#" class="most-sold-card">
+            <div class="rank-number font-bold">۵</div>
+            <div class="product-info">
+              <h3 class="product-name font-medium">
+                بهترین فرش ماشینی طرح دستباف زمینه سبز
+              </h3>
+              <span class="product-code font-regular">کد 771022</span>
+            </div>
+            <div class="product-thumb">
+              <img src="assets/images/mostsold/most-sold-5.png" alt="فرش" loading="lazy" />
+            </div>
+          </a>
+
+          <a href="#" class="most-sold-card">
+            <div class="rank-number font-bold">۶</div>
+            <div class="product-info">
+              <h3 class="product-name font-medium">
+                فرش طرح سنتی 700 شانه زمینه آبی
+              </h3>
+              <span class="product-code font-regular">کد 771021</span>
+            </div>
+            <div class="product-thumb">
+              <img src="assets/images/mostsold/most-sold-6.png" alt="فرش" loading="lazy" />
+            </div>
+          </a>
+
+          <a href="#" class="most-sold-card">
+            <div class="rank-number font-bold">۷</div>
+            <div class="product-info">
+              <h3 class="product-name font-medium">
+                فرش آشپزخانه ارزان با اشکال هندسی
+              </h3>
+              <span class="product-code font-regular">کد 7111</span>
+            </div>
+            <div class="product-thumb">
+              <img src="assets/images/mostsold/most-sold-7.png" alt="فرش" loading="lazy" />
+            </div>
+          </a>
+
+          <a href="#" class="most-sold-card">
+            <div class="rank-number font-bold">۸</div>
+            <div class="product-info">
+              <h3 class="product-name font-medium">
+                بهترین فرش ماشینی طرح دستباف زمینه سبز
+              </h3>
+              <span class="product-code font-regular">کد 771022</span>
+            </div>
+            <div class="product-thumb">
+              <img src="assets/images/mostsold/most-sold-8.png" alt="فرش" loading="lazy" />
+            </div>
+          </a>
+
+          <a href="#" class="most-sold-card">
+            <div class="rank-number font-bold">۹</div>
+            <div class="product-info">
+              <h3 class="product-name font-medium">
+                فرش طرح سنتی 700 شانه زمینه آبی
+              </h3>
+              <span class="product-code font-regular">کد 771021</span>
+            </div>
+            <div class="product-thumb">
+              <img src="assets/images/mostsold/most-sold-9.png" alt="فرش" loading="lazy" />
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="brands-section" aria-label="برندهای همکار">
+      <div class="brands-container">
+        <div class="section-header">
+          <h2 class="section-title font-bold">برندها</h2>
+          <div class="header-line"></div>
+          <a href="#" class="view-all-link font-regular">
+            مشاهده همه
+            <span class="material-icons-outlined icon">arrow_back</span>
+          </a>
+        </div>
+
+        <div class="brands-grid">
+          <a href="#" class="brand-card">
+            <div class="brand-logo-box">
+              <img src="assets/images/brands/patris.png" alt="فرش پاتریس" loading="lazy" />
+            </div>
+            <span class="brand-name font-medium">فرش پاتریس</span>
+          </a>
+
+          <a href="#" class="brand-card">
+            <div class="brand-logo-box">
+              <img src="assets/images/brands/negin.png" alt="فرش نگین مشهد" loading="lazy" />
+            </div>
+            <span class="brand-name font-medium">فرش نگین مشهد</span>
+          </a>
+
+          <a href="#" class="brand-card">
+            <div class="brand-logo-box">
+              <img src="assets/images/brands/bozorgmehr.png" alt="فرش بزرگمهر" loading="lazy" />
+            </div>
+            <span class="brand-name font-medium">فرش بزرگمهر</span>
+          </a>
+
+          <a href="#" class="brand-card">
+            <div class="brand-logo-box">
+              <img src="assets/images/brands/ara.png" alt="فرش آرا" loading="lazy" />
+            </div>
+            <span class="brand-name font-medium">فرش آرا</span>
+          </a>
+
+          <a href="#" class="brand-card">
+            <div class="brand-logo-box">
+              <img src="assets/images/brands/mohtasham.png" alt="فرش محتشم" loading="lazy" />
+            </div>
+            <span class="brand-name font-medium">فرش محتشم</span>
+          </a>
+
+          <a href="#" class="brand-card">
+            <div class="brand-logo-box">
+              <img src="assets/images/brands/gheytaran.png" alt="فرش قیطران" loading="lazy" />
+            </div>
+            <span class="brand-name font-medium">فرش قیطران</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="single-category-section" aria-label="فرش پرز بلند.شگی">
+      <div class="category-slider-container">
+        <div class="section-header">
+          <h2 class="section-title font-bold">فرش پرز بلند.شگی</h2>
+
+          <div class="header-line"></div>
+
+          <a href="#" class="view-all-link font-regular">
+            مشاهده همه
+            <span class="material-icons-outlined icon">arrow_back</span>
+          </a>
+        </div>
+
+        <div class="product-slider-wrapper">
+          <button class="slider-nav-btn nav-btn-right" id="simple-slider-next-btn" aria-label="بعدی">
+            <span class="material-icons-outlined">chevron_right</span>
+          </button>
+
+          <div class="product-scroll-track" id="simple-scroll-track">
+            <article class="simple-product-card">
+              <div class="product-img-box">
+                <img src="/assets/images/sonati/sonati-category-1.png" alt="فرش مدرن" loading="lazy" />
+              </div>
+              <h3 class="product-title font-bold">
+                فرش طرح سنتی هریس مدل وینتیج
+              </h3>
+              <div class="product-footer">
+                <div class="product-prices font-regular">
+                  <del class="old-price">8,580,000 تومان</del>
+                  <div class="new-price font-bold">
+                    7,910,000 <span class="currency">تومان</span>
+                  </div>
+                </div>
+                <div class="product-actions">
+                  <button class="action-btn btn-cart-red" aria-label="افزودن به سبد">
+                    <span class="material-icons-outlined">shopping_bag</span>
+                  </button>
+                  <button class="action-btn btn-fav-outline" aria-label="علاقه‌مندی">
+                    <span class="material-icons-outlined">favorite_border</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="simple-product-card">
+              <div class="product-img-box">
+                <img src="/assets/images/sonati/sonati-category-2.png" alt="فرش مدرن" loading="lazy" />
+              </div>
+              <h3 class="product-title font-bold">
+                فرش طرح سنتی هریس مدل وینتیج
+              </h3>
+              <div class="product-footer">
+                <div class="product-prices font-regular">
+                  <del class="old-price">8,580,000 تومان</del>
+                  <div class="new-price font-bold">
+                    7,910,000 <span class="currency">تومان</span>
+                  </div>
+                </div>
+                <div class="product-actions">
+                  <button class="action-btn btn-cart-red" aria-label="افزودن به سبد">
+                    <span class="material-icons-outlined">shopping_bag</span>
+                  </button>
+                  <button class="action-btn btn-fav-outline" aria-label="علاقه‌مندی">
+                    <span class="material-icons-outlined">favorite_border</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="simple-product-card">
+              <div class="product-img-box">
+                <img src="/assets/images/sonati/sonati-category-3.png" alt="فرش مدرن" loading="lazy" />
+              </div>
+              <h3 class="product-title font-bold">
+                فرش طرح سنتی هریس مدل وینتیج
+              </h3>
+              <div class="product-footer">
+                <div class="product-prices font-regular">
+                  <del class="old-price">8,580,000 تومان</del>
+                  <div class="new-price font-bold">
+                    7,910,000 <span class="currency">تومان</span>
+                  </div>
+                </div>
+                <div class="product-actions">
+                  <button class="action-btn btn-cart-red" aria-label="افزودن به سبد">
+                    <span class="material-icons-outlined">shopping_bag</span>
+                  </button>
+                  <button class="action-btn btn-fav-outline" aria-label="علاقه‌مندی">
+                    <span class="material-icons-outlined">favorite_border</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="simple-product-card">
+              <div class="product-img-box">
+                <img src="/assets/images/sonati/sonati-category-4.png" alt="فرش مدرن" loading="lazy" />
+              </div>
+              <h3 class="product-title font-bold">
+                فرش طرح سنتی هریس مدل وینتیج
+              </h3>
+              <div class="product-footer">
+                <div class="product-prices font-regular">
+                  <del class="old-price">8,580,000 تومان</del>
+                  <div class="new-price font-bold">
+                    7,910,000 <span class="currency">تومان</span>
+                  </div>
+                </div>
+                <div class="product-actions">
+                  <button class="action-btn btn-cart-red" aria-label="افزودن به سبد">
+                    <span class="material-icons-outlined">shopping_bag</span>
+                  </button>
+                  <button class="action-btn btn-fav-outline" aria-label="علاقه‌مندی">
+                    <span class="material-icons-outlined">favorite_border</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="simple-product-card">
+              <div class="product-img-box">
+                <img src="/assets/images/sonati/sonati-category-5.png" alt="فرش مدرن" loading="lazy" />
+              </div>
+              <h3 class="product-title font-bold">
+                فرش طرح سنتی هریس مدل وینتیج
+              </h3>
+              <div class="product-footer">
+                <div class="product-prices font-regular">
+                  <del class="old-price">8,580,000 تومان</del>
+                  <div class="new-price font-bold">
+                    7,910,000 <span class="currency">تومان</span>
+                  </div>
+                </div>
+                <div class="product-actions">
+                  <button class="action-btn btn-cart-red" aria-label="افزودن به سبد">
+                    <span class="material-icons-outlined">shopping_bag</span>
+                  </button>
+                  <button class="action-btn btn-fav-outline" aria-label="علاقه‌مندی">
+                    <span class="material-icons-outlined">favorite_border</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <button class="slider-nav-btn nav-btn-left" id="simple-slider-prev-btn" aria-label="قبلی">
+            <span class="material-icons-outlined">chevron_left</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="single-category-section" aria-label="فرش کودک">
+      <div class="category-slider-container">
+        <div class="section-header">
+          <h2 class="section-title font-bold">فرش کودک</h2>
+
+          <div class="header-line"></div>
+
+          <a href="#" class="view-all-link font-regular">
+            مشاهده همه
+            <span class="material-icons-outlined icon">arrow_back</span>
+          </a>
+        </div>
+
+        <div class="product-slider-wrapper">
+          <button class="slider-nav-btn nav-btn-right" id="simple-slider-next-btn" aria-label="بعدی">
+            <span class="material-icons-outlined">chevron_right</span>
+          </button>
+
+          <div class="product-scroll-track" id="simple-scroll-track">
+            <article class="simple-product-card">
+              <div class="product-img-box">
+                <img src="/assets/images/sonati/sonati-category-1.png" alt="فرش مدرن" loading="lazy" />
+              </div>
+              <h3 class="product-title font-bold">
+                فرش طرح سنتی هریس مدل وینتیج
+              </h3>
+              <div class="product-footer">
+                <div class="product-prices font-regular">
+                  <del class="old-price">8,580,000 تومان</del>
+                  <div class="new-price font-bold">
+                    7,910,000 <span class="currency">تومان</span>
+                  </div>
+                </div>
+                <div class="product-actions">
+                  <button class="action-btn btn-cart-red" aria-label="افزودن به سبد">
+                    <span class="material-icons-outlined">shopping_bag</span>
+                  </button>
+                  <button class="action-btn btn-fav-outline" aria-label="علاقه‌مندی">
+                    <span class="material-icons-outlined">favorite_border</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="simple-product-card">
+              <div class="product-img-box">
+                <img src="/assets/images/sonati/sonati-category-2.png" alt="فرش مدرن" loading="lazy" />
+              </div>
+              <h3 class="product-title font-bold">
+                فرش طرح سنتی هریس مدل وینتیج
+              </h3>
+              <div class="product-footer">
+                <div class="product-prices font-regular">
+                  <del class="old-price">8,580,000 تومان</del>
+                  <div class="new-price font-bold">
+                    7,910,000 <span class="currency">تومان</span>
+                  </div>
+                </div>
+                <div class="product-actions">
+                  <button class="action-btn btn-cart-red" aria-label="افزودن به سبد">
+                    <span class="material-icons-outlined">shopping_bag</span>
+                  </button>
+                  <button class="action-btn btn-fav-outline" aria-label="علاقه‌مندی">
+                    <span class="material-icons-outlined">favorite_border</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="simple-product-card">
+              <div class="product-img-box">
+                <img src="/assets/images/sonati/sonati-category-3.png" alt="فرش مدرن" loading="lazy" />
+              </div>
+              <h3 class="product-title font-bold">
+                فرش طرح سنتی هریس مدل وینتیج
+              </h3>
+              <div class="product-footer">
+                <div class="product-prices font-regular">
+                  <del class="old-price">8,580,000 تومان</del>
+                  <div class="new-price font-bold">
+                    7,910,000 <span class="currency">تومان</span>
+                  </div>
+                </div>
+                <div class="product-actions">
+                  <button class="action-btn btn-cart-red" aria-label="افزودن به سبد">
+                    <span class="material-icons-outlined">shopping_bag</span>
+                  </button>
+                  <button class="action-btn btn-fav-outline" aria-label="علاقه‌مندی">
+                    <span class="material-icons-outlined">favorite_border</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="simple-product-card">
+              <div class="product-img-box">
+                <img src="/assets/images/sonati/sonati-category-4.png" alt="فرش مدرن" loading="lazy" />
+              </div>
+              <h3 class="product-title font-bold">
+                فرش طرح سنتی هریس مدل وینتیج
+              </h3>
+              <div class="product-footer">
+                <div class="product-prices font-regular">
+                  <del class="old-price">8,580,000 تومان</del>
+                  <div class="new-price font-bold">
+                    7,910,000 <span class="currency">تومان</span>
+                  </div>
+                </div>
+                <div class="product-actions">
+                  <button class="action-btn btn-cart-red" aria-label="افزودن به سبد">
+                    <span class="material-icons-outlined">shopping_bag</span>
+                  </button>
+                  <button class="action-btn btn-fav-outline" aria-label="علاقه‌مندی">
+                    <span class="material-icons-outlined">favorite_border</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="simple-product-card">
+              <div class="product-img-box">
+                <img src="/assets/images/sonati/sonati-category-5.png" alt="فرش مدرن" loading="lazy" />
+              </div>
+              <h3 class="product-title font-bold">
+                فرش طرح سنتی هریس مدل وینتیج
+              </h3>
+              <div class="product-footer">
+                <div class="product-prices font-regular">
+                  <del class="old-price">8,580,000 تومان</del>
+                  <div class="new-price font-bold">
+                    7,910,000 <span class="currency">تومان</span>
+                  </div>
+                </div>
+                <div class="product-actions">
+                  <button class="action-btn btn-cart-red" aria-label="افزودن به سبد">
+                    <span class="material-icons-outlined">shopping_bag</span>
+                  </button>
+                  <button class="action-btn btn-fav-outline" aria-label="علاقه‌مندی">
+                    <span class="material-icons-outlined">favorite_border</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <button class="slider-nav-btn nav-btn-left" id="simple-slider-prev-btn" aria-label="قبلی">
+            <span class="material-icons-outlined">chevron_left</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <div class="stack-4-banners">
+      <div class="stack-4-img stack-4-1">
+        <img src="/assets/images/stack-4-1.png" alt="فرش ماشینی" />
+      </div>
+      <div class="stack-4-img stack-4-2">
+        <img src="/assets/images/stack-4-2.png" alt="فرش دستباف" />
+      </div>
+    </div>
+    </section>
+
+    <section class="category-puzzle-section" aria-label="پیشنهاد بر اساس سلیقه">
+      <div class="category-puzzle-container">
+
+        <div class="puzzle-col">
+          <div class="puzzle-header">
+            <h3 class="puzzle-title font-bold">فرش مراکشی</h3>
+            <p class="puzzle-subtitle font-regular">براساس سلیقه شما</p>
+          </div>
+
+          <div class="puzzle-grid">
+            <a href="#" class="puzzle-item">
+              <img src="assets/images/category-puzzle/category-puzzle-moroccan-1.png" alt="فرش مراکشی" loading="lazy">
+            </a>
+            <a href="#" class="puzzle-item">
+              <img src="assets/images/category-puzzle/category-puzzle-moroccan-2.png" alt="فرش مراکشی" loading="lazy">
+            </a>
+            <a href="#" class="puzzle-item">
+              <img src="assets/images/category-puzzle/category-puzzle-moroccan-3.png" alt="فرش مراکشی" loading="lazy">
+            </a>
+            <a href="#" class="puzzle-item">
+              <img src="assets/images/category-puzzle/category-puzzle-moroccan-4.png" alt="فرش مراکشی" loading="lazy">
+            </a>
+          </div>
+
+          <a href="#" class="puzzle-view-all font-regular">
+            مشاهده همه
+            <span class="material-icons-outlined icon">arrow_back</span>
+          </a>
+        </div>
+
+        <div class="puzzle-col">
+          <div class="puzzle-header">
+            <h3 class="puzzle-title font-bold">فرش 1200 شانه</h3>
+            <p class="puzzle-subtitle font-regular">براساس سلیقه شما</p>
+          </div>
+
+          <div class="puzzle-grid">
+            <a href="#" class="puzzle-item">
+              <img src="assets/images/category-puzzle/category-puzzle-1200-1.png" alt="فرش 1200 شانه" loading="lazy">
+            </a>
+            <a href="#" class="puzzle-item">
+              <img src="assets/images/category-puzzle/category-puzzle-1200-2.png" alt="فرش 1200 شانه" loading="lazy">
+            </a>
+            <a href="#" class="puzzle-item">
+              <img src="assets/images/category-puzzle/category-puzzle-1200-3.png" alt="فرش 1200 شانه" loading="lazy">
+            </a>
+            <a href="#" class="puzzle-item">
+              <img src="assets/images/category-puzzle/category-puzzle-1200-4.png" alt="فرش 1200 شانه" loading="lazy">
+            </a>
+          </div>
+
+          <a href="#" class="puzzle-view-all font-regular">
+            مشاهده همه
+            <span class="material-icons-outlined icon">arrow_back</span>
+          </a>
+        </div>
+
+        <div class="puzzle-col">
+          <div class="puzzle-header">
+            <h3 class="puzzle-title font-bold">فرش اتاق خواب</h3>
+            <p class="puzzle-subtitle font-regular">براساس سلیقه شما</p>
+          </div>
+
+          <div class="puzzle-grid">
+            <a href="#" class="puzzle-item">
+              <img src="assets/images/category-puzzle/category-puzzle-bedroom-1.png" alt="فرش اتاق خواب" loading="lazy">
+            </a>
+            <a href="#" class="puzzle-item">
+              <img src="assets/images/category-puzzle/category-puzzle-bedroom-2.png" alt="فرش اتاق خواب" loading="lazy">
+            </a>
+            <a href="#" class="puzzle-item">
+              <img src="assets/images/category-puzzle/category-puzzle-bedroom-3.png" alt="فرش اتاق خواب" loading="lazy">
+            </a>
+            <a href="#" class="puzzle-item">
+              <img src="assets/images/category-puzzle/category-puzzle-bedroom-4.png" alt="فرش اتاق خواب" loading="lazy">
+            </a>
+          </div>
+
+          <a href="#" class="puzzle-view-all font-regular">
+            مشاهده همه
+            <span class="material-icons-outlined icon">arrow_back</span>
+          </a>
+        </div>
+
+        <div class="puzzle-col">
+          <div class="puzzle-header">
+            <h3 class="puzzle-title font-bold">فرش آشپزخانه</h3>
+            <p class="puzzle-subtitle font-regular">براساس سلیقه شما</p>
+          </div>
+
+          <div class="puzzle-grid">
+            <a href="#" class="puzzle-item">
+              <img src="assets/images/category-puzzle/category-puzzle-kitchen-1.png" alt="فرش آشپزخانه" loading="lazy">
+            </a>
+            <a href="#" class="puzzle-item">
+              <img src="assets/images/category-puzzle/category-puzzle-kitchen-2.png" alt="فرش آشپزخانه" loading="lazy">
+            </a>
+            <a href="#" class="puzzle-item">
+              <img src="assets/images/category-puzzle/category-puzzle-kitchen-3.png" alt="فرش آشپزخانه" loading="lazy">
+            </a>
+            <a href="#" class="puzzle-item">
+              <img src="assets/images/category-puzzle/category-puzzle-kitchen-4.png" alt="فرش آشپزخانه" loading="lazy">
+            </a>
+          </div>
+
+          <a href="#" class="puzzle-view-all font-regular">
+            مشاهده همه
+            <span class="material-icons-outlined icon">arrow_back</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="blog-section" aria-label="مجله دیجی فرش">
+      <div class="blog-container">
+        <div class="blog-header">
+          <div class="header-decoration"></div>
+          <h2 class="section-title font-bold">
+            مجله ی <span class="text-primary">دیجی فرش</span>
+          </h2>
+        </div>
+
+        <div class="product-slider-wrapper">
+
+          <button class="slider-nav-btn nav-btn-right" aria-label="بعدی">
+            <span class="material-icons-outlined">chevron_right</span>
+          </button>
+
+          <div class="product-scroll-track blog-scroll-track">
+
+            <article class="blog-card">
+              <div class="blog-img-box">
+                <img src="assets/images/mag-fashion.jpg" alt="مد روز فرش" loading="lazy">
+              </div>
+              <div class="blog-content">
+                <h3 class="blog-title font-bold">مد روز در طرح‌های فرش ایرانی</h3>
+                <p class="blog-excerpt font-regular">
+                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و
+                  متون بلکه روزنامه و مجله...
+                </p>
+                <div class="blog-footer">
+                  <a href="#" class="read-more-btn font-medium">
+                    ادامه مطلب
+                    <span class="material-icons-outlined icon">arrow_back</span>
+                  </a>
+                  <div class="blog-date font-regular">
+                    <span>1401/09/15</span>
+                    <span class="material-icons-outlined icon">calendar_today</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="blog-card">
+              <div class="blog-img-box">
+                <img src="assets/images/mag-maintenance.jpg" alt="نگهداری فرش" loading="lazy">
+              </div>
+              <div class="blog-content">
+                <h3 class="blog-title font-bold">چطور از فرش نگهداری کنیم؟</h3>
+                <p class="blog-excerpt font-regular">
+                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و
+                  متون بلکه روزنامه و مجله...
+                </p>
+                <div class="blog-footer">
+                  <a href="#" class="read-more-btn font-medium">
+                    ادامه مطلب
+                    <span class="material-icons-outlined icon">arrow_back</span>
+                  </a>
+                  <div class="blog-date font-regular">
+                    <span>1401/09/15</span>
+                    <span class="material-icons-outlined icon">calendar_today</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="blog-card">
+              <div class="blog-img-box">
+                <div class="img-overlay"></div> <img src="assets/images/mag-difference.jpg" alt="تفاوت فرش"
+                  loading="lazy">
+              </div>
+              <div class="blog-content">
+                <h3 class="blog-title font-bold text-primary">تفاوت فرش ماشینی و دستباف</h3>
+                <p class="blog-excerpt font-regular">
+                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و
+                  متون بلکه روزنامه و مجله...
+                </p>
+                <div class="blog-footer">
+                  <a href="#" class="read-more-btn font-medium">
+                    ادامه مطلب
+                    <span class="material-icons-outlined icon">arrow_back</span>
+                  </a>
+                  <div class="blog-date font-regular">
+                    <span>1401/09/15</span>
+                    <span class="material-icons-outlined icon">calendar_today</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="blog-card">
+              <div class="blog-img-box">
+                <img src="assets/images/mag-guide.jpg" alt="راهنمای خرید" loading="lazy">
+              </div>
+              <div class="blog-content">
+                <h3 class="blog-title font-bold">راهنمای خرید فرش دستباف</h3>
+                <p class="blog-excerpt font-regular">
+                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و
+                  متون بلکه روزنامه و مجله...
+                </p>
+                <div class="blog-footer">
+                  <a href="#" class="read-more-btn font-medium">
+                    ادامه مطلب
+                    <span class="material-icons-outlined icon">arrow_back</span>
+                  </a>
+                  <div class="blog-date font-regular">
+                    <span>1401/09/15</span>
+                    <span class="material-icons-outlined icon">calendar_today</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="blog-card">
+              <div class="blog-img-box">
+                <img src="assets/images/mag-fashion.jpg" alt="مد روز فرش" loading="lazy">
+              </div>
+              <div class="blog-content">
+                <h3 class="blog-title font-bold">مد روز در طرح‌های فرش ایرانی</h3>
+                <p class="blog-excerpt font-regular">
+                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و
+                  متون بلکه روزنامه و مجله...
+                </p>
+                <div class="blog-footer">
+                  <a href="#" class="read-more-btn font-medium">
+                    ادامه مطلب
+                    <span class="material-icons-outlined icon">arrow_back</span>
+                  </a>
+                  <div class="blog-date font-regular">
+                    <span>1401/09/15</span>
+                    <span class="material-icons-outlined icon">calendar_today</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="blog-card">
+              <div class="blog-img-box">
+                <img src="assets/images/mag-guide.jpg" alt="راهنمای خرید" loading="lazy">
+              </div>
+              <div class="blog-content">
+                <h3 class="blog-title font-bold">راهنمای خرید فرش دستباف</h3>
+                <p class="blog-excerpt font-regular">
+                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و
+                  متون بلکه روزنامه و مجله...
+                </p>
+                <div class="blog-footer">
+                  <a href="#" class="read-more-btn font-medium">
+                    ادامه مطلب
+                    <span class="material-icons-outlined icon">arrow_back</span>
+                  </a>
+                  <div class="blog-date font-regular">
+                    <span>1401/09/15</span>
+                    <span class="material-icons-outlined icon">calendar_today</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+          </div>
+
+          <button class="slider-nav-btn nav-btn-left" aria-label="قبلی">
+            <span class="material-icons-outlined">chevron_left</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="features-bar-bottom" aria-label="ویژگی‌های فروشگاه">
+      <div class="features-container">
+        <div class="feature-item">
+          <img src="/assets/images/support.png" alt="آیکون پشتیبانی" class="feature-icon" />
+          <div class="feature-content">
+            <h3 class="feature-title font-bold">پشتیبانی ۲۴ ساعته</h3>
+            <p class="feature-subtitle font-regular">
+              پشتیبانی همیشه در دسترس
+            </p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <img src="/assets/images/express.png" alt="آیکون ارسال" class="feature-icon" />
+          <div class="feature-content">
+            <h3 class="feature-title font-bold">ارسال اکسپرس</h3>
+            <p class="feature-subtitle font-regular">تحویل سریع و مطمئن</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <img src="/assets/images/return.png" alt="آیکون بازگشت" class="feature-icon" />
+          <div class="feature-content">
+            <h3 class="feature-title font-bold">ضمانت بازگشت ۷ روزه</h3>
+            <p class="feature-subtitle font-regular">خرید بدون دغدغه</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <img src="/assets/images/warranty.png" alt="آیکون ضمانت" class="feature-icon" />
+          <div class="feature-content">
+            <h3 class="feature-title font-bold">ضمانت اصالت فرش</h3>
+            <p class="feature-subtitle font-regular">اصالت تضمین‌شد</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" aria-label="پاورقی سایت">
+    <div class="footer-container">
+      <div class="footer-top-links">
+        <div class="footer-col">
+          <h3 class="footer-col-title font-medium">دسته‌بندی‌های محبوب</h3>
+          <ul class="footer-link-list font-regular">
+            <li><a href="#">فرش افشان</a></li>
+            <li><a href="#">فرش پذیرایی</a></li>
+            <li><a href="#">فرش آشپزخانه</a></li>
+            <li><a href="#">فرش اتاق خواب</a></li>
+            <li><a href="#">فرش مدرن و فانتزی</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3 class="footer-col-title font-medium">برندهای معروف</h3>
+          <ul class="footer-link-list font-regular">
+            <li><a href="#">فرش نیاوران</a></li>
+            <li><a href="#">فرش محتشم</a></li>
+            <li><a href="#">فرش شاهکار صفویه</a></li>
+            <li><a href="#">فرش کشمیر</a></li>
+            <li><a href="#">فرش قصر ایرانیان</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3 class="footer-col-title font-medium">راهنمای خرید</h3>
+          <ul class="footer-link-list font-regular">
+            <li><a href="#">راهنمای ثبت سفارش</a></li>
+            <li><a href="#">نحوه ارسال و مدت زمان تحویل</a></li>
+            <li><a href="#">شرایط بازگشت کالا</a></li>
+            <li><a href="#">پرسش‌های پرتکرار (FAQ)</a></li>
+            <li><a href="#">پیگیری سفارش</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-col--wide">
+          <h3 class="footer-col-title font-medium">
+            پاسخگویی در ساعات اداری صبح
+          </h3>
+          <ul class="footer-info-list font-regular">
+            <li><span class="bullet"></span>دفتر اداری: ۷۱۰۵۳۰۹۹ - ۰۲۱</li>
+            <li><span class="bullet"></span>کارشناس فروش: ۰۹۹۰۹۸۰۹۱۰۰</li>
+            <li>
+              <span class="bullet"></span>بخش تولید و نمایشگاه: ۰۹۹۰۹۸۰۹۱۰۰
+            </li>
+            <li>
+              <span class="bullet"></span>مخصوص نمایندگی (خرید عمده):
+              ۰۹۹۰۹۸۰۹۱۰۰
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-col--wide">
+          <h3 class="footer-col-title font-medium">آدرس‌ها</h3>
+          <ul class="footer-info-list font-regular">
+            <li class="address-item">
+              <span class="bullet"></span>
+              <strong>دفتر اداری:</strong>
+              <p>تهران، تهرانپارس، خیابان رشید، پلاک ۹۴ واحد ۱</p>
+            </li>
+            <li class="address-item">
+              <span class="bullet"></span>
+              <strong>بخش تولید و نمایشگاه:</strong>
+              <p>کاشان، شهرک صنعتی سلیمان صباحی، بلوار وحدت پلاک ۱۸</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom-cards">
+        <div class="footer-card footer-desc-card">
+          <h3 class="footer-card-title font-bold">
+            دیجی فرش؛ تجربه‌ای مطمئن در خرید اینترنتی فرش
+          </h3>
+          <p class="footer-desc-text font-regular">
+            مجموعه بزرگ دیجی فرش با ۱۲ سال تجربه فروش آنلاین فرش، به دلیل
+            پشتیبانی و پاسخگویی حرفه‌ای، تضمین قیمت و کیفیت محصولات، به عنوان
+            بهترین سایت فروشگاه فرش از نظر کاربران معرفی شده است. این مجموعه
+            با ارائه جدیدترین و متنوع‌ترین فرش‌های ماشینی به صورت آنلاین، خرید
+            فرش را برای مشتریان خود آسان کرده است. اگر مایلید خرید اینترنتی
+            فرش را بدون واسطه انجام بدین و محصول شما مستقیما از کارخانه فرش
+            کاشان برای شما ارسال شود، این امکان را سایت دیجی فرش برای شما محیا
+            کرده است. خوشحالیم در کنار شما هستیم.
+          </p>
+        </div>
+
+        <div class="footer-card footer-symbols-card">
+          <h3 class="footer-card-title footer-card-title--center font-bold">
+            نماد ها
+          </h3>
+          <div class="symbols-wrapper">
+            <div class="symbol-item">
+              <img src="/assets/images/enamad.png" alt="نماد ۱" />
+            </div>
+            <div class="symbol-item">
+              <img src="/assets/images/samandehi.png" alt="نماد ۲" />
+            </div>
+            <div class="symbol-item">
+              <img src="/assets/images/zarinpal.png" alt="نماد ۳" />
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-card footer-social-card">
+          <a href="#" class="social-link"><span class="material-icons-outlined">near_me</span></a>
+          <a href="#" class="social-link"><span class="material-icons-outlined">call</span></a>
+          <a href="#" class="social-link"><span class="material-icons-outlined">photo_camera</span></a>
+        </div>
+
+        <div class="footer-card footer-contact-card">
+          <div class="contact-card-content">
+            <span class="material-icons-outlined contact-headset">headset_mic</span>
+            <span class="contact-phone font-bold">۰۹۹۰۹۸۰۹۱۰۰</span>
+            <span class="contact-subtitle font-regular">پشتیبانی ۲۴ ساعته</span>
+          </div>
+          <div class="decorative-circle c1"></div>
+          <div class="decorative-circle c2"></div>
+        </div>
+      </div>
+
+      <div class="footer-divider"></div>
+
+      <div class="footer-copyright-row font-regular">
+        <a href="#" class="scroll-top-btn">برو بالا</a>
+        <p>متعلق به شرکت فرش آرمان کاشان (شماره ثبت ۱۴۸۹) می‌باشد.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="menu-overlay"></div>
+
+  <script src="components/js/story-slider.js"></script>
+  <script src="components/js/hero-carousel.js"></script>
+  <script src="components/js/amazing-offer.js"></script>
+  <script src="components/js/single-category-slider.js"></script>
+  <script src="components/js/mag-slider.js"></script>
+  <script src="components/js/mega-menu.js"></script>
+</body>
+
 </html>
