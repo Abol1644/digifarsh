@@ -215,24 +215,38 @@ document.addEventListener("DOMContentLoaded", () => {
 // hero-carousel.js
 document.addEventListener("DOMContentLoaded", function () {
   const carousel = document.getElementById("hero-carousel");
+  // Safety check: if carousel doesn't exist, stop.
   if (!carousel) return;
 
   const slides = Array.from(carousel.querySelectorAll(".hero-slide"));
   const dots = Array.from(carousel.querySelectorAll(".hero-dot"));
-  const prev = carousel.querySelector(".hero-nav-prev");
-  const next = carousel.querySelector(".hero-nav-next");
+  const prevBtn = carousel.querySelector(".hero-nav-prev");
+  const nextBtn = carousel.querySelector(".hero-nav-next");
 
   if (!slides.length) return;
 
   let current = 0;
+  let autoPlayInterval;
+  
+  // Touch variables
+  let touchStartX = 0;
+  let touchEndX = 0;
 
+  // --- Core Navigation Function ---
   function goToSlide(index) {
-    current = (index + slides.length) % slides.length;
+    // Wrap around index
+    if (index < 0) index = slides.length - 1;
+    if (index >= slides.length) index = 0;
 
+    current = index;
+
+    // Update Slides
     slides.forEach((slide, i) => {
       slide.classList.toggle("active", i === current);
+      slide.setAttribute("aria-hidden", i !== current);
     });
 
+    // Update Dots
     dots.forEach((dot, i) => {
       const isActive = i === current;
       dot.classList.toggle("active", isActive);
@@ -240,13 +254,77 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  prev?.addEventListener("click", () => goToSlide(current - 1));
-  next?.addEventListener("click", () => goToSlide(current + 1));
-
-  dots.forEach((dot, i) => {
-    dot.addEventListener("click", () => goToSlide(i));
+  // --- Event Listeners (Click) ---
+  nextBtn?.addEventListener("click", () => {
+    goToSlide(current + 1);
+    resetAutoPlay();
   });
 
-  // اختیاری: اتوپلی
-  setInterval(() => goToSlide(current + 1), 8000);
+  prevBtn?.addEventListener("click", () => {
+    goToSlide(current - 1);
+    resetAutoPlay();
+  });
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener("click", () => {
+      goToSlide(i);
+      resetAutoPlay();
+    });
+  });
+
+  // --- Touch / Swipe Logic (CORRECTED) ---
+
+  carousel.addEventListener('touchstart', (e) => {
+    // Record where the finger landed
+    touchStartX = e.changedTouches[0].screenX;
+    stopAutoPlay(); // Pause timer while user interacts
+  }, { passive: true });
+
+  carousel.addEventListener('touchend', (e) => {
+    // Record where the finger lifted
+    touchEndX = e.changedTouches[0].screenX;
+    handleGesture();
+    startAutoPlay(); // Resume timer
+  }, { passive: true });
+
+  function handleGesture() {
+    // Calculate the difference
+    const diff = touchEndX - touchStartX;
+    const threshold = 50; // Min swipe distance in pixels
+
+    // Math.abs turns negative numbers positive so we can check magnitude
+    if (Math.abs(diff) > threshold) {
+      if (diff > 0) {
+        // Swiped Right (Finger moved Left -> Right) => Show Previous
+        goToSlide(current - 1);
+      } else {
+        // Swiped Left (Finger moved Right -> Left) => Show Next
+        goToSlide(current + 1);
+      }
+    }
+  }
+
+  // --- Auto Play Logic ---
+  function startAutoPlay() {
+    stopAutoPlay(); // Clear any existing timer first
+    autoPlayInterval = setInterval(() => goToSlide(current + 1), 6000);
+  }
+
+  function stopAutoPlay() {
+    if (autoPlayInterval) {
+      clearInterval(autoPlayInterval);
+    }
+  }
+
+  function resetAutoPlay() {
+    stopAutoPlay();
+    startAutoPlay();
+  }
+
+  // Pause on mouse hover (Desktop UX)
+  carousel.addEventListener('mouseenter', stopAutoPlay);
+  carousel.addEventListener('mouseleave', startAutoPlay);
+
+  // Initialize
+  startAutoPlay();
 });
