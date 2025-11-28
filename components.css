@@ -282,6 +282,7 @@
   color: #000;
   transition: color 0.2s ease-in-out;
 }
+
 .nav-left-item a:hover {
   color: var(--primary);
 }
@@ -376,7 +377,8 @@ main {
 /* Default / Desktop Styles for new elements */
 .mobile-menu-trigger,
 .mobile-call-btn {
-  display: none; /* Hidden on desktop */
+  display: none;
+  /* Hidden on desktop */
 }
 
 /* Helper class to hide desktop elements */
@@ -391,9 +393,10 @@ main {
   }
 
   .search-logo-wrapper {
-    display: contents; /* This makes the wrapper invisible to the layout */
+    display: contents;
+    /* This makes the wrapper invisible to the layout */
   }
-  
+
   .header-lower-nav {
     visibility: hidden;
     display: none;
@@ -415,21 +418,24 @@ main {
     gap: 6px;
     background: transparent;
     border: none;
-    order: 1; /* First item in RTL */
+    order: 1;
+    /* First item in RTL */
     cursor: pointer;
     padding: 0;
   }
-  
+
   .mobile-menu-trigger span {
     font-size: 0.8rem;
-    color: #333; /* Text color */
+    color: #333;
+    /* Text color */
   }
 
-  
+
 
   .mobile-menu-trigger .icon {
     font-size: 28px;
-    color: var(--primary); /* Red Hamburger Icon */
+    color: var(--primary);
+    /* Red Hamburger Icon */
   }
 
   .menu-state-open {
@@ -447,7 +453,8 @@ main {
   }
 
   .logo-img {
-    height: 28px; /* Slightly larger on mobile */
+    height: 28px;
+    /* Slightly larger on mobile */
   }
 
   /* 4. Actions (Left) */
@@ -460,9 +467,11 @@ main {
   /* Phone Icon */
   .mobile-call-btn {
     display: flex;
-    color: var(--primary); /* Red phone icon */
+    color: var(--primary);
+    /* Red phone icon */
     text-decoration: none;
   }
+
   .mobile-call-btn .icon {
     font-size: 26px;
   }
@@ -472,17 +481,19 @@ main {
     background: transparent !important;
     border: none !important;
     padding: 0 !important;
-    color: #333 !important; /* Black user icon */
+    color: #333 !important;
+    /* Black user icon */
     width: auto;
     height: auto;
   }
 
   .header-login-btn .btn-text {
-    display: none; /* Hide text "Login/Register" */
+    display: none;
+    /* Hide text "Login/Register" */
   }
-  
+
   .header-login-btn .icon {
-    font-size: 28px; 
+    font-size: 28px;
     margin: 0;
   }
 
@@ -491,12 +502,14 @@ main {
     order: 4;
     width: 100%;
     margin-top: 8px;
-    min-width: unset; /* Remove desktop min-width */
+    min-width: unset;
+    /* Remove desktop min-width */
     max-width: unset;
   }
 
   .search-field {
-    background-color: #F5F6F8; /* Light gray background */
+    background-color: #F5F6F8;
+    /* Light gray background */
     border-radius: 12px;
     height: 48px;
   }
@@ -505,7 +518,7 @@ main {
     font-size: 0.85rem;
     color: #999;
   }
-  
+
   /* Fix container padding */
   .header-container-top {
     padding: 16px 12px 0 12px;
@@ -643,22 +656,24 @@ main {
 
 /* Slides wrapper */
 .hero-slides {
-  display: grid; 
+  display: grid;
   position: relative;
   overflow: hidden;
   border-radius: 32px;
   /* Ensure the container has height based on content */
-  grid-template-areas: "stack"; 
+  grid-template-areas: "stack";
 }
 
 /* Each slide */
 .hero-slide {
-  grid-area: stack; /* Stacks them on top of each other */
+  grid-area: stack;
+  /* Stacks them on top of each other */
   background: linear-gradient(135deg, var(--primary) 0%, var(--bg-offer) 100%);
   color: #fff;
-  
+
   /* Layout inside the slide */
-  display: flex; /* Always display flex, we control visibility via opacity */
+  display: flex;
+  /* Always display flex, we control visibility via opacity */
   align-items: center;
   justify-content: space-between;
   padding: 40px 72px;
@@ -681,7 +696,8 @@ main {
 .hero-slide .hero-slide-media {
   opacity: 0;
   transform: translateY(20px);
-  transition: all 0.6s ease-out 0.2s; /* 0.2s delay */
+  transition: all 0.6s ease-out 0.2s;
+  /* 0.2s delay */
 }
 
 .hero-slide.active .hero-slide-content,
@@ -748,6 +764,7 @@ main {
   background: transparent;
   cursor: pointer;
   z-index: 3;
+
   span {
     font-weight: 800 !important;
   }
@@ -866,7 +883,7 @@ main {
     display: none;
   }
 
-  .slider-btn  {
+  .slider-btn {
     display: none;
   }
 
@@ -1456,7 +1473,7 @@ main {
   .product-img-box {
     height: 160px;
   }
-} 
+}
 
 /* most-sold.css */
 
@@ -2494,31 +2511,58 @@ main {
 
 /* --- Responsive Design --- */
 
+/* --- Responsive Design (Mobile & Tablet) --- */
 @media (max-width: 992px) {
+  /* تنظیم کانتینر برای تبدیل شدن به گرید */
   .features-container {
-    justify-content: center;
-    /* Center items when wrapping */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* گرید ۲ در ۲ */
+    gap: 10px; /* فاصله بین آیتم‌ها */
+    padding: 0 12px; /* پدینگ کناری مطابق درخواست */
+    width: 100%;
+    box-sizing: border-box;
   }
 
+  /* تنظیم هر آیتم ویژگی */
   .feature-item {
-    flex: 0 0 45%;
-    /* 2 items per row */
-    justify-content: center;
-    /* Center content within the item */
-  }
-}
+    /* حذف محدودیت‌های فلکس باکس قبلی */
+    min-width: 0;
+    width: 100%;
+    flex: unset; 
 
-@media (max-width: 600px) {
+    /* چیدمان عمودی برای موبایل (آیکون بالا، متن پایین) */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    /* استایل کارت */
+    padding: 15px 10px;
+    background-color: #00000005; /* رنگ پس‌زمینه ملایم برای دیده شدن گرید */
+    border-radius: 12px; /* کمی گرد کردن گوشه‌ها */
+    gap: 8px; /* فاصله بین آیکون و متن */
+  }
+
+  /* اصلاح سایز آیکون برای موبایل */
+  .feature-icon {
+    width: 40px; /* کمی کوچکتر برای تعادل بهتر */
+    height: 40px;
+    margin: 0; /* حذف مارجین‌های احتمالی */
+  }
+
+  /* اصلاح فونت‌ها برای موبایل */
+  .feature-title {
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+  }
+
+  .feature-subtitle {
+    font-size: 0.75rem;
+  }
+
+  /* تنظیم پدینگ سکشن اصلی */
   .features-bar {
-    padding: 24px 0;
-  }
-
-  .feature-item {
-    flex: 0 0 100%;
-    /* 1 item per row (stacked) */
-    justify-content: flex-start;
-    /* Left/Right align looks better in stack */
-    padding: 0 12px;
+    padding: 20px 0;
   }
 }
 
@@ -3021,7 +3065,7 @@ main {
 
 /* stacks-section.css */
 
-.stack-1-banners {
+.stack-1-container {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -3030,8 +3074,15 @@ main {
   padding: 0 60px;
 }
 
-.stack-1-img img {
+.stack-banner-link img {
   height: 160px;
+  transition: all 0.3s ease;
+}
+
+.stack-banner-link img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  
 }
 
 .stack-3-banners {
@@ -3053,4 +3104,45 @@ main {
 
 .stack-4-img {
   padding: 0 10px;
+}
+
+@media (max-width: 768px) {
+  /* تنظیمات کانتینر اصلی برای گرید ۲ در ۲ */
+  .stack-1-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* ایجاد دو ستون مساوی (2x2) */
+    gap: 6px; /* فضای ۶ پیکسلی بین آیتم‌ها */
+    padding: 6px; /* پدینگ اطراف کل گرید (اختیاری برای تراز بهتر) */
+    width: 100%;
+  }
+
+  /* تنظیمات لینک نگهدارنده عکس */
+  .stack-banner-link {
+    display: block;
+    width: 100%; /* اشغال کل فضای سلول گرید */
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* جلوگیری از بیرون زدگی عکس از گوشه‌های گرد */
+  }
+
+  /* افکت هاور */
+  .stack-banner-link:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  /* تنظیمات عکس برای داینامیک بودن */
+  .stack-banner-link img {
+    width: 100%; /* عکس کل عرض سلول گرید را پر می‌کند */
+    height: auto; /* ارتفاع بر اساس نسبت تصویر اتوماتیک تنظیم می‌شود */
+    object-fit: cover; /* اطمینان از پر شدن فضا بدون دفرمه شدن */
+    display: block; /* حذف فاصله اضافی زیر عکس‌های inline */
+  }
+  
+  /* جهت اطمینان از اینکه سکشن اصلی مشکلی ایجاد نمی‌کند */
+  .stack-1-section {
+    padding: 10px 0;
+    direction: ltr; /* اگر گرید به هم ریخت، موقتا LTR تست کنید، اما RTL هم باید کار کند */
+  }
 }
