@@ -536,7 +536,6 @@ main {
   gap: 24px;
   overflow-x: auto;
   scroll-behavior: smooth;
-  padding-top: 12px
 }
 
 .story-list::-webkit-scrollbar {
@@ -548,11 +547,15 @@ main {
   text-align: center;
   width: 70px;
   flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .story-title {
   margin-top: 8px;
   font-size: 0.85rem;
+  white-space: nowrap;
 }
 
 /* Thumbnail design */
@@ -616,6 +619,10 @@ main {
   .story-thumb {
     width: 60px;
     height: 60px;
+  }
+
+  .story-list {
+    gap: 16px;
   }
 }
 
@@ -1119,7 +1126,10 @@ main {
 
   .hero-nav {
     display: none;
-    /* روی موبایل می‌تونی swipe یا اسکرول افقی اضافه کنی اگر خواستی */
+  }
+
+  .slider-btn  {
+    display: none;
   }
 }
 
