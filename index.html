@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="components.css" />
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
 </head>
 
 <body>
@@ -1620,7 +1621,8 @@
               <div class="blog-content">
                 <h3 class="blog-title font-bold">چطور از فرش نگهداری کنیم؟</h3>
                 <p class="blog-excerpt font-regular">
-                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله...
+                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و
+                  متون بلکه روزنامه و مجله...
                 </p>
                 <div class="blog-footer">
                   <a href="#" class="read-more-btn font-medium">
@@ -1776,11 +1778,16 @@
     </section>
   </main>
 
-  <footer class="site-footer" aria-label="پاورقی سایت">
+  <footer class="site-footer">
     <div class="footer-container">
+      <!-- بخش لینک‌های آکاردئونی -->
       <div class="footer-top-links">
-        <div class="footer-col">
-          <h3 class="footer-col-title font-medium">دسته‌بندی‌های محبوب</h3>
+        <!-- ستون 1 -->
+        <div class="footer-col active"> <!-- کلاس active برای باز بودن پیش‌فرض اولی -->
+          <div class="footer-col-title">
+            <span>دسته‌بندی‌های محبوب</span>
+            <span class="material-icons-outlined arrow">expand_more</span>
+          </div>
           <ul class="footer-link-list font-regular">
             <li><a href="#">فرش افشان</a></li>
             <li><a href="#">فرش پذیرایی</a></li>
@@ -1790,117 +1797,114 @@
           </ul>
         </div>
 
+        <!-- ستون 2 -->
         <div class="footer-col">
-          <h3 class="footer-col-title font-medium">برندهای معروف</h3>
+          <div class="footer-col-title">
+            <span>برندهای معروف</span>
+            <span class="material-icons-outlined arrow">expand_more</span>
+          </div>
           <ul class="footer-link-list font-regular">
             <li><a href="#">فرش نیاوران</a></li>
             <li><a href="#">فرش محتشم</a></li>
             <li><a href="#">فرش شاهکار صفویه</a></li>
             <li><a href="#">فرش کشمیر</a></li>
-            <li><a href="#">فرش قصر ایرانیان</a></li>
           </ul>
         </div>
 
+        <!-- ستون 3 -->
         <div class="footer-col">
-          <h3 class="footer-col-title font-medium">راهنمای خرید</h3>
+          <div class="footer-col-title">
+            <span>راهنمای خرید</span>
+            <span class="material-icons-outlined arrow">expand_more</span>
+          </div>
           <ul class="footer-link-list font-regular">
             <li><a href="#">راهنمای ثبت سفارش</a></li>
-            <li><a href="#">نحوه ارسال و مدت زمان تحویل</a></li>
+            <li><a href="#">نحوه ارسال</a></li>
             <li><a href="#">شرایط بازگشت کالا</a></li>
-            <li><a href="#">پرسش‌های پرتکرار (FAQ)</a></li>
-            <li><a href="#">پیگیری سفارش</a></li>
           </ul>
         </div>
 
+        <!-- ستون 4 -->
         <div class="footer-col footer-col--wide">
-          <h3 class="footer-col-title font-medium">
-            پاسخگویی در ساعات اداری صبح
-          </h3>
+          <div class="footer-col-title">
+            <span>پاسخگویی در ساعات اداری صبح</span>
+            <span class="material-icons-outlined arrow">expand_more</span>
+          </div>
           <ul class="footer-info-list font-regular">
-            <li><span class="bullet"></span>دفتر اداری: ۷۱۰۵۳۰۹۹ - ۰۲۱</li>
-            <li><span class="bullet"></span>کارشناس فروش: ۰۹۹۰۹۸۰۹۱۰۰</li>
-            <li>
-              <span class="bullet"></span>بخش تولید و نمایشگاه: ۰۹۹۰۹۸۰۹۱۰۰
-            </li>
-            <li>
-              <span class="bullet"></span>مخصوص نمایندگی (خرید عمده):
-              ۰۹۹۰۹۸۰۹۱۰۰
-            </li>
+            <li>دفتر اداری: ۷۱۰۵۳۰۹۹ - ۰۲۱</li>
+            <li>کارشناس فروش: ۰۹۹۰۹۸۰۹۱۰۰</li>
           </ul>
         </div>
 
+        <!-- ستون 5 -->
         <div class="footer-col footer-col--wide">
-          <h3 class="footer-col-title font-medium">آدرس‌ها</h3>
+          <div class="footer-col-title">
+            <span>آدرس‌ها</span>
+            <span class="material-icons-outlined arrow">expand_more</span>
+          </div>
           <ul class="footer-info-list font-regular">
-            <li class="address-item">
-              <span class="bullet"></span>
-              <strong>دفتر اداری:</strong>
-              <p>تهران، تهرانپارس، خیابان رشید، پلاک ۹۴ واحد ۱</p>
-            </li>
-            <li class="address-item">
-              <span class="bullet"></span>
-              <strong>بخش تولید و نمایشگاه:</strong>
-              <p>کاشان، شهرک صنعتی سلیمان صباحی، بلوار وحدت پلاک ۱۸</p>
-            </li>
+            <li>تهران، تهرانپارس، خیابان رشید، پلاک ۹۴</li>
+            <li>کاشان، شهرک صنعتی سلیمان صباحی</li>
           </ul>
         </div>
       </div>
 
+      <!-- بخش کارت‌های پایین (شبکه بندی جدید موبایل) -->
       <div class="footer-bottom-cards">
+        <!-- 1. کارت توضیحات -->
         <div class="footer-card footer-desc-card">
           <h3 class="footer-card-title font-bold">
             دیجی فرش؛ تجربه‌ای مطمئن در خرید اینترنتی فرش
           </h3>
           <p class="footer-desc-text font-regular">
-            مجموعه بزرگ دیجی فرش با ۱۲ سال تجربه فروش آنلاین فرش، به دلیل
-            پشتیبانی و پاسخگویی حرفه‌ای، تضمین قیمت و کیفیت محصولات، به عنوان
-            بهترین سایت فروشگاه فرش از نظر کاربران معرفی شده است. این مجموعه
-            با ارائه جدیدترین و متنوع‌ترین فرش‌های ماشینی به صورت آنلاین، خرید
-            فرش را برای مشتریان خود آسان کرده است. اگر مایلید خرید اینترنتی
-            فرش را بدون واسطه انجام بدین و محصول شما مستقیما از کارخانه فرش
-            کاشان برای شما ارسال شود، این امکان را سایت دیجی فرش برای شما محیا
-            کرده است. خوشحالیم در کنار شما هستیم.
+            مجموعه بزرگ دیجی فرش با ۱۲ سال تجربه فروش آنلاین فرش، به دلیل پشتیبانی و پاسخگویی حرفه‌ای، تضمین قیمت و
+            کیفیت محصولات، به عنوان بهترین سایت فروشگاه فرش معرفی شده است...
           </p>
+          <div class="read-more-btn">مشاهده همه +</div>
         </div>
 
-        <div class="footer-card footer-symbols-card">
-          <h3 class="footer-card-title footer-card-title--center font-bold">
-            نماد ها
-          </h3>
-          <div class="symbols-wrapper">
-            <div class="symbol-item">
-              <img src="/assets/images/enamad.png" alt="نماد ۱" />
-            </div>
-            <div class="symbol-item">
-              <img src="/assets/images/samandehi.png" alt="نماد ۲" />
-            </div>
-            <div class="symbol-item">
-              <img src="/assets/images/zarinpal.png" alt="نماد ۳" />
-            </div>
-          </div>
-        </div>
-
-        <div class="footer-card footer-social-card">
-          <a href="#" class="social-link"><span class="material-icons-outlined">near_me</span></a>
-          <a href="#" class="social-link"><span class="material-icons-outlined">call</span></a>
-          <a href="#" class="social-link"><span class="material-icons-outlined">photo_camera</span></a>
-        </div>
-
+        <!-- 2. کارت تماس (قرمز) -->
         <div class="footer-card footer-contact-card">
-          <div class="contact-card-content">
-            <span class="material-icons-outlined contact-headset">headset_mic</span>
-            <span class="contact-phone font-bold">۰۹۹۰۹۸۰۹۱۰۰</span>
+          <div class="contact-icon-wrapper">
+            <span class="material-icons-round">
+              headset_mic
+            </span>
+          </div>
+          <div class="contact-content-wrapper">
+            <span class="contact-phone">09909809100</span>
             <span class="contact-subtitle font-regular">پشتیبانی ۲۴ ساعته</span>
           </div>
           <div class="decorative-circle c1"></div>
           <div class="decorative-circle c2"></div>
+          <div class="decorative-circle c3"></div>
+        </div>
+
+        <!-- 3. کارت شبکه‌های اجتماعی (سمت چپ در موبایل) -->
+        <div class="footer-card footer-social-card">
+          <a href="#" class="social-link"><span class="material-icons-outlined">near_me</span></a> <!-- تلگرام -->
+          <a href="#" class="social-link"><span class="material-icons-outlined">call</span></a> <!-- واتساپ -->
+          <a href="#" class="social-link"><span class="material-icons-outlined">photo_camera</span></a>
+          <!-- اینستاگرام -->
+        </div>
+
+        <!-- 4. کارت نمادها (سمت راست در موبایل) -->
+        <div class="footer-card footer-symbols-card">
+          <h3 class="footer-card-title footer-card-title--center font-bold">نماد ها</h3>
+          <div class="symbols-wrapper">
+            <div class="symbol-item">
+              <img src="assets/images/zarinpal.png" alt="نماد ۱" />
+            </div>
+            <div class="symbol-item">
+              <img src="assets/images/enamad.png" alt="نماد ۲" />
+            </div>
+            <div class="symbol-item">
+              <img src="assets/images/samandehi.png" alt="نماد ۳" />
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="footer-divider"></div>
-
       <div class="footer-copyright-row font-regular">
-        <a href="#" class="scroll-top-btn">برو بالا</a>
         <p>متعلق به شرکت فرش آرمان کاشان (شماره ثبت ۱۴۸۹) می‌باشد.</p>
       </div>
     </div>

@@ -9,15 +9,15 @@ document.addEventListener("DOMContentLoaded", () => {
     scrollBtn.addEventListener("click", () => {
       // Card width (approx 170px mobile / 240px desktop) + Gap
       // We calculate it dynamically based on the first card to be safe
-      const card = scrollContainer.querySelector('.offer-card');
+      const card = scrollContainer.querySelector(".offer-card");
       const cardWidth = card ? card.offsetWidth + 16 : 260; // 16 is gap
-      
+
       const direction = getComputedStyle(document.body).direction;
-      
+
       // In RTL mode, "Next" usually means moving visually to the Left (negative scroll)
-      // However, scrollBy logic depends on browser. 
+      // However, scrollBy logic depends on browser.
       // Simplest way for RTL: Positive value moves LEFT in most modern browsers with dir="rtl"
-      const scrollAmount = direction === 'rtl' ? -cardWidth : cardWidth;
+      const scrollAmount = direction === "rtl" ? -cardWidth : cardWidth;
 
       scrollContainer.scrollBy({
         left: scrollAmount,
@@ -27,47 +27,47 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // --- 2. Desktop Drag-to-Scroll Logic ---
-  // We only want this active if the user is using a MOUSE. 
+  // We only want this active if the user is using a MOUSE.
   // Mobile users should use native CSS scrolling (better performance).
 
   let isDown = false;
   let startX;
   let scrollLeft;
 
-  scrollContainer.addEventListener('mousedown', (e) => {
+  scrollContainer.addEventListener("mousedown", (e) => {
     isDown = true;
-    scrollContainer.classList.add('active');
-    
+    scrollContainer.classList.add("active");
+
     // Calculate start position
     startX = e.pageX - scrollContainer.offsetLeft;
     scrollLeft = scrollContainer.scrollLeft;
-    
+
     // Disable smooth scroll while dragging (causes lag if left on)
-    scrollContainer.style.scrollBehavior = 'auto'; 
+    scrollContainer.style.scrollBehavior = "auto";
   });
 
-  scrollContainer.addEventListener('mouseleave', () => {
+  scrollContainer.addEventListener("mouseleave", () => {
     isDown = false;
-    scrollContainer.classList.remove('active');
-    scrollContainer.style.scrollBehavior = 'smooth';
+    scrollContainer.classList.remove("active");
+    scrollContainer.style.scrollBehavior = "smooth";
   });
 
-  scrollContainer.addEventListener('mouseup', () => {
+  scrollContainer.addEventListener("mouseup", () => {
     isDown = false;
-    scrollContainer.classList.remove('active');
-    scrollContainer.style.scrollBehavior = 'smooth';
+    scrollContainer.classList.remove("active");
+    scrollContainer.style.scrollBehavior = "smooth";
   });
 
-  scrollContainer.addEventListener('mousemove', (e) => {
-    if (!isDown) return; 
-    e.preventDefault(); 
-    
+  scrollContainer.addEventListener("mousemove", (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+
     const x = e.pageX - scrollContainer.offsetLeft;
     // RTL MATH FIX:
     // In LTR: (x - startX) gives how much we moved right. We subtract that from scrollLeft.
     // In RTL: The logic often needs to be inverted depending on browser implementation.
     // However, the standard calculation usually works if scrollLeft is handled correctly.
-    
+
     const walk = (x - startX) * 2; // Speed multiplier
     scrollContainer.scrollLeft = scrollLeft - walk;
   });
@@ -276,7 +276,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let current = 0;
   let autoPlayInterval;
-  
+
   // Touch variables
   let touchStartX = 0;
   let touchEndX = 0;
@@ -323,18 +323,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // --- Touch / Swipe Logic (CORRECTED) ---
 
-  carousel.addEventListener('touchstart', (e) => {
-    // Record where the finger landed
-    touchStartX = e.changedTouches[0].screenX;
-    stopAutoPlay(); // Pause timer while user interacts
-  }, { passive: true });
+  carousel.addEventListener(
+    "touchstart",
+    (e) => {
+      // Record where the finger landed
+      touchStartX = e.changedTouches[0].screenX;
+      stopAutoPlay(); // Pause timer while user interacts
+    },
+    { passive: true }
+  );
 
-  carousel.addEventListener('touchend', (e) => {
-    // Record where the finger lifted
-    touchEndX = e.changedTouches[0].screenX;
-    handleGesture();
-    startAutoPlay(); // Resume timer
-  }, { passive: true });
+  carousel.addEventListener(
+    "touchend",
+    (e) => {
+      // Record where the finger lifted
+      touchEndX = e.changedTouches[0].screenX;
+      handleGesture();
+      startAutoPlay(); // Resume timer
+    },
+    { passive: true }
+  );
 
   function handleGesture() {
     // Calculate the difference
@@ -371,9 +379,34 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Pause on mouse hover (Desktop UX)
-  carousel.addEventListener('mouseenter', stopAutoPlay);
-  carousel.addEventListener('mouseleave', startAutoPlay);
+  carousel.addEventListener("mouseenter", stopAutoPlay);
+  carousel.addEventListener("mouseleave", startAutoPlay);
 
   // Initialize
   startAutoPlay();
+});
+
+// footer accordion.js
+
+document.addEventListener("DOMContentLoaded", function () {
+  const titles = document.querySelectorAll(".footer-col-title");
+
+  titles.forEach((title) => {
+    title.addEventListener("click", function () {
+      // فقط در حالت موبایل اجرا شود
+      if (window.innerWidth <= 992) {
+        const parent = this.parentElement;
+
+        // بستن بقیه (اختیاری - اگر می‌خواهید فقط یکی باز باشد)
+        /*
+                        document.querySelectorAll('.footer-col').forEach(col => {
+                            if (col !== parent) col.classList.remove('active');
+                        });
+                        */
+
+        // تغییر وضعیت آیتم کلیک شده
+        parent.classList.toggle("active");
+      }
+    });
+  });
 });
