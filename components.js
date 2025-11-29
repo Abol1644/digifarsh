@@ -1,27 +1,76 @@
-/* components/js/offers-slider.js */
-
 document.addEventListener("DOMContentLoaded", () => {
   const scrollContainer = document.getElementById("offers-list");
   const scrollBtn = document.getElementById("offer-scroll-btn");
 
-  if (scrollContainer && scrollBtn) {
+  if (!scrollContainer) return;
+
+  // --- 1. Button Logic (Click to Scroll) ---
+  if (scrollBtn) {
     scrollBtn.addEventListener("click", () => {
-      // Determine scroll amount (card width + gap)
-      // Roughly 240px card + 16px gap = 256px
-      const scrollAmount = 260;
+      // Card width (approx 170px mobile / 240px desktop) + Gap
+      // We calculate it dynamically based on the first card to be safe
+      const card = scrollContainer.querySelector('.offer-card');
+      const cardWidth = card ? card.offsetWidth + 16 : 260; // 16 is gap
+      
+      const direction = getComputedStyle(document.body).direction;
+      
+      // In RTL mode, "Next" usually means moving visually to the Left (negative scroll)
+      // However, scrollBy logic depends on browser. 
+      // Simplest way for RTL: Positive value moves LEFT in most modern browsers with dir="rtl"
+      const scrollAmount = direction === 'rtl' ? -cardWidth : cardWidth;
 
-      // scrollBy scrolls relative to current position
-      // Negative value scrolls Left (which reveals more content in RTL layouts depending on browser)
-      // In pure RTL mode, sometimes scrolling negative X moves visual left.
-
-      // NOTE: In many browsers, RTL scrollLeft is negative.
-      // To go "Next" (visually left), we subtract.
       scrollContainer.scrollBy({
-        left: -scrollAmount,
+        left: scrollAmount,
         behavior: "smooth",
       });
     });
   }
+
+  // --- 2. Desktop Drag-to-Scroll Logic ---
+  // We only want this active if the user is using a MOUSE. 
+  // Mobile users should use native CSS scrolling (better performance).
+
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  scrollContainer.addEventListener('mousedown', (e) => {
+    isDown = true;
+    scrollContainer.classList.add('active');
+    
+    // Calculate start position
+    startX = e.pageX - scrollContainer.offsetLeft;
+    scrollLeft = scrollContainer.scrollLeft;
+    
+    // Disable smooth scroll while dragging (causes lag if left on)
+    scrollContainer.style.scrollBehavior = 'auto'; 
+  });
+
+  scrollContainer.addEventListener('mouseleave', () => {
+    isDown = false;
+    scrollContainer.classList.remove('active');
+    scrollContainer.style.scrollBehavior = 'smooth';
+  });
+
+  scrollContainer.addEventListener('mouseup', () => {
+    isDown = false;
+    scrollContainer.classList.remove('active');
+    scrollContainer.style.scrollBehavior = 'smooth';
+  });
+
+  scrollContainer.addEventListener('mousemove', (e) => {
+    if (!isDown) return; 
+    e.preventDefault(); 
+    
+    const x = e.pageX - scrollContainer.offsetLeft;
+    // RTL MATH FIX:
+    // In LTR: (x - startX) gives how much we moved right. We subtract that from scrollLeft.
+    // In RTL: The logic often needs to be inverted depending on browser implementation.
+    // However, the standard calculation usually works if scrollLeft is handled correctly.
+    
+    const walk = (x - startX) * 2; // Speed multiplier
+    scrollContainer.scrollLeft = scrollLeft - walk;
+  });
 });
 
 // story-slider.js

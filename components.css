@@ -1007,11 +1007,19 @@ main {
 
   /* Hide Scrollbar (Firefox) */
   scrollbar-width: none;
+  width: 100%;        /* Force it to fill the parent, not the content */
+  min-width: 0;       /* The "Magic" fix: Allows flex item to shrink smaller than content */
+  white-space: nowrap;
 }
 
 /* Hide Scrollbar (Chrome/Safari/Edge) */
 .offers-scroll-area::-webkit-scrollbar {
   display: none;
+}
+
+.offers-scroll-area.active {
+  cursor: grabbing; /* نشانگر دست مشت شده موقع کشیدن */
+  user-select: none; /* جلوگیری از انتخاب شدن متن‌ها موقع کشیدن */
 }
 
 /* --- Product Card --- */
@@ -1026,6 +1034,8 @@ main {
   justify-content: space-between;
   transition: transform 0.2s;
   height: 100%;
+  flex-shrink: 0;
+  width: 240px;
 }
 
 .offer-card:hover {
@@ -1138,50 +1148,230 @@ main {
 }
 
 /* --- Responsive --- */
-@media (max-width: 992px) {
-  .offers-container {
-    flex-direction: column;
-    height: auto;
-    padding-bottom: 0;
-    background: linear-gradient(180deg, var(--primary) 0%, var(--bg-offer) 100%);
+@media (max-width: 768px) {
+
+  .offers-section {
+    padding: 10px 0;
   }
 
+  /* --- 1. Container Styling (Red Background) --- */
+  .offers-container {
+    /* تغییر گرادینت به رنگ قرمز خالص یا پترن */
+    background: #ef394e;
+    /* رنگ قرمز دیجی‌کالایی */
+
+    /* اگر فایل پترن (اون طرح‌های چرخشی) رو داری، این خط رو آنکامنت کن */
+    /* background-image: url('/assets/images/red-pattern.png'); */
+
+    border-radius: 0;
+    /* در موبایل معمولا گوشه‌ها تیز یا با ردایوس کم هستن */
+    padding: 20px 0;
+    margin: 0 10px;
+    border-radius: 16px;
+    flex-direction: column;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* --- 2. Header (Title & Link) --- */
   .offers-banner {
     width: 100%;
+    flex: unset;
+    height: auto;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: auto;
-    padding-bottom: 60px;
-    /* Space for image */
+    padding: 0 20px 15px 20px;
+    margin: 0;
   }
 
+  .offers-banner-content {
+    width: 100%;
+    flex-direction: row;
+    /* چیدمان افقی */
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* حذف عکس تزیینی فرش در هدر برای شلوغ نشدن */
   .offers-decor-img {
-    width: 150px;
-    right: auto;
-    left: 0;
-    bottom: 0;
+    display: none;
   }
 
+  /* استایل تیتر "شگفت انگیزان" */
+  .offers-title {
+    font-size: 1rem;
+    color: #fff;
+    margin: 0;
+    text-shadow: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    white-space: nowrap;
+  }
+
+  .offers-title br {
+    display: none;
+  }
+
+  /* اضافه کردن آیکون درصد فرضی با CSS (اختیاری) */
+
+  /* لینک "مشاهده همه" */
+  .offers-view-all {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #fff;
+    opacity: 0.9;
+  }
+
+  /* حذف دکمه اسکرول وسط */
   .offer-nav-btn {
     display: none;
-    /* Hide button on tablet/mobile, use swipe */
   }
 
+  /* --- 3. Scroll Area & Cards --- */
   .offers-scroll-area {
-    width: 100%;
-    padding-bottom: 24px;
+    padding: 0 20px;
+    /* پدینگ کناری */
+    gap: 12px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    cursor: grab;
+    /* نشانگر دست باز */
+    width: 100%;        /* Force it to fill the parent, not the content */
+  min-width: 0;       /* The "Magic" fix: Allows flex item to shrink smaller than content */
+  white-space: nowrap;
   }
-}
 
-@media (max-width: 480px) {
-  .offers-title {
-    font-size: 1.8rem;
+  .offers-scroll-area.active {
+    cursor: grabbing;
+    /* نشانگر دست مشت شده موقع کشیدن */
+    user-select: none;
+    /* جلوگیری از انتخاب شدن متن‌ها موقع کشیدن */
   }
 
   .offer-card {
-    flex: 0 0 200px;
-    /* Smaller cards on mobile */
+    /* عرض کارت رو طوری تنظیم میکنیم که گوشه کارت بعدی معلوم باشه */
+    flex: 0 0 190px;
+    width: 190px;
+    max-width: 190px;
+    padding: 12px;
+    border-radius: 16px;
+    position: relative;
+    /* برای پوزیشن ابسولوت دکمه قلب */
+    overflow: visible;
+    /* برای اینکه سایه‌ها بریده نشن */
+    
+  }
+
+  /* --- 4. Image Section & Heart Icon --- */
+  .offer-img-box {
+    background-color: #f1f2f4;
+    /* رنگ طوسی روشن پشت فرش */
+    border-radius: 12px;
+    height: 150px;
+    margin-bottom: 10px;
+    position: relative;
+    /* اگر بخوایم قلب رو نسبت به باکس عکس تنظیم کنیم */
+  }
+
+  .offer-img-box img {
+    width: 80%;
+    height: 80%;
+    /* اگر بخوایم قلب رو نسبت به باکس عکس تنظیم کنیم */
+  }
+
+  /* تغییر مهم: دکمه قلب میره بالا سمت چپ */
+  .btn-fav {
+    position: absolute;
+    top: 15px;
+    /* تنظیم فاصله از بالا */
+    right: 15px;
+    /* تنظیم فاصله از چپ */
+    width: 28px;
+    height: 28px;
+    color: #9e9e9e;
+    /* رنگ طوسی آیکون */
+    background: transparent;
+    z-index: 10;
+  }
+
+  .btn-fav .material-icons-outlined {
+    font-size: 24px;
+  }
+
+  /* --- 5. Footer Layout (Price & Cart Button) --- */
+  .offer-card-footer {
+    flex-direction: row-reverse;
+    /* برعکس کردن جهت تا دکمه بیاد چپ، قیمت راست */
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: auto;
+    /* چسباندن به پایین کارت */
+  }
+
+  /* دکمه سبد خرید (قرمز بزرگ) */
+  .offer-actions {
+    margin: 0;
+    gap: 0;
+  }
+
+  /* ما دکمه قلب رو بردیم بالا، پس اینجا مخفیش میکنیم که دو تا نشه (تکنیک CSS) 
+     اما چون پوزیشن ابسولوت دادیم خودش از جریان خارج شده، فقط باید مطمئن شیم روی دکمه خرید اثر نمیذاره */
+
+  .btn-add-cart {
+    width: 42px;
+    height: 42px;
+    background-color: #ef394e;
+    border-radius: 12px;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .btn-add-cart .material-icons-outlined {
+    font-size: 24px;
+  }
+
+  /* --- 6. Typography (Prices & Title) --- */
+  .offer-card-title {
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #424750;
+    margin-bottom: 15px;
+    height: 40px;
+    /* ارتفاع ثابت برای نظم */
+    line-height: 20px;
+    text-align: right;
+  }
+
+  .offer-prices {
+    align-items: flex-end;
+    /* راست‌چین کردن قیمت‌ها */
+  }
+
+  .old-price {
+    font-size: 0.75rem;
+    color: #a1a3a8;
+    margin-bottom: 4px;
+    text-decoration: line-through;
+  }
+
+  .new-price {
+    font-size: 1rem;
+    color: #000;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .currency {
+    font-size: 0.7rem;
+    font-weight: 400;
   }
 }
 
@@ -2513,12 +2703,16 @@ main {
 
 /* --- Responsive Design (Mobile & Tablet) --- */
 @media (max-width: 992px) {
+
   /* تنظیم کانتینر برای تبدیل شدن به گرید */
   .features-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* گرید ۲ در ۲ */
-    gap: 10px; /* فاصله بین آیتم‌ها */
-    padding: 0 12px; /* پدینگ کناری مطابق درخواست */
+    grid-template-columns: repeat(2, 1fr);
+    /* گرید ۲ در ۲ */
+    gap: 10px;
+    /* فاصله بین آیتم‌ها */
+    padding: 0 12px;
+    /* پدینگ کناری مطابق درخواست */
     width: 100%;
     box-sizing: border-box;
   }
@@ -2528,26 +2722,31 @@ main {
     /* حذف محدودیت‌های فلکس باکس قبلی */
     min-width: 0;
     width: 100%;
-    flex: unset; 
+    flex: unset;
 
     /* چیدمان عمودی برای موبایل (آیکون بالا، متن پایین) */
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    
+
     /* استایل کارت */
     padding: 15px 10px;
-    background-color: #00000005; /* رنگ پس‌زمینه ملایم برای دیده شدن گرید */
-    border-radius: 12px; /* کمی گرد کردن گوشه‌ها */
-    gap: 8px; /* فاصله بین آیکون و متن */
+    background-color: #00000005;
+    /* رنگ پس‌زمینه ملایم برای دیده شدن گرید */
+    border-radius: 12px;
+    /* کمی گرد کردن گوشه‌ها */
+    gap: 8px;
+    /* فاصله بین آیکون و متن */
   }
 
   /* اصلاح سایز آیکون برای موبایل */
   .feature-icon {
-    width: 40px; /* کمی کوچکتر برای تعادل بهتر */
+    width: 40px;
+    /* کمی کوچکتر برای تعادل بهتر */
     height: 40px;
-    margin: 0; /* حذف مارجین‌های احتمالی */
+    margin: 0;
+    /* حذف مارجین‌های احتمالی */
   }
 
   /* اصلاح فونت‌ها برای موبایل */
@@ -2897,33 +3096,44 @@ main {
   .category-section {
     padding: 10px 0;
   }
+
   /* تنظیمات کانتینر اصلی */
   .category-container {
-    padding: 0; /* حذف پدینگ‌های اضافه کانتینر برای استفاده از کل عرض */
-    overflow: hidden; /* جلوگیری از اسکرول افقی کل صفحه */
+    padding: 0;
+    /* حذف پدینگ‌های اضافه کانتینر برای استفاده از کل عرض */
+    overflow: hidden;
+    /* جلوگیری از اسکرول افقی کل صفحه */
   }
 
   .category-content-wrapper {
-    padding: 0; /* حذف فاصله فلش‌ها */
+    padding: 0;
+    /* حذف فاصله فلش‌ها */
   }
 
   /* تبدیل گرید به نوار اسکرولی */
   .category-grid {
-    display: flex; /* چینش خطی */
-    flex-wrap: nowrap; /* جلوگیری از شکستن خط */
-    overflow-x: auto; /* فعال کردن اسکرول افقی */
-    gap: 12px; /* فاصله بین آیتم‌ها */
-    padding: 10px 24px 30px 24px; /* پدینگ اطراف (پایین بیشتر برای سایه) */
-    
+    display: flex;
+    /* چینش خطی */
+    flex-wrap: nowrap;
+    /* جلوگیری از شکستن خط */
+    overflow-x: auto;
+    /* فعال کردن اسکرول افقی */
+    gap: 12px;
+    /* فاصله بین آیتم‌ها */
+    padding: 10px 24px 30px 24px;
+    /* پدینگ اطراف (پایین بیشتر برای سایه) */
+
     /* تنظیمات نرمی اسکرول در iOS و Android */
-    -webkit-overflow-scrolling: touch; 
+    -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
-    
+
     /* مخفی کردن اسکرول‌بار برای زیبایی */
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE/Edge */
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE/Edge */
   }
-  
+
   /* مخفی کردن اسکرول‌بار در Chrome/Safari */
   .category-grid::-webkit-scrollbar {
     display: none;
@@ -2932,10 +3142,11 @@ main {
   /* تنظیمات کارت‌ها */
   .category-card {
     /* عرض ثابت برای اینکه 3 تا آیتم و نصفی دیده بشه (مثل عکس) */
-    flex: 0 0 36%; 
-    min-width: 100px; /* جلوگیری از خیلی کوچک شدن در گوشی‌های قدیمی */
+    flex: 0 0 36%;
+    min-width: 100px;
+    /* جلوگیری از خیلی کوچک شدن در گوشی‌های قدیمی */
     max-width: 130px;
-    
+
     /* وسط‌چین کردن محتوا */
     display: flex;
     flex-direction: column;
@@ -2945,56 +3156,65 @@ main {
 
   /* باکس عکس */
   .category-img-box {
-  width: 100%;
-  aspect-ratio: 1 / 1; /* باکس مربعی */
-  border-radius: 20px; /* گردی گوشه‌ها */
-  background-color: #f2f6fa; /* رنگ پس‌زمینه باکس */
-  
-  /* نکته کلیدی ۱: اجازه میدیم عکس از کادر بزنه بیرون */
-  overflow: visible; 
-  
-  /* برای اینکه عکس رو بتونیم وسط‌چین و کنترل کنیم */
-  display: flex;
-  align-items: center; /* تراز عمودی */
-  justify-content: center; /* تراز افقی */
-  
-  margin-bottom: 12px; /* فاصله باکس تا متن پایین */
-  position: relative;
-  z-index: 1; /* مطمئن میشیم زیر بقیه المنت‌ها نمیره */
-}
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    /* باکس مربعی */
+    border-radius: 20px;
+    /* گردی گوشه‌ها */
+    background-color: #f2f6fa;
+    /* رنگ پس‌زمینه باکس */
+
+    /* نکته کلیدی ۱: اجازه میدیم عکس از کادر بزنه بیرون */
+    overflow: visible;
+
+    /* برای اینکه عکس رو بتونیم وسط‌چین و کنترل کنیم */
+    display: flex;
+    align-items: center;
+    /* تراز عمودی */
+    justify-content: center;
+    /* تراز افقی */
+
+    margin-bottom: 12px;
+    /* فاصله باکس تا متن پایین */
+    position: relative;
+    z-index: 1;
+    /* مطمئن میشیم زیر بقیه المنت‌ها نمیره */
+  }
 
   .category-img-box img {
-  /* نکته کلیدی ۲: عکس رو بزرگتر از باکس میکنیم */
-  width: 115%; 
-  height: auto;
-  
-  /* نکته کلیدی ۳: با مارجین منفی میکشیمش بالا تا از سر باکس بزنه بیرون */
-  margin-top: -25%; 
-  
-  /* سایه برای اینکه جدا از باکس به نظر بیاد */
-  filter: drop-shadow(0 10px 10px rgba(0,0,0,0.2)); 
-  
-  transition: transform 0.3s ease;
-}
+    /* نکته کلیدی ۲: عکس رو بزرگتر از باکس میکنیم */
+    width: 115%;
+    height: auto;
 
-/* (اختیاری) افکت انیمیشن نرم وقتی صفحه لود میشه */
-.category-card:hover .category-img-box img {
+    /* نکته کلیدی ۳: با مارجین منفی میکشیمش بالا تا از سر باکس بزنه بیرون */
+    margin-top: -25%;
+
+    /* سایه برای اینکه جدا از باکس به نظر بیاد */
+    filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.2));
+
+    transition: transform 0.3s ease;
+  }
+
+  /* (اختیاری) افکت انیمیشن نرم وقتی صفحه لود میشه */
+  .category-card:hover .category-img-box img {
     transform: translateY(-5px) scale(1.02);
-}
+  }
 
   /* فونت‌ها در موبایل */
   .category-label {
     font-size: 0.8rem;
     font-weight: bold;
-    color: #444; /* رنگ متن تیره‌تر برای خوانایی */
-    white-space: nowrap; /* جلوگیری از دو خطی شدن متن */
+    color: #444;
+    /* رنگ متن تیره‌تر برای خوانایی */
+    white-space: nowrap;
+    /* جلوگیری از دو خطی شدن متن */
   }
 
   /* مخفی کردن فلش‌ها در موبایل */
   .nav-arrow {
     display: none;
   }
-  
+
   /* تنظیم هدر */
   .category-header {
     margin-bottom: 20px;
@@ -3159,7 +3379,7 @@ main {
 .stack-banner-link img:hover {
   transform: scale(1.05);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-  
+
 }
 
 .stack-3-banners {
@@ -3184,23 +3404,29 @@ main {
 }
 
 @media (max-width: 768px) {
+
   /* تنظیمات کانتینر اصلی برای گرید ۲ در ۲ */
   .stack-1-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* ایجاد دو ستون مساوی (2x2) */
-    gap: 6px; /* فضای ۶ پیکسلی بین آیتم‌ها */
-    padding: 6px; /* پدینگ اطراف کل گرید (اختیاری برای تراز بهتر) */
+    grid-template-columns: repeat(2, 1fr);
+    /* ایجاد دو ستون مساوی (2x2) */
+    gap: 6px;
+    /* فضای ۶ پیکسلی بین آیتم‌ها */
+    padding: 6px;
+    /* پدینگ اطراف کل گرید (اختیاری برای تراز بهتر) */
     width: 100%;
   }
 
   /* تنظیمات لینک نگهدارنده عکس */
   .stack-banner-link {
     display: block;
-    width: 100%; /* اشغال کل فضای سلول گرید */
+    width: 100%;
+    /* اشغال کل فضای سلول گرید */
     border-radius: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden; /* جلوگیری از بیرون زدگی عکس از گوشه‌های گرد */
+    overflow: hidden;
+    /* جلوگیری از بیرون زدگی عکس از گوشه‌های گرد */
   }
 
   /* افکت هاور */
@@ -3211,15 +3437,20 @@ main {
 
   /* تنظیمات عکس برای داینامیک بودن */
   .stack-banner-link img {
-    width: 100%; /* عکس کل عرض سلول گرید را پر می‌کند */
-    height: auto; /* ارتفاع بر اساس نسبت تصویر اتوماتیک تنظیم می‌شود */
-    object-fit: cover; /* اطمینان از پر شدن فضا بدون دفرمه شدن */
-    display: block; /* حذف فاصله اضافی زیر عکس‌های inline */
+    width: 100%;
+    /* عکس کل عرض سلول گرید را پر می‌کند */
+    height: auto;
+    /* ارتفاع بر اساس نسبت تصویر اتوماتیک تنظیم می‌شود */
+    object-fit: cover;
+    /* اطمینان از پر شدن فضا بدون دفرمه شدن */
+    display: block;
+    /* حذف فاصله اضافی زیر عکس‌های inline */
   }
-  
+
   /* جهت اطمینان از اینکه سکشن اصلی مشکلی ایجاد نمی‌کند */
   .stack-1-section {
     padding: 10px 0;
-    direction: ltr; /* اگر گرید به هم ریخت، موقتا LTR تست کنید، اما RTL هم باید کار کند */
+    direction: ltr;
+    /* اگر گرید به هم ریخت، موقتا LTR تست کنید، اما RTL هم باید کار کند */
   }
 }
