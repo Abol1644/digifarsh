@@ -1751,8 +1751,7 @@ main {
   padding: 0 24px;
 }
 
-/* Reusing the Header styles from single-category-slider, 
-   but ensuring they are applied here if you didn't make them global */
+/* --- Header --- */
 .section-header {
   display: flex;
   align-items: center;
@@ -1761,8 +1760,9 @@ main {
 }
 
 .section-title {
-  font-size: 1.5rem;
-  color: var(--primary);
+  font-size: 1.6rem;
+  color: #ef394e;
+  /* Using Red explicitly based on image */
   margin: 0;
   white-space: nowrap;
 }
@@ -1770,7 +1770,7 @@ main {
 .header-line {
   flex-grow: 1;
   height: 1px;
-  background-color: #F0F0F0;
+  background-color: #eee;
   margin-top: 4px;
 }
 
@@ -1781,22 +1781,21 @@ main {
   text-decoration: none;
   color: #777;
   font-size: 0.9rem;
-  white-space: nowrap;
   transition: color 0.2s;
 }
 
 .view-all-link:hover {
-  color: var(--primary);
+  color: #ef394e;
 }
-
 
 /* --- Grid Layout --- */
 .most-sold-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   /* 3 Columns */
-  gap: 12px;
-  /* Space between cards */
+  gap: 16px;
+  /* Ensure padding for shadows if needed */
+  padding: 4px;
 }
 
 /* --- Card Styles --- */
@@ -1805,45 +1804,57 @@ main {
   align-items: center;
   justify-content: space-between;
   background: #ffffff;
-  border: 1px solid #EEEEEE;
-  border-radius: 16px;
-  padding: 6px;
+  border: 1px solid #f0f0f0;
+  border-radius: 12px;
+  padding: 12px 16px;
   text-decoration: none;
-  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
-  height: 100%;
+  transition: all 0.2s ease;
+  min-height: 110px;
+
+  /* IMPORTANT for Mobile Scroll: Prevent card from squashing */
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .most-sold-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   border-color: #e0e0e0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
 }
 
-/* 1. Rank Number (Right Side in RTL) */
+/* 1. Rank Number (Big Red Number) */
 .rank-number {
-  font-size: 2rem;
-  color: var(--primary);
+  font-size: 2.2rem;
+  /* Larger font */
+  font-weight: 800;
+  /* Extra Bold */
+  color: #ef394e;
+  /* Digikala Red */
   width: 40px;
   text-align: center;
   flex-shrink: 0;
-  margin-top: 8px;
+  margin-left: 12px;
+  /* Space between number and text */
+  line-height: 1;
 }
 
 /* 2. Text Info (Middle) */
 .product-info {
   flex: 1;
-  padding: 0 16px;
-  /* Spacing from number and image */
+  /* Take up remaining space */
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-left: 12px;
+  /* Space from image */
 }
 
 .product-name {
-  font-size: 0.9rem;
-  color: var(--text-color);
+  font-size: 0.95rem;
+  color: #333;
   margin: 0 0 8px 0;
-  line-height: 1.5;
+  line-height: 1.6;
+  font-weight: 500;
   /* Limit to 2 lines */
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -1853,15 +1864,17 @@ main {
 }
 
 .product-code {
-  font-size: 0.8rem;
-  color: var(--muted-text);
+  font-size: 0.85rem;
+  color: #9e9e9e;
+  /* Muted gray */
 }
 
-/* 3. Image (Left Side in RTL) */
+/* 3. Image (Left Side) */
 .product-thumb {
-  width: 80px;
-  height: 80px;
-  background-color: var(--bg-card-thumb);
+  width: 86px;
+  height: 86px;
+  background-color: #f5f5f5;
+  /* Light gray bg behind rug */
   border-radius: 12px;
   flex-shrink: 0;
   overflow: hidden;
@@ -1871,8 +1884,10 @@ main {
 }
 
 .product-thumb img {
-  width: 70px;
-  height: 70px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Use cover if image fills box, or contain if transparent */
   object-fit: contain;
 }
 
@@ -1880,20 +1895,62 @@ main {
 /* --- Responsive --- */
 @media (max-width: 992px) {
   .most-sold-grid {
-    grid-template-columns: repeat(2, 1fr);
-    /* 2 Columns on Tablet */
+    display: grid;
+
+    /* 1. Disable the desktop column logic */
+    grid-template-columns: none;
+
+    /* 2. Create exactly 3 Rows */
+    grid-template-rows: repeat(3, min-content);
+
+    /* 3. Force items to fill vertically (Top-to-Bottom), then create new columns */
+    grid-auto-flow: column;
+
+    /* 4. Set the width of each column (approx 85% of screen width usually looks best) */
+    grid-auto-columns: 85%;
+    /* Or use a fixed width like 280px if you prefer exact sizing */
+
+    /* 5. Scroll settings */
+    overflow-x: auto;
+    gap: 12px;
+    padding-bottom: 12px;
+
+    /* 6. Snap Effect (Optional: Makes it stop neatly on columns) */
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .most-sold-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .most-sold-card {
+    /* Ensure they don't stretch weirdly */
+    height: auto;
+    width: 100%;
+
+    /* Snap alignment */
+    scroll-snap-align: start;
+
+    /* Optional: Reset hover effects on mobile to prevent sticky states */
+    transform: none;
   }
 }
 
 @media (max-width: 600px) {
   .most-sold-grid {
     grid-template-columns: 1fr;
-    /* 1 Column on Mobile */
-    gap: 16px;
+    /* 1 Column Mobile */
+    gap: 12px;
   }
 
-  .section-title {
-    font-size: 1.2rem;
+  .most-sold-card {
+    padding: 10px;
+  }
+
+  .rank-number {
+    font-size: 1.8rem;
+    width: 30px;
   }
 }
 
@@ -3432,6 +3489,52 @@ main {
   }
 }
 
+/* --- Responsive --- */
+
+/* Tablet & Mobile (Max Width 992px or 768px depending on preference) */
+@media (max-width: 992px) {
+  .brands-grid {
+    /* 1. Switch to Flexbox for a single row */
+    display: flex;
+    flex-wrap: nowrap;
+    /* Crucial: Prevents items from dropping to next line */
+
+    /* 2. Enable Scrolling */
+    overflow-x: auto;
+    gap: 16px;
+    padding-bottom: 12px;
+    /* Space for touch interaction */
+
+    /* 3. Hide Scrollbar & Smooth Feel */
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+  }
+
+  .brands-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* 4. Fix Card Size for Mobile */
+  .brand-card {
+    /* 'flex: 0 0 auto' means: Don't grow, Don't shrink, Auto basis */
+    flex: 0 0 130px;
+    /* Set your desired width for brand cards here */
+    scroll-snap-align: center;
+    /* Snaps the card to center when scrolling stops */
+  }
+
+  /* Optional: Adjust logo box size for mobile if 120px is too big */
+  .brand-logo-box {
+    height: 100px;
+    padding: 16px;
+  }
+
+  .section-title {
+    font-size: 1.2rem;
+  }
+}
+
 /* stacks-section.css */
 
 .stack-1-container {
@@ -3485,7 +3588,23 @@ main {
     align-items: center;
     gap: 12px;
   }
+
   .stack-3-img img {
+    width: 100%;
+  }
+
+  .stack-4-banners {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 8px;
+  }
+  .stack-4-img img {
+    width: 100%;
+  }
+  .stack-4-section {
     width: 100%;
   }
 
