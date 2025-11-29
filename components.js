@@ -121,65 +121,68 @@ document.addEventListener("DOMContentLoaded", () => {
 /* components/js/mega-menu.js */
 
 document.addEventListener("DOMContentLoaded", function () {
-  // 1. Header & Menu Toggles
-  const menuBtn = document.querySelector(".mobile-menu-trigger");
-  const megaMenu = document.querySelector(".mega-menu");
-  const openState = document.querySelector(".menu-state-open");
-  const closeState = document.querySelector(".menu-state-close");
+  
+  // 1. Toggle Mobile Drawer (Connect to your existing header button)
+  const menuBtn = document.querySelector("#mobile-menu-btn"); // Your header button ID
+  const drawer = document.querySelector("#mobileMegaMenu");
   const body = document.body;
 
-  if (menuBtn) {
+  if (menuBtn && drawer) {
     menuBtn.addEventListener("click", () => {
-      // Toggle Menu Class
-      megaMenu.classList.toggle("menu-open");
-
-      // Toggle Button State (Menu Icon vs Close Icon)
-      const isOpen = megaMenu.classList.contains("menu-open");
-      if (isOpen) {
-        openState.style.display = "none";
-        closeState.style.display = "flex";
-        body.style.overflow = "hidden"; // Prevent background scrolling
+      drawer.classList.toggle("active");
+      
+      // Update the icon inside the button (Menu vs Close)
+      const openState = menuBtn.querySelector(".menu-state-open");
+      const closeState = menuBtn.querySelector(".menu-state-close");
+      
+      if(drawer.classList.contains("active")) {
+          if(openState) openState.style.display = 'none';
+          if(closeState) closeState.style.display = 'flex';
+          body.style.overflow = "hidden"; // Prevent background scroll
       } else {
-        openState.style.display = "flex";
-        closeState.style.display = "none";
-        body.style.overflow = "";
+          if(openState) openState.style.display = 'flex';
+          if(closeState) closeState.style.display = 'none';
+          body.style.overflow = "";
       }
     });
   }
 
-  // 2. Mobile Accordion Logic (Left Side)
-  const accordionTitles = document.querySelectorAll(".mega-col-title");
+  // 2. Sidebar Tab Switching
+  const sideItems = document.querySelectorAll(".side-item");
+  const tabPanes = document.querySelectorAll(".mobile-tab-pane");
 
-  accordionTitles.forEach((title) => {
-    title.addEventListener("click", () => {
-      // Only run on mobile
-      if (window.innerWidth <= 992) {
-        const parent = title.parentElement; // .mega-col
+  sideItems.forEach(item => {
+    item.addEventListener("click", function() {
+      // Remove active from all sidebar items
+      sideItems.forEach(i => i.classList.remove("active"));
+      // Add active to clicked
+      this.classList.add("active");
 
-        // Toggle active class
-        parent.classList.toggle("accordion-active");
+      // Hide all panes
+      tabPanes.forEach(pane => pane.classList.remove("active"));
+      
+      // Show target pane
+      const targetId = this.getAttribute("data-target");
+      const targetPane = document.getElementById(targetId);
+      if(targetPane) {
+        targetPane.classList.add("active");
       }
     });
   });
 
-  // 3. Tab Switching Logic (Right Sidebar)
-  const sidebarLinks = document.querySelectorAll(".mega-sidebar-list li");
+  // 3. Accordion Logic
+  const accordionHeaders = document.querySelectorAll(".mobile-accordion .accordion-header");
 
-  sidebarLinks.forEach((link) => {
-    link.addEventListener("click", (e) => {
-      e.preventDefault(); // Prevent jump
-
-      // Remove active from all
-      sidebarLinks.forEach((l) => l.classList.remove("active"));
-
-      // Add active to clicked
-      link.classList.add("active");
-
-      // Logic to switch content (Optional: If you have different content divs)
-      // For now, it just highlights the tab as per visual design
+  accordionHeaders.forEach(header => {
+    header.addEventListener("click", function() {
+      const parent = this.parentElement;
+      // Toggle current
+      parent.classList.toggle("open");
     });
   });
+
 });
+
 
 document.addEventListener("DOMContentLoaded", () => {
   // 1. Select all slider wrappers on the page

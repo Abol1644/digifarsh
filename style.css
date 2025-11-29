@@ -19,23 +19,23 @@
 
 body {
   margin: 0;
-  font-family: system-ui;
+  font-family: system-ui, peyda;
   direction: rtl;
 }
 
 @font-face {
   font-family: peyda;
-  src: url(/assets/fonts/Peyda-Regular.woff2);
+  src: url(./assets/fonts/Peyda-Regular.woff2);
 }
 
 @font-face {
   font-family: peyda-medium;
-  src: url(/assets/fonts/Peyda-Medium.woff2);
+  src: url(./assets/fonts/Peyda-Medium.woff2);
 }
 
 @font-face {
   font-family: peyda-bold;
-  src: url(/assets/fonts/Peyda-Bold.woff2);
+  src: url(./assets/fonts/Peyda-Bold.woff2);
 }
 
 .font-regular {
