@@ -1007,8 +1007,10 @@ main {
 
   /* Hide Scrollbar (Firefox) */
   scrollbar-width: none;
-  width: 100%;        /* Force it to fill the parent, not the content */
-  min-width: 0;       /* The "Magic" fix: Allows flex item to shrink smaller than content */
+  width: 100%;
+  /* Force it to fill the parent, not the content */
+  min-width: 0;
+  /* The "Magic" fix: Allows flex item to shrink smaller than content */
   white-space: nowrap;
 }
 
@@ -1018,8 +1020,10 @@ main {
 }
 
 .offers-scroll-area.active {
-  cursor: grabbing; /* نشانگر دست مشت شده موقع کشیدن */
-  user-select: none; /* جلوگیری از انتخاب شدن متن‌ها موقع کشیدن */
+  cursor: grabbing;
+  /* نشانگر دست مشت شده موقع کشیدن */
+  user-select: none;
+  /* جلوگیری از انتخاب شدن متن‌ها موقع کشیدن */
 }
 
 /* --- Product Card --- */
@@ -1240,9 +1244,11 @@ main {
     scrollbar-width: none;
     cursor: grab;
     /* نشانگر دست باز */
-    width: 100%;        /* Force it to fill the parent, not the content */
-  min-width: 0;       /* The "Magic" fix: Allows flex item to shrink smaller than content */
-  white-space: nowrap;
+    width: 100%;
+    /* Force it to fill the parent, not the content */
+    min-width: 0;
+    /* The "Magic" fix: Allows flex item to shrink smaller than content */
+    white-space: nowrap;
   }
 
   .offers-scroll-area.active {
@@ -1263,7 +1269,7 @@ main {
     /* برای پوزیشن ابسولوت دکمه قلب */
     overflow: visible;
     /* برای اینکه سایه‌ها بریده نشن */
-    
+
   }
 
   /* --- 4. Image Section & Heart Icon --- */
@@ -1511,15 +1517,18 @@ main {
 
 /* Card Styling */
 .simple-product-card {
-  flex: 0 0 260px; /* Fixed width */
+  flex: 0 0 260px;
+  /* Fixed width */
   background: #ffffff;
-  border-radius: 24px; /* Slightly more rounded to match image */
-  padding: 12px;       /* Less padding to let image be bigger */
+  border-radius: 24px;
+  /* Slightly more rounded to match image */
+  padding: 12px;
+  /* Less padding to let image be bigger */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   /* Softer shadow like the reference */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03); 
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
   transition: transform 0.2s, box-shadow 0.2s;
   position: relative;
 }
@@ -1531,14 +1540,17 @@ main {
 
 .product-img-box {
   width: 100%;
-  height: 220px; /* Taller image area */
-  background-color: #f9f9f9; /* Very light gray background */
+  height: 220px;
+  /* Taller image area */
+  background-color: #f9f9f9;
+  /* Very light gray background */
   border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 16px;
-  position: relative; /* Essential for absolute positioning of heart */
+  position: relative;
+  /* Essential for absolute positioning of heart */
   overflow: hidden;
 }
 
@@ -1546,7 +1558,7 @@ main {
   max-width: 90%;
   max-height: 90%;
   object-fit: contain;
-  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.05));
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.05));
 }
 
 .btn-fav-absolute {
@@ -1555,8 +1567,10 @@ main {
   right: 12px;
   width: 32px;
   height: 32px;
-  border-radius: 50%; /* Circle */
-  background: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+  border-radius: 50%;
+  /* Circle */
+  background: rgba(255, 255, 255, 0.8);
+  /* Semi-transparent white */
   border: none;
   color: #888;
   display: flex;
@@ -1569,8 +1583,9 @@ main {
 
 .btn-fav-absolute:hover {
   background: #fff;
-  color: #ef394e; /* Red on hover */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  color: #ef394e;
+  /* Red on hover */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .btn-fav-absolute .material-icons-outlined {
@@ -1582,20 +1597,23 @@ main {
   color: #333;
   margin: 0 0 12px;
   line-height: 1.5;
-  height: 42px; /* Limit to 2 lines */
+  height: 42px;
+  /* Limit to 2 lines */
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   line-clamp: 2;
   -webkit-box-orient: vertical;
-  text-align: right; /* Ensure RTL alignment */
+  text-align: right;
+  /* Ensure RTL alignment */
 }
 
 /* Footer (Actions + Price) */
 .product-footer {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end; /* Align bottom */
+  align-items: flex-end;
+  /* Align bottom */
   padding-top: 8px;
 }
 
@@ -1621,14 +1639,16 @@ main {
 .btn-cart-red {
   width: 44px;
   height: 44px;
-  border-radius: 14px; /* Squircle shape */
+  border-radius: 14px;
+  /* Squircle shape */
   border: none;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: 0.2s;
-  background-color: #ef394e; /* Digikala Red */
+  background-color: #ef394e;
+  /* Digikala Red */
   color: #ffffff;
   box-shadow: 0 4px 12px rgba(239, 57, 78, 0.25);
 }
@@ -1667,7 +1687,8 @@ main {
 .new-price {
   font-size: 1.1rem;
   color: #333;
-  font-weight: 800; /* Extra bold for price */
+  font-weight: 800;
+  /* Extra bold for price */
 }
 
 .currency {
@@ -3455,6 +3476,18 @@ main {
 }
 
 @media (max-width: 768px) {
+
+  .stack-3-banners {
+    width: 100%;
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .stack-3-img img {
+    width: 100%;
+  }
 
   /* تنظیمات کانتینر اصلی برای گرید ۲ در ۲ */
   .stack-1-container {
