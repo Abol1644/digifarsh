@@ -1511,16 +1511,17 @@ main {
 
 /* Card Styling */
 .simple-product-card {
-  flex: 0 0 260px;
-  /* Fixed width */
+  flex: 0 0 260px; /* Fixed width */
   background: #ffffff;
-  border-radius: 16px;
-  padding: 16px;
+  border-radius: 24px; /* Slightly more rounded to match image */
+  padding: 12px;       /* Less padding to let image be bigger */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 10px 4px 10px rgba(0, 0, 0, 0.04);
+  /* Softer shadow like the reference */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03); 
   transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
 }
 
 .simple-product-card:hover {
@@ -1530,42 +1531,72 @@ main {
 
 .product-img-box {
   width: 100%;
-  height: 200px;
-  background-color: var(--bg-card);
-  border-radius: 12px;
+  height: 220px; /* Taller image area */
+  background-color: #f9f9f9; /* Very light gray background */
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 16px;
-  padding: 10px;
+  position: relative; /* Essential for absolute positioning of heart */
+  overflow: hidden;
 }
 
 .product-img-box img {
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 90%;
+  max-height: 90%;
   object-fit: contain;
-  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.05));
+}
+
+.btn-fav-absolute {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%; /* Circle */
+  background: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+  border: none;
+  color: #888;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  transition: 0.2s;
+}
+
+.btn-fav-absolute:hover {
+  background: #fff;
+  color: #ef394e; /* Red on hover */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.btn-fav-absolute .material-icons-outlined {
+  font-size: 20px;
 }
 
 .product-title {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: #333;
-  margin: 0 0 16px;
-  line-height: 1.6;
-  height: 44px;
-  /* Fixed height for 2 lines */
+  margin: 0 0 12px;
+  line-height: 1.5;
+  height: 42px; /* Limit to 2 lines */
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   line-clamp: 2;
   -webkit-box-orient: vertical;
+  text-align: right; /* Ensure RTL alignment */
 }
 
 /* Footer (Actions + Price) */
 .product-footer {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: flex-end; /* Align bottom */
+  padding-top: 8px;
 }
 
 /* Buttons */
@@ -1588,13 +1619,23 @@ main {
 }
 
 .btn-cart-red {
-  background-color: var(--primary);
+  width: 44px;
+  height: 44px;
+  border-radius: 14px; /* Squircle shape */
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.2s;
+  background-color: #ef394e; /* Digikala Red */
   color: #ffffff;
-  box-shadow: 0 4px 10px rgba(230, 0, 18, 0.2);
+  box-shadow: 0 4px 12px rgba(239, 57, 78, 0.25);
 }
 
 .btn-cart-red:hover {
-  background-color: #c4000f;
+  background-color: #d61f35;
+  transform: scale(1.05);
 }
 
 .btn-fav-outline {
@@ -1610,22 +1651,28 @@ main {
 
 /* Prices */
 .product-prices {
-  text-align: left;
+  text-align: right;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  justify-content: center;
 }
 
 .old-price {
-  font-size: 0.85rem;
-  color: #aaa;
+  font-size: 0.8rem;
+  color: #bbb;
   text-decoration: line-through;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
 .new-price {
   font-size: 1.1rem;
   color: #333;
+  font-weight: 800; /* Extra bold for price */
+}
+
+.currency {
+  font-size: 0.75rem;
+  font-weight: 400;
 }
 
 
@@ -1642,6 +1689,10 @@ main {
 
   .nav-btn-left {
     left: 0;
+  }
+
+  .btn-fav-outline {
+    display: none;
   }
 }
 
