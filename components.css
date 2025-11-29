@@ -2892,36 +2892,113 @@ main {
 }
 
 
-/* --- Responsive --- */
-@media (max-width: 1100px) {
-  .category-grid {
-    grid-template-columns: repeat(4, 1fr);
-    /* 4 per row on tablets */
-  }
-}
-
+/* --- Mobile Horizontal Scroll (Touch Friendly) --- */
 @media (max-width: 768px) {
-  .category-grid {
-    grid-template-columns: repeat(3, 1fr);
-    /* 3 per row on small tablets */
+  .category-section {
+    padding: 10px 0;
+  }
+  /* تنظیمات کانتینر اصلی */
+  .category-container {
+    padding: 0; /* حذف پدینگ‌های اضافه کانتینر برای استفاده از کل عرض */
+    overflow: hidden; /* جلوگیری از اسکرول افقی کل صفحه */
   }
 
   .category-content-wrapper {
-    padding: 0;
-    /* Remove side padding on mobile */
+    padding: 0; /* حذف فاصله فلش‌ها */
   }
 
-  .nav-arrow {
-    display: none;
-    /* Hide arrows on mobile, rely on scroll */
+  /* تبدیل گرید به نوار اسکرولی */
+  .category-grid {
+    display: flex; /* چینش خطی */
+    flex-wrap: nowrap; /* جلوگیری از شکستن خط */
+    overflow-x: auto; /* فعال کردن اسکرول افقی */
+    gap: 12px; /* فاصله بین آیتم‌ها */
+    padding: 10px 24px 30px 24px; /* پدینگ اطراف (پایین بیشتر برای سایه) */
+    
+    /* تنظیمات نرمی اسکرول در iOS و Android */
+    -webkit-overflow-scrolling: touch; 
+    scroll-behavior: smooth;
+    
+    /* مخفی کردن اسکرول‌بار برای زیبایی */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
   }
+  
+  /* مخفی کردن اسکرول‌بار در Chrome/Safari */
+  .category-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* تنظیمات کارت‌ها */
+  .category-card {
+    /* عرض ثابت برای اینکه 3 تا آیتم و نصفی دیده بشه (مثل عکس) */
+    flex: 0 0 36%; 
+    min-width: 100px; /* جلوگیری از خیلی کوچک شدن در گوشی‌های قدیمی */
+    max-width: 130px;
+    
+    /* وسط‌چین کردن محتوا */
+    display: flex;
+    flex-direction: column;
+    align_items: center;
+    justify-content: flex-start;
+  }
+
+  /* باکس عکس */
+  .category-img-box {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* باکس مربعی */
+  border-radius: 20px; /* گردی گوشه‌ها */
+  background-color: #f2f6fa; /* رنگ پس‌زمینه باکس */
+  
+  /* نکته کلیدی ۱: اجازه میدیم عکس از کادر بزنه بیرون */
+  overflow: visible; 
+  
+  /* برای اینکه عکس رو بتونیم وسط‌چین و کنترل کنیم */
+  display: flex;
+  align-items: center; /* تراز عمودی */
+  justify-content: center; /* تراز افقی */
+  
+  margin-bottom: 12px; /* فاصله باکس تا متن پایین */
+  position: relative;
+  z-index: 1; /* مطمئن میشیم زیر بقیه المنت‌ها نمیره */
 }
 
-@media (max-width: 500px) {
-  .category-grid {
-    grid-template-columns: repeat(2, 1fr);
-    /* 2 per row on mobile */
-    gap: 16px;
+  .category-img-box img {
+  /* نکته کلیدی ۲: عکس رو بزرگتر از باکس میکنیم */
+  width: 115%; 
+  height: auto;
+  
+  /* نکته کلیدی ۳: با مارجین منفی میکشیمش بالا تا از سر باکس بزنه بیرون */
+  margin-top: -25%; 
+  
+  /* سایه برای اینکه جدا از باکس به نظر بیاد */
+  filter: drop-shadow(0 10px 10px rgba(0,0,0,0.2)); 
+  
+  transition: transform 0.3s ease;
+}
+
+/* (اختیاری) افکت انیمیشن نرم وقتی صفحه لود میشه */
+.category-card:hover .category-img-box img {
+    transform: translateY(-5px) scale(1.02);
+}
+
+  /* فونت‌ها در موبایل */
+  .category-label {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #444; /* رنگ متن تیره‌تر برای خوانایی */
+    white-space: nowrap; /* جلوگیری از دو خطی شدن متن */
+  }
+
+  /* مخفی کردن فلش‌ها در موبایل */
+  .nav-arrow {
+    display: none;
+  }
+  
+  /* تنظیم هدر */
+  .category-header {
+    margin-bottom: 20px;
+    padding: 0 24px;
   }
 }
 
