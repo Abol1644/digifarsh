@@ -3150,7 +3150,7 @@ main {
     /* وسط‌چین کردن محتوا */
     display: flex;
     flex-direction: column;
-    align_items: center;
+    align-items: center;
     justify-content: flex-start;
   }
 
