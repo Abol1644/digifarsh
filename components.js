@@ -125,7 +125,29 @@ document.addEventListener("DOMContentLoaded", function () {
   // 1. Toggle Mobile Drawer (Connect to your existing header button)
   const menuBtn = document.querySelector("#mobile-menu-btn"); // Your header button ID
   const drawer = document.querySelector("#mobileMegaMenu");
+  const desktopSideItems = document.querySelectorAll(".mega-sidebar-list li");
+  const desktopPanes = document.querySelectorAll(".mega-content-pane");
   const body = document.body;
+
+  desktopSideItems.forEach(item => {
+    // Use 'mouseenter' for desktop so user doesn't have to click
+    item.addEventListener("mouseenter", function() {
+      // 1. Remove active class from all sidebar items & content panes
+      desktopSideItems.forEach(i => i.classList.remove("active"));
+      desktopPanes.forEach(pane => pane.classList.remove("active"));
+
+      // 2. Activate the hovered item
+      this.classList.add("active");
+
+      // 3. Show the corresponding content pane
+      const targetId = this.getAttribute("data-target"); // We will add this to HTML
+      const targetPane = document.getElementById(targetId);
+      
+      if(targetPane) {
+        targetPane.classList.add("active");
+      }
+    });
+  });
 
   if (menuBtn && drawer) {
     menuBtn.addEventListener("click", () => {
@@ -150,6 +172,25 @@ document.addEventListener("DOMContentLoaded", function () {
   // 2. Sidebar Tab Switching
   const sideItems = document.querySelectorAll(".side-item");
   const tabPanes = document.querySelectorAll(".mobile-tab-pane");
+  const desktopMenuBtn = document.querySelector(".category-btn");
+  const desktopMegaMenu = document.querySelector(".mega-menu");
+  const desktopWrapper = document.querySelector(".category-menu-wrapper");
+
+  if(desktopMenuBtn && desktopMegaMenu) {
+    desktopMenuBtn.addEventListener("click", (e) => {
+      e.stopPropagation(); // Stop click from bubbling to document
+      desktopMenuBtn.classList.toggle("active");
+      desktopMegaMenu.classList.toggle("menu-open");
+    });
+
+    // Close when clicking anywhere outside
+    document.addEventListener("click", (e) => {
+      if (!desktopWrapper.contains(e.target)) {
+        desktopMenuBtn.classList.remove("active");
+        desktopMegaMenu.classList.remove("menu-open");
+      }
+    });
+  }
 
   sideItems.forEach(item => {
     item.addEventListener("click", function() {

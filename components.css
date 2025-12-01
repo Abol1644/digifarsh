@@ -2135,50 +2135,9 @@ main {
 }
 
 
+
 /* --- Responsive --- */
-@media (max-width: 992px) {
-  .most-sold-grid {
-    display: grid;
 
-    /* 1. Disable the desktop column logic */
-    grid-template-columns: none;
-
-    /* 2. Create exactly 3 Rows */
-    grid-template-rows: repeat(3, min-content);
-
-    /* 3. Force items to fill vertically (Top-to-Bottom), then create new columns */
-    grid-auto-flow: column;
-
-    /* 4. Set the width of each column (approx 85% of screen width usually looks best) */
-    grid-auto-columns: 85%;
-    /* Or use a fixed width like 280px if you prefer exact sizing */
-
-    /* 5. Scroll settings */
-    overflow-x: auto;
-    gap: 12px;
-    padding-bottom: 12px;
-
-    /* 6. Snap Effect (Optional: Makes it stop neatly on columns) */
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-  }
-
-  .most-sold-grid::-webkit-scrollbar {
-    display: none;
-  }
-
-  .most-sold-card {
-    /* Ensure they don't stretch weirdly */
-    height: auto;
-    width: 100%;
-
-    /* Snap alignment */
-    scroll-snap-align: start;
-
-    /* Optional: Reset hover effects on mobile to prevent sticky states */
-    transform: none;
-  }
-}
 
 @media (max-width: 600px) {
   .most-sold-grid {
@@ -2238,6 +2197,23 @@ main {
   /* Optional: Add a small margin if you want a gap, or 0 to touch the bar */
   margin-top: 0px;
 }
+
+.mega-content-pane {
+  display: none; /* Hide all by default */
+  width: 100%;
+  animation: fadeIn 0.3s ease;
+}
+
+.mega-content-pane.active {
+  display: block; /* Show only the active one */
+}
+
+/* Optional: Animation for smooth switching */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 
 /* 4. ACTIVE CLASS (Toggled by JS) */
 .mega-menu.menu-open {
