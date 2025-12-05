@@ -38,18 +38,33 @@ body {
   src: url(./assets/fonts/Peyda-Bold.woff2);
 }
 
+@font-face {
+  font-family: yekan;
+  src: url(./assets/fonts/yekan-regular.woff);
+}
+
+@font-face {
+  font-family: yekan-medium;
+  src: url(./assets/fonts/yekan-medium.woff);
+}
+
+@font-face {
+  font-family: yekan-bold;
+  src: url(./assets/fonts/yekan-bold.woff);
+}
+
 .font-regular {
-  font-family: peyda;
+  font-family: yekan;
   font-weight: 400;
 }
 
 .font-medium {
-  font-family: peyda-medium;
+  font-family: yekan-medium;
   font-weight: 500;
 }
 
 .font-bold {
-  font-family: peyda-bold;
+  font-family: yekan-bold;
   font-weight: 700;
 }
 
