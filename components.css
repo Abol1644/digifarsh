@@ -975,6 +975,7 @@ main {
 .hero-slide-content {
   flex: 1;
   text-align: right;
+  margin-right: 40px;
 }
 
 .hero-title {
@@ -1099,6 +1100,7 @@ main {
 
   .hero-slide-content {
     text-align: center;
+    margin-right: 0;
   }
 
   .hero-title {

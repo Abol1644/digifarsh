@@ -68,6 +68,21 @@ body {
   font-weight: 700;
 }
 
+.peyda-regular {
+  font-family: peyda;
+  font-weight: 400;
+}
+
+.peyda-medium {
+  font-family: peyda-medium;
+  font-weight: 500;
+}
+
+.peyda-bold {
+  font-family: peyda-bold;
+  font-weight: 700;
+}
+
 .material-icons-outlined {
   display: flex !important;
 }
