@@ -3234,7 +3234,6 @@ main {
   align-items: center;
   padding: 0 20px;
   /* Divider Line on the Left side for RTL layout */
-  border-left: 1px solid var(--divider-color);
 }
 
 /* Remove border from the last column on the left */
@@ -3269,7 +3268,7 @@ main {
   width: 100%;
   margin-bottom: 24px;
   /* Optional: If you want a border around the WHOLE grid, uncomment below */
-  /* border: 1px solid var(--divider-color); */
+  /* border: 1px solid var(--border-color); */
   /* border-radius: 12px; */
   /* overflow: hidden; */
 }
@@ -3287,18 +3286,18 @@ main {
 }
 
 .puzzle-item:nth-child(1) {
-  border-left: 1px solid var(--divider-color);
-  border-bottom: 1px solid var(--divider-color);
+  border-left: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
 }
 
 /* Item 2 (Top Left in RTL): Needs Bottom border only */
 .puzzle-item:nth-child(2) {
-  border-bottom: 1px solid var(--divider-color);
+  border-bottom: 1px solid var(--border-color);
 }
 
 /* Item 3 (Bottom Right in RTL): Needs Left border only */
 .puzzle-item:nth-child(3) {
-  border-left: 1px solid var(--divider-color);
+  border-left: 1px solid var(--border-color);
 }
 
 /* Item 4 (Bottom Left in RTL): No borders needed */
@@ -3346,7 +3345,7 @@ main {
 @media (max-width: 992px) {
   .category-puzzle-container {
     flex-wrap: wrap;
-    gap: 40px 0;
+    gap: 20px 0;
     /* Vertical gap when wrapping */
   }
 
@@ -3357,24 +3356,31 @@ main {
     /* Remove default borders */
   }
 
-  /* Add borders to odd items (Right side items in RTL) */
-  .puzzle-col:nth-child(odd) {
-    border-left: 1px solid var(--divider-color);
+  .puzzle-title, .puzzle-subtitle {
+    text-align: right;
   }
-}
 
-@media (max-width: 600px) {
+  .puzzle-header {
+    width: 100%;
+  }
+
   .puzzle-col {
     flex: 0 0 100%;
     /* 1 column per row */
     border-left: none !important;
-    border-bottom: 1px solid var(--divider-color);
+    border-bottom: 1px solid var(--border-color);
     padding-bottom: 40px;
+    padding-top: 20px;
+    border-radius: 20px;
+    background-color: var(--bg-card);
   }
 
   .puzzle-col:last-child {
     border-bottom: none;
-    padding-bottom: 0;
+  }
+
+  .category-puzzle-section {
+    padding-bottom: 10px;
   }
 }
 
