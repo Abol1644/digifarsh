@@ -121,7 +121,6 @@ document.addEventListener("DOMContentLoaded", () => {
 /* components/js/mega-menu.js */
 
 document.addEventListener("DOMContentLoaded", function () {
-  
   // 1. Toggle Mobile Drawer (Connect to your existing header button)
   const menuBtn = document.querySelector("#mobile-menu-btn"); // Your header button ID
   const drawer = document.querySelector("#mobileMegaMenu");
@@ -129,12 +128,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const desktopPanes = document.querySelectorAll(".mega-content-pane");
   const body = document.body;
 
-  desktopSideItems.forEach(item => {
+  desktopSideItems.forEach((item) => {
     // Use 'mouseenter' for desktop so user doesn't have to click
-    item.addEventListener("mouseenter", function() {
+    item.addEventListener("mouseenter", function () {
       // 1. Remove active class from all sidebar items & content panes
-      desktopSideItems.forEach(i => i.classList.remove("active"));
-      desktopPanes.forEach(pane => pane.classList.remove("active"));
+      desktopSideItems.forEach((i) => i.classList.remove("active"));
+      desktopPanes.forEach((pane) => pane.classList.remove("active"));
 
       // 2. Activate the hovered item
       this.classList.add("active");
@@ -142,8 +141,8 @@ document.addEventListener("DOMContentLoaded", function () {
       // 3. Show the corresponding content pane
       const targetId = this.getAttribute("data-target"); // We will add this to HTML
       const targetPane = document.getElementById(targetId);
-      
-      if(targetPane) {
+
+      if (targetPane) {
         targetPane.classList.add("active");
       }
     });
@@ -152,19 +151,19 @@ document.addEventListener("DOMContentLoaded", function () {
   if (menuBtn && drawer) {
     menuBtn.addEventListener("click", () => {
       drawer.classList.toggle("active");
-      
+
       // Update the icon inside the button (Menu vs Close)
       const openState = menuBtn.querySelector(".menu-state-open");
       const closeState = menuBtn.querySelector(".menu-state-close");
-      
-      if(drawer.classList.contains("active")) {
-          if(openState) openState.style.display = 'none';
-          if(closeState) closeState.style.display = 'flex';
-          body.style.overflow = "hidden"; // Prevent background scroll
+
+      if (drawer.classList.contains("active")) {
+        if (openState) openState.style.display = "none";
+        if (closeState) closeState.style.display = "flex";
+        body.style.overflow = "hidden"; // Prevent background scroll
       } else {
-          if(openState) openState.style.display = 'flex';
-          if(closeState) closeState.style.display = 'none';
-          body.style.overflow = "";
+        if (openState) openState.style.display = "flex";
+        if (closeState) closeState.style.display = "none";
+        body.style.overflow = "";
       }
     });
   }
@@ -176,7 +175,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const desktopMegaMenu = document.querySelector(".mega-menu");
   const desktopWrapper = document.querySelector(".category-menu-wrapper");
 
-  if(desktopMenuBtn && desktopMegaMenu) {
+  if (desktopMenuBtn && desktopMegaMenu) {
     desktopMenuBtn.addEventListener("click", (e) => {
       e.stopPropagation(); // Stop click from bubbling to document
       desktopMenuBtn.classList.toggle("active");
@@ -192,38 +191,38 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  sideItems.forEach(item => {
-    item.addEventListener("click", function() {
+  sideItems.forEach((item) => {
+    item.addEventListener("click", function () {
       // Remove active from all sidebar items
-      sideItems.forEach(i => i.classList.remove("active"));
+      sideItems.forEach((i) => i.classList.remove("active"));
       // Add active to clicked
       this.classList.add("active");
 
       // Hide all panes
-      tabPanes.forEach(pane => pane.classList.remove("active"));
-      
+      tabPanes.forEach((pane) => pane.classList.remove("active"));
+
       // Show target pane
       const targetId = this.getAttribute("data-target");
       const targetPane = document.getElementById(targetId);
-      if(targetPane) {
+      if (targetPane) {
         targetPane.classList.add("active");
       }
     });
   });
 
   // 3. Accordion Logic
-  const accordionHeaders = document.querySelectorAll(".mobile-accordion .accordion-header");
+  const accordionHeaders = document.querySelectorAll(
+    ".mobile-accordion .accordion-header"
+  );
 
-  accordionHeaders.forEach(header => {
-    header.addEventListener("click", function() {
+  accordionHeaders.forEach((header) => {
+    header.addEventListener("click", function () {
       const parent = this.parentElement;
       // Toggle current
       parent.classList.toggle("open");
     });
   });
-
 });
-
 
 document.addEventListener("DOMContentLoaded", () => {
   // 1. Select all slider wrappers on the page
@@ -455,7 +454,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-
 document.addEventListener("DOMContentLoaded", () => {
   // --- Auth Modal Logic ---
   const modal = document.getElementById("auth-modal");
@@ -466,7 +464,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (modal) {
     // 1. Open Modal
-    loginBtns.forEach(btn => {
+    loginBtns.forEach((btn) => {
       btn.addEventListener("click", (e) => {
         e.preventDefault();
         modal.classList.add("active");
@@ -488,11 +486,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // 3. Tab Switching
-    tabs.forEach(tab => {
+    tabs.forEach((tab) => {
       tab.addEventListener("click", () => {
         // Remove active class from all tabs & forms
-        tabs.forEach(t => t.classList.remove("active"));
-        forms.forEach(f => f.classList.remove("active"));
+        tabs.forEach((t) => t.classList.remove("active"));
+        forms.forEach((f) => f.classList.remove("active"));
 
         // Add active class to clicked tab
         tab.classList.add("active");
@@ -501,6 +499,40 @@ document.addEventListener("DOMContentLoaded", () => {
         const targetId = tab.getAttribute("data-target");
         document.getElementById(targetId).classList.add("active");
       });
+    });
+  }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const cartBtn = document.getElementById("cart-toggle-btn");
+  const cartDropdown = document.getElementById("cart-dropdown");
+  const closeCartBtn = document.getElementById("cart-close-popup");
+
+  if (cartBtn && cartDropdown) {
+    // Open/Close on Button Click
+    cartBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      cartDropdown.classList.toggle("active");
+    });
+
+    // Close on X Button
+    if (closeCartBtn) {
+      closeCartBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        cartDropdown.classList.remove("active");
+      });
+    }
+
+    // Close when clicking outside
+    document.addEventListener("click", (e) => {
+      if (!cartDropdown.contains(e.target) && !cartBtn.contains(e.target)) {
+        cartDropdown.classList.remove("active");
+      }
+    });
+
+    // Optional: Stop closing when clicking INSIDE the dropdown
+    cartDropdown.addEventListener("click", (e) => {
+      e.stopPropagation();
     });
   }
 });

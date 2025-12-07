@@ -54,10 +54,77 @@
             <a href="tel:09909809100" class="btn-icon mobile-call-btn">
               <span class="material-icons-outlined icon">phone_in_talk</span>
             </a>
-            <button class="btn btn-primary font-medium header-cart-btn desktop-only">
-              <span class="material-icons-outlined icon">shopping_bag</span>
-              <span>سبد خرید</span>
-            </button>
+            <div class="cart-wrapper">
+              <button class="btn btn-primary font-medium header-cart-btn desktop-only" id="cart-toggle-btn">
+                <span class="material-icons-outlined icon">shopping_bag</span>
+                <span>سبد خرید</span>
+                <span class="cart-badge-count">2</span>
+              </button>
+
+              <div class="cart-dropdown modern-cart" id="cart-dropdown">
+
+                <div class="cart-popup-header">
+                  <span class="font-bold title">سبد خرید شما (2)</span>
+                  <button class="cart-close-btn" id="cart-close-popup">
+                    <span class="material-icons-outlined">close</span>
+                  </button>
+                </div>
+
+                <div class="cart-items-scroll">
+
+                  <div class="cart-item-card">
+                    <div class="cart-thumb">
+                      <img src="./assets/images/category-puzzle/category-puzzle-moroccan-1.png" alt="فرش">
+                    </div>
+                    <div class="cart-info">
+                      <h4 class="cart-title font-medium">فرش گبه کاشان زمینه سرمه ای</h4>
+                      <div class="cart-meta font-regular">
+                        <span>کد: 6140018</span> | <span>پادری</span>
+                      </div>
+                      <div class="cart-price-row">
+                        <div class="quantity-box font-regular">2 عدد</div>
+                        <div class="price font-bold">15,000,000 تومان</div>
+                      </div>
+                    </div>
+                    <button class="btn-remove-item" aria-label="حذف از سبد">
+                      <span class="material-icons-outlined">delete_outline</span>
+                    </button>
+                  </div>
+
+                  <div class="cart-item-card">
+                    <div class="cart-thumb">
+                      <img src="./assets/images/category-puzzle/category-puzzle-1200-1.png" alt="فرش">
+                    </div>
+                    <div class="cart-info">
+                      <h4 class="cart-title font-medium">فرش 1200 شانه طرح افشان</h4>
+                      <div class="cart-meta font-regular">
+                        <span>کد: 7720</span> | <span>6 متری</span>
+                      </div>
+                      <div class="cart-price-row">
+                        <div class="quantity-box font-regular">1 عدد</div>
+                        <div class="price font-bold">9,500,000 تومان</div>
+                      </div>
+                    </div>
+                    <button class="btn-remove-item" aria-label="حذف از سبد">
+                      <span class="material-icons-outlined">delete_outline</span>
+                    </button>
+                  </div>
+
+                </div>
+
+                <div class="cart-popup-footer">
+                  <div class="cart-total-row">
+                    <span class="font-regular label">مبلغ قابل پرداخت:</span>
+                    <span class="font-bold total-price">24,500,000 <span class="currency">تومان</span></span>
+                  </div>
+
+                  <div class="cart-actions-row">
+                    <a href="#" class="btn btn-primary font-bold action-btn checkout-btn">تسویه حساب</a>
+                    <a href="#" class="btn btn-outline font-medium action-btn view-cart-btn">مشاهده سبد</a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
