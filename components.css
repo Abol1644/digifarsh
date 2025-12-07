@@ -3972,3 +3972,189 @@ main {
     /* اگر گرید به هم ریخت، موقتا LTR تست کنید، اما RTL هم باید کار کند */
   }
 }
+
+/* --- Auth Modal Styles --- */
+.auth-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 2000; /* Higher than header */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.auth-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.auth-modal-box {
+  background-color: #ffffff;
+  width: 400px;
+  max-width: 90%;
+  border-radius: 24px;
+  padding: 32px;
+  position: relative;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.auth-modal-overlay.active .auth-modal-box {
+  transform: translateY(0);
+}
+
+.auth-close-btn {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #777;
+  padding: 5px;
+  border-radius: 50%;
+  transition: 0.2s;
+  display: flex;
+}
+
+.auth-close-btn:hover {
+  background-color: #f5f5f5;
+  color: #000;
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.auth-logo {
+  height: 28px;
+  margin-bottom: 12px;
+}
+
+/* Tabs */
+.auth-tabs {
+  display: flex;
+  border-bottom: 2px solid #f0f0f0;
+  margin-bottom: 24px;
+}
+
+.auth-tab {
+  flex: 1;
+  background: transparent;
+  border: none;
+  padding: 12px;
+  font-size: 1rem;
+  color: #777;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition: all 0.3s;
+}
+
+.auth-tab.active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+  font-weight: 700;
+}
+
+/* Forms */
+.auth-form {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+.auth-form.active {
+  display: block;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: #F5F6F8;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  outline: none;
+  transition: 0.2s;
+}
+
+.form-input:focus {
+  background-color: #fff;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(230, 0, 18, 0.1);
+}
+
+.form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  font-size: 0.85rem;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  color: #555;
+}
+
+.forgot-link {
+  color: #777;
+  transition: 0.2s;
+}
+
+.forgot-link:hover {
+  color: var(--primary);
+}
+
+.auth-submit-btn {
+  width: 100%;
+  justify-content: center;
+  padding: 14px;
+  font-size: 1rem;
+}
+
+.auth-terms {
+  font-size: 0.8rem;
+  color: #777;
+  text-align: center;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.auth-terms a {
+  color: var(--primary);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--primary);
+}
+
+@media (max-width: 993px) {
+  .form-footer {
+    flex-direction: column;
+    gap: 14px;
+  }
+}

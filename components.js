@@ -454,3 +454,53 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  // --- Auth Modal Logic ---
+  const modal = document.getElementById("auth-modal");
+  const loginBtns = document.querySelectorAll(".header-login-btn"); // Selects all login buttons (mobile/desktop)
+  const closeBtn = document.getElementById("auth-close-btn");
+  const tabs = document.querySelectorAll(".auth-tab");
+  const forms = document.querySelectorAll(".auth-form");
+
+  if (modal) {
+    // 1. Open Modal
+    loginBtns.forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        modal.classList.add("active");
+        document.body.style.overflow = "hidden"; // Prevent background scrolling
+      });
+    });
+
+    // 2. Close Modal
+    const closeModal = () => {
+      modal.classList.remove("active");
+      document.body.style.overflow = "";
+    };
+
+    if (closeBtn) closeBtn.addEventListener("click", closeModal);
+
+    // Close when clicking outside the box
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) closeModal();
+    });
+
+    // 3. Tab Switching
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        // Remove active class from all tabs & forms
+        tabs.forEach(t => t.classList.remove("active"));
+        forms.forEach(f => f.classList.remove("active"));
+
+        // Add active class to clicked tab
+        tab.classList.add("active");
+
+        // Show corresponding form
+        const targetId = tab.getAttribute("data-target");
+        document.getElementById(targetId).classList.add("active");
+      });
+    });
+  }
+});

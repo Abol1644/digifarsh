@@ -1647,16 +1647,20 @@
 
           <div class="puzzle-grid">
             <a href="#" class="puzzle-item">
-              <img src="./assets/images/category-puzzle/category-puzzle-bedroom-1.png" alt="فرش اتاق خواب" loading="lazy">
+              <img src="./assets/images/category-puzzle/category-puzzle-bedroom-1.png" alt="فرش اتاق خواب"
+                loading="lazy">
             </a>
             <a href="#" class="puzzle-item">
-              <img src="./assets/images/category-puzzle/category-puzzle-bedroom-2.png" alt="فرش اتاق خواب" loading="lazy">
+              <img src="./assets/images/category-puzzle/category-puzzle-bedroom-2.png" alt="فرش اتاق خواب"
+                loading="lazy">
             </a>
             <a href="#" class="puzzle-item">
-              <img src="./assets/images/category-puzzle/category-puzzle-bedroom-3.png" alt="فرش اتاق خواب" loading="lazy">
+              <img src="./assets/images/category-puzzle/category-puzzle-bedroom-3.png" alt="فرش اتاق خواب"
+                loading="lazy">
             </a>
             <a href="#" class="puzzle-item">
-              <img src="./assets/images/category-puzzle/category-puzzle-bedroom-4.png" alt="فرش اتاق خواب" loading="lazy">
+              <img src="./assets/images/category-puzzle/category-puzzle-bedroom-4.png" alt="فرش اتاق خواب"
+                loading="lazy">
             </a>
           </div>
 
@@ -1674,16 +1678,20 @@
 
           <div class="puzzle-grid">
             <a href="#" class="puzzle-item">
-              <img src="./assets/images/category-puzzle/category-puzzle-kitchen-1.png" alt="فرش آشپزخانه" loading="lazy">
+              <img src="./assets/images/category-puzzle/category-puzzle-kitchen-1.png" alt="فرش آشپزخانه"
+                loading="lazy">
             </a>
             <a href="#" class="puzzle-item">
-              <img src="./assets/images/category-puzzle/category-puzzle-kitchen-2.png" alt="فرش آشپزخانه" loading="lazy">
+              <img src="./assets/images/category-puzzle/category-puzzle-kitchen-2.png" alt="فرش آشپزخانه"
+                loading="lazy">
             </a>
             <a href="#" class="puzzle-item">
-              <img src="./assets/images/category-puzzle/category-puzzle-kitchen-3.png" alt="فرش آشپزخانه" loading="lazy">
+              <img src="./assets/images/category-puzzle/category-puzzle-kitchen-3.png" alt="فرش آشپزخانه"
+                loading="lazy">
             </a>
             <a href="#" class="puzzle-item">
-              <img src="./assets/images/category-puzzle/category-puzzle-kitchen-4.png" alt="فرش آشپزخانه" loading="lazy">
+              <img src="./assets/images/category-puzzle/category-puzzle-kitchen-4.png" alt="فرش آشپزخانه"
+                loading="lazy">
             </a>
           </div>
 
@@ -2033,6 +2041,62 @@
   </footer>
 
   <div class="menu-overlay"></div>
+
+  <div id="auth-modal" class="auth-modal-overlay">
+    <div class="auth-modal-box">
+      <button id="auth-close-btn" class="auth-close-btn" aria-label="بستن">
+        <span class="material-icons-outlined">close</span>
+      </button>
+
+      <div class="auth-header">
+        <img src="./assets/images/logo-main.png" alt="دیجی فرش" class="auth-logo">
+        <h3 class="font-bold">ورود | ثبت‌نام</h3>
+      </div>
+
+      <div class="auth-tabs font-medium">
+        <button class="auth-tab active font-medium" data-target="login-form">ورود</button>
+        <button class="auth-tab font-medium" data-target="register-form">ثبت‌نام</button>
+      </div>
+
+      <form id="login-form" class="auth-form active">
+        <div class="form-group">
+          <label class="font-regular">شماره موبایل</label>
+          <input type="text" class="form-input font-regular" placeholder="مثلا: 09123456789">
+        </div>
+        <div class="form-group">
+          <label class="font-regular">رمز عبور</label>
+          <input type="password" class="form-input font-regular" placeholder="رمز عبور خود را وارد کنید">
+        </div>
+
+        <div class="form-footer font-regular">
+          <label class="checkbox-label">
+            <input type="checkbox">
+            <span>مرا به خاطر بسپار</span>
+          </label>
+          <a href="#" class="forgot-link">رمز عبور را فراموش کرده‌اید؟</a>
+        </div>
+
+        <button type="submit" class="btn btn-primary auth-submit-btn font-bold">ورود به دیجی‌فرش</button>
+      </form>
+
+      <form id="register-form" class="auth-form">
+        <div class="form-group">
+          <label class="font-regular">شماره موبایل</label>
+          <input type="tel" class="form-input font-regular" placeholder="مثلا: 09123456789">
+        </div>
+        <div class="form-group">
+          <label class="font-regular">رمز عبور</label>
+          <input type="password" class="form-input font-regular" placeholder="حداقل ۶ کاراکتر">
+        </div>
+
+        <p class="auth-terms font-regular">
+          با ثبت‌نام در دیجی‌فرش، <a href="#">قوانین و مقررات</a> را می‌پذیرم.
+        </p>
+
+        <button type="submit" class="btn btn-primary auth-submit-btn font-bold">ثبت‌نام در دیجی‌فرش</button>
+      </form>
+    </div>
+  </div>
 
   <script src="./components.js"></script>
 </body>
