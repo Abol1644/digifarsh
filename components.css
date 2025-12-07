@@ -2715,6 +2715,7 @@ main {
   border-radius: var(--border-radius);
   padding: 24px;
   border: none;
+  border-radius: 20px;
 }
 
 /* Card: Description */
