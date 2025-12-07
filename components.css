@@ -921,7 +921,7 @@ main {
 .hero-slide {
   grid-area: stack;
   /* Stacks them on top of each other */
-  background: linear-gradient(135deg, var(--primary) 0%, var(--bg-offer) 100%);
+  background: linear-gradient(45deg, var(--primary) 0%, var(--bg-offer) 75%);
   color: #fff;
 
   /* Layout inside the slide */
