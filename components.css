@@ -4434,3 +4434,213 @@ main {
   box-shadow: 0 6px 15px rgba(230, 0, 18, 0.3);
   transform: translateY(-2px);
 }
+/* --- Story Viewer (Instagram Style - Fitted UI) --- */
+
+.story-viewer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000; /* پس‌زمینه مشکی خالص */
+  z-index: 3000;
+  perspective: 1000px;
+  overflow: hidden;
+  
+  /* مخفی بودن پیش‌فرض */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.story-viewer.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* کانتینر اصلی که فریم را در مرکز نگه می‌دارد */
+.story-viewer-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  
+  /* تنظیمات انیمیشن */
+  transform-style: preserve-3d;
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: transform;
+}
+
+/* --- The Magic Frame: جعبه‌ای که دور مدیا فیت می‌شود --- */
+.story-frame {
+  position: relative;
+  width: fit-content;  /* عرض به اندازه محتوا */
+  height: fit-content; /* ارتفاع به اندازه محتوا */
+  max-width: 100%;     /* نباید از صفحه بزند بیرون */
+  max-height: 100%;
+  display: flex;       /* حذف فاصله‌های اضافی */
+  border-radius: 8px;  /* کمی گردی گوشه */
+  overflow: hidden;    /* برش زدن عکس */
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+/* در دسکتاپ سایز را محدود می‌کنیم */
+@media (min-width: 768px) {
+  .story-frame {
+    max-height: 90vh; /* کمی فاصله از بالا و پایین */
+    max-width: 450px; /* شبیه سایز موبایل */
+    border-radius: 16px;
+  }
+}
+
+/* Media Styling */
+.story-media-container {
+  line-height: 0; /* حذف فاصله زیر عکس */
+}
+
+.story-media {
+  display: block;
+  max-width: 100vw;
+  max-height: 100vh;
+  /* نکته مهم: در دسکتاپ ارتفاع محدود شده توسط فریم است */
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: none; /* پیش‌فرض مخفی */
+}
+
+.story-media.active {
+  display: block;
+}
+
+/* --- UI Elements (چسبیده به بالای فریم) --- */
+
+/* سایه گرادینت برای خوانایی متن روی عکس روشن */
+.story-overlay-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, transparent 100%);
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* Progress Bars */
+.story-progress-wrapper {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  display: flex;
+  gap: 4px;
+  z-index: 20;
+  direction: rtl;
+}
+
+.story-bar {
+  flex: 1;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.story-bar-fill {
+  height: 100%;
+  background: #fff;
+  width: 0%;
+  transition: width linear;
+}
+
+/* Header */
+.story-viewer-header {
+  position: absolute;
+  top: 24px;
+  left: 0;
+  width: 100%;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 20;
+  direction: rtl;
+}
+
+.story-user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.story-user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.story-text-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.story-user-name {
+  color: #fff;
+  font-size: 0.85rem;
+  line-height: 1.2;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+}
+
+.story-time {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.7rem;
+  line-height: 1.2;
+}
+
+.story-actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.story-action-btn {
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+}
+
+.story-action-btn .icon {
+  font-size: 24px;
+  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.8));
+}
+
+/* Tap Zones (FullScreen) */
+.story-nav-zone {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 40%; /* ناحیه بزرگتر برای کلیک راحت */
+  z-index: 30; /* بالاتر از همه چیز */
+  /* background: rgba(255,0,0,0.1);  تست: برای دیدن ناحیه کلیک */
+}
+.story-nav-zone.left { left: 0; }
+.story-nav-zone.right { right: 0; }
+
+/* --- Animations Classes (همان قبلی‌ها) --- */
+.story-rtl-next-out { transform: translateX(-100%) rotateY(25deg) scale(0.85); opacity: 0; }
+.story-rtl-next-enter { transform: translateX(100%) rotateY(-25deg) scale(0.85); opacity: 0; }
+.story-rtl-next-in { transform: translateX(0) rotateY(0) scale(1); opacity: 1; }
+
+.story-rtl-prev-out { transform: translateX(100%) rotateY(-25deg) scale(0.85); opacity: 0; }
+.story-rtl-prev-enter { transform: translateX(-100%) rotateY(25deg) scale(0.85); opacity: 0; }
+.story-rtl-prev-in { transform: translateX(0) rotateY(0) scale(1); opacity: 1; }
+
+.story-no-transition { transition: none !important; }

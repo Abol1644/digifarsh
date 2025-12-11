@@ -2162,6 +2162,40 @@
     </div>
   </div>
 
+  <div id="story-viewer" class="story-viewer">
+    <div class="story-viewer-content">
+      <div class="story-nav-zone left" id="story-tap-left"></div>
+      <div class="story-nav-zone right" id="story-tap-right"></div>
+      <div class="story-frame">
+        <div class="story-overlay-gradient"></div>
+        <div class="story-progress-wrapper" id="story-progress-bars"></div>
+        <div class="story-viewer-header">
+          <div class="story-user-info">
+            <img id="story-user-img" src="" alt="user" class="story-user-avatar">
+            <div class="story-text-col">
+              <span id="story-user-name" class="story-user-name font-bold"></span>
+              <span id="story-time" class="story-time font-regular"></span>
+            </div>
+          </div>
+          <div class="story-actions">
+            <button id="story-volume-btn" class="story-action-btn">
+              <span class="material-icons-outlined icon">volume_off</span>
+            </button>
+            <button id="story-close-btn" class="story-action-btn">
+              <span class="material-icons-outlined icon">close</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="story-media-container">
+          <img id="story-img-element" src="" alt="story" class="story-media">
+          <video id="story-video-element" class="story-media" playsinline webkit-playsinline></video>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
   <script src="./components.js"></script>
 </body>
 

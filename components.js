@@ -536,3 +536,453 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+document.addEventListener("DOMContentLoaded", () => {
+  // -----------------------------------------
+  // 1. Data Structure (NEW: Grouped by User)
+  // -----------------------------------------
+  const storyGroups = [
+    {
+      userId: "user_digifarsh",
+      username: "دیجی‌فرش",
+      userImg: "./assets/images/logo-main.png",
+      items: [
+        {
+          type: "image",
+          src: "./assets/images/story-thumbnail-1.jpg",
+          time: "2ساعت پیش",
+          duration: 5000,
+        },
+        {
+          type: "video",
+          src: "https://www.w3schools.com/html/mov_bbb.mp4",
+          time: "3ساعت پیش",
+          duration: 10000,
+        },
+      ],
+    },
+    {
+      userId: "user_festival",
+      username: "جشنواره_بهاره",
+      userImg: "./assets/images/brands/patris.png", // مثال
+      items: [
+        {
+          type: "image",
+          src: "./assets/images/story-thumbnail-2.jpg",
+          time: "جدید",
+          duration: 4000,
+        },
+        {
+          type: "image",
+          src: "./assets/images/story-thumbnail-3.jpg",
+          time: "10دقیقه پیش",
+          duration: 4000,
+        },
+      ],
+    },
+    {
+      userId: "user_support",
+      username: "پشتیبانی",
+      userImg: "./assets/images/support.png",
+      items: [
+        {
+          type: "image",
+          src: "./assets/images/category-puzzle/category-puzzle-moroccan-1.png",
+          time: "1ساعت پیش",
+          duration: 5000,
+        },
+      ],
+    },
+  ];
+
+  // -----------------------------------------
+  // 2. Elements & State
+  // -----------------------------------------
+  // (با فرض اینکه دکمه‌های استوری در صفحه اصلی به ترتیب گروه‌ها هستند)
+  const storyThumbnails = document.querySelectorAll(".story-item");
+
+  const viewer = document.getElementById("story-viewer");
+  const contentWrapper = document.querySelector(".story-viewer-content");
+  const closeBtn = document.getElementById("story-close-btn");
+  const progressContainer = document.getElementById("story-progress-bars");
+
+  const imgElement = document.getElementById("story-img-element");
+  const videoElement = document.getElementById("story-video-element");
+
+  const userNameLabel = document.getElementById("story-user-name");
+  const userImgLabel = document.getElementById("story-user-img");
+  const timeLabel = document.getElementById("story-time");
+
+  const tapLeft = document.getElementById("story-tap-left");
+  const tapRight = document.getElementById("story-tap-right");
+  const volumeBtn = document.getElementById("story-volume-btn");
+
+  // State Trackers
+  let currentGroupIndex = 0; // کدام کاربر؟
+  let currentItemIndex = 0; // کدام استوریِ آن کاربر؟
+
+  let timer;
+  let startTime;
+  let remainingTime;
+  let isPaused = false;
+  let isMuted = true;
+  let isAnimatingUser = false; // جلوگیری از تداخل انیمیشن‌ها
+
+  // Touch Swipe Variables
+  let touchStartX = 0;
+  let touchStartY = 0;
+
+  if (!viewer) return;
+
+  // -----------------------------------------
+  // 3. Open/Close Logic
+  // -----------------------------------------
+  storyThumbnails.forEach((item, index) => {
+    item.addEventListener("click", () => {
+      // باز کردن گروه مربوطه بر اساس ایندکس دکمه کلیک شده
+      // (در پروژه واقعی باید بر اساس ID کاربر مچ شود)
+      currentGroupIndex = index % storyGroups.length;
+      currentItemIndex = 0; // همیشه از اولین استوری کاربر شروع شود
+      openViewer();
+    });
+  });
+
+  function openViewer() {
+    viewer.classList.add("active");
+    document.body.style.overflow = "hidden";
+    loadStoryGroup(currentGroupIndex, currentItemIndex);
+  }
+
+  function closeViewer() {
+    viewer.classList.remove("active");
+    clearTimeout(timer);
+    videoElement.pause();
+    document.body.style.overflow = "";
+    // پاک کردن کلاس‌های انیمیشن برای دفعه بعد
+    setTimeout(() => {
+      contentWrapper.className = "story-viewer-content";
+    }, 300);
+  }
+
+  closeBtn.addEventListener("click", closeViewer);
+
+  // -----------------------------------------
+  // 4. Core Loading Logic (Group & Item)
+  // -----------------------------------------
+
+  // این تابع وقتی صدا زده می‌شود که کلا گروه کاربری عوض شود
+  function loadStoryGroup(groupIndex, itemIndexToStart = 0) {
+    currentGroupIndex = groupIndex;
+    const groupData = storyGroups[currentGroupIndex];
+
+    // آپدیت اطلاعات هدر (کاربر)
+    userNameLabel.textContent = groupData.username;
+    userImgLabel.src = groupData.userImg;
+
+    // ساخت نوار پیشرفت به تعداد استوری‌های این کاربر
+    progressContainer.innerHTML = "";
+    groupData.items.forEach(() => {
+      const bar = document.createElement("div");
+      bar.classList.add("story-bar");
+      const fill = document.createElement("div");
+      fill.classList.add("story-bar-fill");
+      bar.appendChild(fill);
+      progressContainer.appendChild(bar);
+    });
+
+    // لود کردن آیتم خاص
+    loadStoryItem(itemIndexToStart);
+  }
+
+  // این تابع برای تغییر استوری داخل یک گروه است
+  function loadStoryItem(index) {
+    const groupData = storyGroups[currentGroupIndex];
+
+    // بررسی مرزها (Navigation داخل گروه)
+    if (index < 0) {
+      // رسیدیم به قبل از اولین استوری -> برو کاربر قبلی
+      jumpToPrevUserGroup();
+      return;
+    }
+    if (index >= groupData.items.length) {
+      // رسیدیم به بعد از آخرین استوری -> برو کاربر بعدی
+      jumpToNextUserGroup();
+      return;
+    }
+
+    currentItemIndex = index;
+    const itemData = groupData.items[currentItemIndex];
+
+    // Reset UI & Timer
+    clearTimeout(timer);
+    isPaused = false;
+    updateProgressBarsUI(currentItemIndex);
+    timeLabel.textContent = itemData.time;
+
+    // Handle Media Type
+    if (itemData.type === "video") {
+      imgElement.classList.remove("active");
+      videoElement.classList.add("active");
+      videoElement.src = itemData.src;
+      videoElement.muted = isMuted;
+      videoElement.currentTime = 0;
+
+      // صبر کن تا متادیتای ویدیو لود شود تا زمان واقعی را بگیریم
+      videoElement.onloadedmetadata = () => {
+        // اگر در حین لود شدن کاربر رفته بود، پخش نکن
+        if (!viewer.classList.contains("active")) return;
+        startProgress(videoElement.duration * 1000);
+        videoElement.play().catch((e) => console.log("Video play failed:", e));
+      };
+    } else {
+      videoElement.pause();
+      videoElement.classList.remove("active");
+      imgElement.classList.add("active");
+      imgElement.src = itemData.src;
+      // کمی تاخیر برای اطمینان از لود تصویر قبل از شروع تایمر
+      setTimeout(() => {
+        startProgress(itemData.duration);
+      }, 100);
+    }
+  }
+
+  // -----------------------------------------
+  // 5. User Transition Logic (Swipe Animations)
+  // -----------------------------------------
+
+  function jumpToNextUserGroup() {
+    if (isAnimatingUser) return;
+    if (currentGroupIndex + 1 >= storyGroups.length) {
+      closeViewer();
+      return;
+    }
+    performUserTransition("next");
+  }
+
+  function jumpToPrevUserGroup() {
+    if (isAnimatingUser) return;
+    if (currentGroupIndex - 1 < 0) {
+      return; // یا closeViewer() اگر می‌خواهید بسته شود
+    }
+    performUserTransition("prev");
+  }
+
+  function performUserTransition(direction) {
+    isAnimatingUser = true;
+    clearTimeout(timer);
+    videoElement.pause();
+
+    // تعیین کلاس‌ها بر اساس جهت RTL
+    // Next: حرکت به سمت کاربر سمت چپ (پس خروج به راست)
+    // Prev: حرکت به سمت کاربر سمت راست (پس خروج به چپ)
+    const outClass =
+      direction === "next" ? "story-rtl-next-out" : "story-rtl-prev-out";
+    const enterClass =
+      direction === "next" ? "story-rtl-next-enter" : "story-rtl-prev-enter";
+    const inClass =
+      direction === "next" ? "story-rtl-next-in" : "story-rtl-prev-in";
+
+    const newGroupIndex =
+      direction === "next" ? currentGroupIndex + 1 : currentGroupIndex - 1;
+
+    // 1. شروع انیمیشن خروج روی آیتم فعلی
+    contentWrapper.classList.add(outClass);
+
+    // 2. منتظر می‌مانیم تا انیمیشن خروج تمام شود (500ms)
+    setTimeout(() => {
+      // --- پشت صحنه ---
+      // انیمیشن را موقتا خاموش می‌کنیم تا پرش دیده نشود
+      contentWrapper.classList.add("story-no-transition");
+      contentWrapper.classList.remove(outClass);
+
+      // داده‌های کاربر جدید را لود می‌کنیم
+      // (تایمر را بلافاصله پاک می‌کنیم تا وسط انیمیشن شروع نشود)
+      loadStoryGroup(newGroupIndex, 0);
+      clearTimeout(timer);
+
+      // کانتینر را به نقطه شروع "ورود" می‌بریم (بیرون کادر)
+      contentWrapper.classList.add(enterClass);
+
+      // یک فریم صبر می‌کنیم تا مرورگر موقعیت جدید را رندر کند
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          // --- شروع انیمیشن ورود ---
+          // انیمیشن را روشن می‌کنیم
+          contentWrapper.classList.remove("story-no-transition");
+          // کلاس شروع ورود را برمیداریم
+          contentWrapper.classList.remove(enterClass);
+          // کلاس پایان ورود را اضافه می‌کنیم (حرکت به مرکز)
+          contentWrapper.classList.add(inClass);
+
+          // صبر می‌کنیم تا انیمیشن ورود تمام شود
+          setTimeout(() => {
+            isAnimatingUser = false;
+            // تمیزکاری کلاس‌های انیمیشن
+            contentWrapper.classList.remove(inClass);
+
+            // شروع تایمر استوری جدید
+            const currentItem =
+              storyGroups[currentGroupIndex].items[currentItemIndex];
+            const duration =
+              currentItem.type === "video"
+                ? videoElement.duration * 1000
+                : currentItem.duration;
+            if (duration) startProgress(duration);
+          }, 500);
+        });
+      });
+    }, 500); // زمان انیمیشن خروج
+  }
+
+  // -----------------------------------------
+  // 6. Progress & Timer (Similar to before)
+  // -----------------------------------------
+  function updateProgressBarsUI(activeIndex) {
+    const fills = document.querySelectorAll(".story-bar-fill");
+    fills.forEach((fill, idx) => {
+      if (idx < activeIndex) {
+        fill.style.width = "-100%";
+        fill.style.transition = "none";
+      } else if (idx > activeIndex) {
+        fill.style.width = "0%";
+        fill.style.transition = "none";
+      } else {
+        fill.style.width = "0%"; // Reset current for animation
+        // Force reflow
+        void fill.offsetWidth;
+      }
+    });
+  }
+
+  function startProgress(duration) {
+    if (isAnimatingUser) return; // اگر در حال ترنزیشن یوزر هستیم تایمر نباید کار کنه
+    clearTimeout(timer);
+    remainingTime = duration || 5000; // Fallback safety
+
+    const fill = document.querySelectorAll(".story-bar-fill")[currentItemIndex];
+    if (!fill) return;
+
+    startTime = Date.now();
+    // ست کردن ترنزیشن با یک تاخیر بسیار کوچک برای اطمینان از اعمال CSS
+    setTimeout(() => {
+      if (isPaused || isAnimatingUser) return;
+      fill.style.transition = `width ${remainingTime}ms linear`;
+      fill.style.width = "100%";
+    }, 20);
+
+    timer = setTimeout(() => {
+      loadStoryItem(currentItemIndex + 1);
+    }, remainingTime);
+  }
+
+  // -----------------------------------------
+  // 7. Navigation (Taps)
+  // -----------------------------------------
+  tapRight.addEventListener("click", () => loadStoryItem(currentItemIndex + 1));
+  tapLeft.addEventListener("click", () => loadStoryItem(currentItemIndex - 1));
+
+  // -----------------------------------------
+  // 8. Pause / Resume (Hold Logic)
+  // -----------------------------------------
+  const pauseStory = () => {
+    if (isAnimatingUser) return;
+    isPaused = true;
+    clearTimeout(timer);
+
+    const elapsed = Date.now() - startTime;
+    remainingTime -= elapsed;
+
+    const fill = document.querySelectorAll(".story-bar-fill")[currentItemIndex];
+    if (fill) {
+      const computedWidth = getComputedStyle(fill).width;
+      fill.style.transition = "none";
+      fill.style.width = computedWidth;
+    }
+
+    if (
+      storyGroups[currentGroupIndex].items[currentItemIndex].type === "video"
+    ) {
+      videoElement.pause();
+    }
+  };
+
+  const resumeStory = () => {
+    if (!isPaused || isAnimatingUser) return;
+    isPaused = false;
+
+    if (
+      storyGroups[currentGroupIndex].items[currentItemIndex].type === "video"
+    ) {
+      videoElement.play();
+    }
+
+    const fill = document.querySelectorAll(".story-bar-fill")[currentItemIndex];
+    if (fill && remainingTime > 0) {
+      fill.style.transition = `width ${remainingTime}ms linear`;
+      fill.style.width = "100%";
+      startTime = Date.now();
+      timer = setTimeout(
+        () => loadStoryItem(currentItemIndex + 1),
+        remainingTime
+      );
+    } else {
+      // اگر زمانی نمانده بود، برو بعدی
+      loadStoryItem(currentItemIndex + 1);
+    }
+  };
+
+  // Mouse/Touch Events for Hold
+  contentWrapper.addEventListener("mousedown", pauseStory);
+  contentWrapper.addEventListener("mouseup", resumeStory);
+  contentWrapper.addEventListener("mouseleave", resumeStory); // اگر موس از کادر خارج شد
+  contentWrapper.addEventListener(
+    "touchstart",
+    (e) => {
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+      pauseStory();
+    },
+    { passive: true }
+  );
+
+  // -----------------------------------------
+  // 9. Swipe Detection & Volume
+  // -----------------------------------------
+
+  contentWrapper.addEventListener(
+    "touchend",
+    (e) => {
+      const touchEndX = e.changedTouches[0].clientX;
+      const touchEndY = e.changedTouches[0].clientY;
+
+      const diffX = touchEndX - touchStartX;
+      const diffY = touchEndY - touchStartY;
+
+      // شرط تشخیص اسوایپ: حرکت افقی بیشتر
+      if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50) {
+        isPaused = false;
+
+        // --- تغییر جهت اینجاست ---
+        if (diffX < 0) {
+          // Swipe Left (انگشت به چپ کشیده شد) -> برو بعدی
+          jumpToNextUserGroup();
+        } else {
+          // Swipe Right (انگشت به راست کشیده شد) -> برو قبلی
+          jumpToPrevUserGroup();
+        }
+      } else {
+        resumeStory();
+      }
+    },
+    { passive: true }
+  );
+
+  // Volume Control
+  volumeBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    isMuted = !isMuted;
+    videoElement.muted = isMuted;
+    volumeBtn.querySelector(".icon").textContent = isMuted
+      ? "volume_off"
+      : "volume_up";
+  });
+});
